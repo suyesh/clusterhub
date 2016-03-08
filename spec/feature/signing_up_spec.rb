@@ -15,12 +15,12 @@ RSpec.feature "Users can create Accounts" do
     fill_in "Business Name", with: "Acme Retail Inc"
     fill_in "Phone Number", with: "3472817892"
     fill_in "Cell Number", with: "3472817892"
-    fill_in "Tax Id", with: "1234567890"
-    fill_in "Last 4 of Social", with: "2222"
+    fill_in "Tax ID", with: "1234567890"
+    fill_in "SSN #", with: "2222"
     fill_in "Street Address", with: "3416 99 st"
-    fill_in "zip Code", with: "11234"
+    fill_in "Zip Code", with: "11234"
     fill_in "City", with: "New York"
-    select('NY', :from => 'State')
+    select('New York', :from => 'State')
     select("Retail", :from => "Business Type")
     fill_in "Years in Business", with: "5"
     click_button "Sign up"
