@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Welcome! You have signed up successfully. It might take upto 24 hours for Petrohub to approve your account. If you have any Questions, please email sales@petrohub.org"
-      redirect_to root_url
+      redirect_to root_path
     else
       flash.now[:alert] = "Oops! Something went wrong.Account could not be created. Please Check your info and resubmit"
       render "new"

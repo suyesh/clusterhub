@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root to: 'pages#home'
 
   get 'about' =>"pages#about"
   get 'what-we-do' =>"pages#what_we_do"
