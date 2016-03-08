@@ -6,7 +6,7 @@ RSpec.feature "Users can create Accounts" do
     click_link "Sign up"
   end
 
-  scenario "Retailer: with valid attributes" do
+  scenario "With valid attributes" do
     fill_in "First Name", with: "Suyesh"
     fill_in "Last Name", with: "Bhandari"
     fill_in "Email", with: "test@email.com"
@@ -25,7 +25,11 @@ RSpec.feature "Users can create Accounts" do
     fill_in "Years in Business", with: "5"
     click_button "Sign up"
 
-    expect(page.current_url).to be "/"
+    expect(page.current_url).to eq root_url
     expect(page).to have_content("Welcome! You have signed up successfully. It might take upto 24 hours for Petrohub to approve your account. If you have any Questions, please email sales@petrohub.org")
+  end
+
+  scenario "With invalid attributes" do
+    fill_in "First Name", with: ""
   end
 end
