@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Petrohub</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>PetroHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "Petrohub", root_path, class: "navbar-brand"%>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse">
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if current_page?('/')%>">
+              <%= link_to "Home", root_path %>
+            </li>
+            <% unless current_user %>
+            <li class="<%= 'active' if current_page?('/users/sign_up')%>">
+              <%= link_to "Sign up", signup_path %>
+            </li>
+            <li class="<%= 'active' if current_page?('/users/sign_in')%>">
+              <%= link_to "Sign in", login_path %>
+            </li>
+            <%end%>
+          </ul>
+          <% if current_user %>
+          <div class="navbar-right">
+            <p class="navbar-text">
+              Account#
+              <%= current_user.account_number %>
+            </p>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to "Sign out", logout_path %>
+              </li>
+            </ul>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <% flash.each do |key, message| %>
+      <div class="alert alert-<%= key %>">
+        <%= message %>
+      </div>
+      <% end %>
+      <%= yield %>
 
-<%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>

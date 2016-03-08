@@ -18,6 +18,7 @@ RSpec.feature "Users can create Accounts" do
     fill_in "Tax Id", with: "1234567890"
     fill_in "Last 4 of Social", with: "2222"
     fill_in "Street Address", with: "3416 99 st"
+    fill_in "zip Code", with: "11234"
     fill_in "City", with: "New York"
     select('NY', :from => 'State')
     select("Retail", :from => "Business Type")

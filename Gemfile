@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem "sorcery"
+gem 'simple_form'
 
 
 
