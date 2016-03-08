@@ -1,21 +1,23 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :business_name, presence: true
-  validates :phone_number, presence: true
-  validates :cell_number, presence: true
-  validates :tax_identification, presence: true
-  validates :ssn, presence: true
-  validates :address, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
-  validates :zip_code, presence: true
-  validates :account_type, presence: true
-  validates :y_in_biz, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :first_name,
+            :last_name,
+            :business_name,
+            :phone_number,
+            :cell_number,
+            :tax_identification,
+            :ssn,
+            :address,
+            :city,
+            :state,
+            :zip_code,
+            :account_type,
+            :y_in_biz,
+            :email,
+            presence: true
   validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
+  validates :password, presence: true, length: { minimum: 6 }
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
 
 
