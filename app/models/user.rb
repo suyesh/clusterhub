@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
-
+  enum account_status: [:pending, :approved, :disabled]
+  enum user_kind: [:unsure, :retailer, :supplier, :trucking, :admin]
 
 
 end
