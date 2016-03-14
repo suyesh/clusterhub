@@ -14,6 +14,11 @@ RSpec.feature "Users can sign In" do
       #=> If their account has not been approved by Admin, should have active status
       #=> If their account has Inactive status
       #=> If their account has Denied or pending status.
+    #The root of Users should be based on user type:-
+      #=> Admin should be application root of admin namespace
+      #=> Retailer should be application root of retailer namespace
+      #=> Supplier should be application root of supplier namespace
+      #=> Trucking should be application root of trucking namespace
   end
 
   scenario "With Invalid attributes" do
