@@ -1,6 +1,6 @@
-Myapp::Application.routes.draw do
+Rails.Application.routes.draw do
   namespace :trucking do
-  get 'application/index'
+    get 'application/index'
   end
 
   namespace :supplier do
@@ -8,7 +8,10 @@ Myapp::Application.routes.draw do
   end
 
   namespace :retailer do
-    get 'application/index'
+    root 'application#index'
+    resources :stations, only: [:new, :create, :edit, :update] do
+      resources :tanks
+    end
   end
 
   namespace :admin do
