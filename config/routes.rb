@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
-  get 'signup'  => 'users#new'
-  post 'signup' => 'users#create'
   resources :sessions, only: [:new, :create, :destroy]
 
   namespace :trucking do
