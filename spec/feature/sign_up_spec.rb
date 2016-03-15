@@ -27,18 +27,12 @@ RSpec.feature 'Users can sign Up' do
 
     expect(page.current_url).to eq new_user_document_path
     expect(page).to have_content 'Please Upload documents listed below.'
-    expect(page).to have_content # placeholder for documents
 
     attach_file('Upload Document', Rails.root + 'spec/support/files/file.pdf')
 
     click_button 'Apply'
 
     expect(page).to have_content 'Thank you for Applying for PetroHub account. We are currently reviewing your application, which might take upto 24hrs.'
-    # This should test If User can sign up
-    # After sign-up They should be redirected to Upload documents page
-    #-where user.documents will be created and assigned to user.
-    # After uploading documents They should be redirected to -
-    #-Splash page with message, asking them to wait for 24 hours for approval.
   end
 
   scenario 'With Invalid attributes' do
