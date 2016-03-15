@@ -26,7 +26,7 @@ RSpec.feature 'Users can sign Up' do
     check('user_terms')
     click_button 'Apply'
 
-    #expect(page.current_url).to eq new_user_document_path
+    expect(page.current_url).to eq root_url
     #expect(page).to have_content 'Please Upload documents listed below.'
 
     #attach_file('Upload Document', Rails.root + 'spec/support/files/file.pdf')

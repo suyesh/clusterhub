@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = 'Oops! something went wrong. Please check your application and resubmit. Thank you.'
+      render "new"
     end
   end
 

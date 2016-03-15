@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetroHub</title>
@@ -12,32 +12,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-</head>
-<body class="md-skin">
+  </head>
+  <body class="md-skin">
 
     <!-- Wrapper-->
     <div id="wrapper">
 
-        <!-- Navigation -->
-        <%= render 'layouts/navigation' %>
+      <!-- Navigation -->
+      <%= render 'layouts/navigation' %>
 
-        <!-- Page wraper -->
-        <div id="page-wrapper" class="gray-bg">
+      <!-- Page wraper -->
+      <div id="page-wrapper" class="gray-bg">
 
-            <!-- Page wrapper -->
-            <%= render 'layouts/topnavbar' %>
-
-            <!-- Main view  -->
-            <%= yield %>
-
-            <!-- Footer -->
-            <%= render 'layouts/footer' %>
-
+        <!-- Page wrapper -->
+        <%= render 'layouts/topnavbar' %>
+        <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %>">
+          <%= message %>
         </div>
-        <!-- End page wrapper-->
+        <% end %>
+        <!-- Main view  -->
+        <%= yield %>
+
+        <!-- Footer -->
+        <%= render 'layouts/footer' %>
+
+      </div>
+      <!-- End page wrapper-->
 
     </div>
     <!-- End wrapper-->
 
-</body>
+  </body>
 </html>
