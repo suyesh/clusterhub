@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :applications, controller: :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    get "thankyou" => "users#thank_you"
+  end
+  get 'signup'  => 'users#new'
   resources :sessions, only: [:new, :create, :destroy]
 
   namespace :trucking do

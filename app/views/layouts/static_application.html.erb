@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSPINIA | Responsive admin theme</title>
@@ -15,14 +15,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-
-
-</head>
-<body class="gray-bg">
-
-<!-- Main view  -->
-<%= yield %>
-
+  </head>
+  <body class="gray-bg">
+    <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %>">
+      <%= message %>
+    </div>
+    <% end %>
+    <!-- Main view  -->
+    <%= yield %>
 
     <!-- Include javascript per-controller - vendor plugins -->
     <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
@@ -31,5 +32,5 @@
     <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
     <%= yield :javascript %>
 
-</body>
+  </body>
 </html>

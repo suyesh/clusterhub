@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.feature 'Users can sign Up' do
   scenario 'With Valid attributes' do
     visit '/'
-    click_link 'Apply'
+    click_link 'apply'
 
-    expect(page.current_url).to eq new_user_path
+    expect(page.current_url).to eq signup_url
 
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Doe'
@@ -15,22 +15,23 @@ RSpec.feature 'Users can sign Up' do
     fill_in 'Street Address', with: '212 Wise St'
     fill_in 'Apt/Suite', with: '410'
     fill_in 'City', with: 'New york'
-    fill_in 'State', with: 'New York'
-    fill_in 'Zip-Code', with: '11104'
+    select "New York", :from => "State"
+    fill_in 'Zip Code', with: '11104'
     fill_in 'Tax ID', with: '12345678'
     fill_in 'SSN', with: '124000987'
-    fill_in 'In Business For', with: '5'
+    fill_in 'How many years in Business?', with: '5'
     fill_in 'Email', with: 'test@example.com'
     fill_in 'user_password', with: 'password'
     fill_in 'user_password_confirmation', with: 'password'
-    click_button 'Submit'
-
-    expect(page.current_url).to eq new_user_document_path
-    expect(page).to have_content 'Please Upload documents listed below.'
-
-    attach_file('Upload Document', Rails.root + 'spec/support/files/file.pdf')
-
+    check('user_terms')
     click_button 'Apply'
+
+    #expect(page.current_url).to eq new_user_document_path
+    #expect(page).to have_content 'Please Upload documents listed below.'
+
+    #attach_file('Upload Document', Rails.root + 'spec/support/files/file.pdf')
+
+    #click_button 'Apply'
 
     expect(page).to have_content 'Thank you for Applying for PetroHub account. We are currently reviewing your application, which might take upto 24hrs.'
   end

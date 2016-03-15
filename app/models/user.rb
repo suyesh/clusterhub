@@ -33,6 +33,7 @@
 class User < ActiveRecord::Base
   #before_save :generate_account_number, on: [:create]
   authenticates_with_sorcery!
+  validates_confirmation_of :password
 
   enum role: [:reviewed,:retailer, :supplier, :trucking, :admin]
   enum status: [:pending, :active, :denied, :archived, :inactive]
@@ -52,4 +53,4 @@ class User < ActiveRecord::Base
   #    SecureRandom.hex(2)
   # end
   #end
-#end
+end
