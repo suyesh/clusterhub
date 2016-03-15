@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :applications, controller: :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+
   namespace :trucking do
     root to: 'application#index', as: 'dashboard'
   end

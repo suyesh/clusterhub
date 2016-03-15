@@ -5,6 +5,8 @@ RSpec.feature 'Users can sign Up' do
     visit '/'
     click_link 'Apply'
 
+    expect(page.current_url).to eq new_user_path
+
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Doe'
     fill_in 'Business Name', with: 'Acme Inc'
