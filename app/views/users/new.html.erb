@@ -24,8 +24,7 @@
             Fuel trading marketplace. Simple way to manage your Fuel business.
         </p>
         <p>Sign Up. To see it in action.</p>
-        <form class="m-t" role="form" action="#">
-          <%= simple_form_for @user do |f| %>
+          <%= simple_form_for @user, class: "m-t" do |f| %>
           <%= f.input :first_name, label: "First Name" %>
           <%= f.input :last_name, label: "Last Name" %>
           <%= f.input :business_name, label: "Business Name" %>
@@ -45,7 +44,6 @@
           <%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
           <%= f.button :submit, class: "btn btn-primary block full-width m-b" %>
           <%end%>
-        </form>
         <p class="m-t"> <small>Petrohub &copy; 2015</small> </p>
     </div>
 </div>
