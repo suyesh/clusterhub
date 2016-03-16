@@ -1,18 +1,24 @@
-<% if @user.errors.any? %>
-<div id="errors_explanation">
-  <h2><%= pluralize(@user.errors.count, "errors")%>
-   prohibited you from submitting this application:</h2>
-</div>
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-  <li>
-    <%= msg %>
-  </li>
-  <%end%>
-</ul>
-<%end%>
+
 
 <div class="middle-box text-center loginscreen  animated fadeInDown">
+    <% if @user.errors.any? %>
+    <div id="errors_explanation">
+      <h2><%= pluralize(@user.errors.count, "errors")%>
+       prohibited you from submitting this application:</h2>
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li>
+        <%= msg %>
+      </li>
+      <%end%>
+    </ul>
+    <%end%>
+    <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %>">
+      <%= message %>
+    </div>
+    <% end %>
     <div>
         <div>
 

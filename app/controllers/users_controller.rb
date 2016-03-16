@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Thank you for Applying for PetroHub account. We are currently reviewing your application, which might take upto 24hrs.'
-      redirect_to root_path
+      redirect_to new_user_path
     else
       flash[:alert] = 'Oops! something went wrong. Please check your application and resubmit. Thank you.'
       render "new"
