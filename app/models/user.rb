@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   enum role: [:reviewed,:retailer, :supplier, :trucking, :admin]
-  enum status: [:pending, :active, :denied, :archived, :inactive]
+  enum status: [:active, :denied, :archived, :inactive]
 
   # validate :account_number_check
 

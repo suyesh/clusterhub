@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create]
+  resources :users
+  post '/users' => 'users#create'
   resources :sessions, only: [:new, :create, :destroy]
+
 
   namespace :trucking do
     root to: 'application#index', as: 'dashboard'
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
     resources :stations do
       resources :tanks
     end
-    resources :users
   end
 
   get 'home/index'

@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
 <div id="errors_explanation">
   <h2><%= pluralize(@user.errors.count, "errors")%>
-    prohibited this project from being saved:</h2>
+   prohibited you from submitting this application:</h2>
 </div>
 <ul>
   <% @user.errors.full_messages.each do |msg| %>
@@ -43,7 +43,7 @@
           <%= f.input :password, label: "Password"%>
           <%= f.input :password_confirmation, label: "Password Confirmation"%>
           <%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
-          <%= f.button :submit, "Apply", class: "btn btn-primary block full-width m-b" %>
+          <%= f.button :submit, class: "btn btn-primary block full-width m-b" %>
           <%end%>
         </form>
         <p class="m-t"> <small>Petrohub &copy; 2015</small> </p>
