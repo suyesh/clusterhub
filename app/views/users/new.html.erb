@@ -1,55 +1,57 @@
-
-
 <div class="middle-box text-center loginscreen  animated fadeInDown">
-    <% if @user.errors.any? %>
-    <div id="errors_explanation">
-      <h2><%= pluralize(@user.errors.count, "errors")%>
-       prohibited you from submitting this application:</h2>
-    </div>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li>
-        <%= msg %>
-      </li>
-      <%end%>
-    </ul>
-    <%end%>
+
+  <% if @user.errors.any? || flash[:notice]%>
+  <div id="errors_explanation">
     <% flash.each do |key, message| %>
     <div class="alert alert-<%= key %>">
       <%= message %>
     </div>
     <% end %>
+    <h2><%= pluralize(@user.errors.count, "errors")%>
+      prohibited you from submitting this application:</h2>
+  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+
+  <div>
     <div>
-        <div>
 
-            <h1 class="logo-name"><%=image_tag("petrohub.png")%></h1>
+      <h1 class="logo-name"><%=image_tag("petrohub.png")%></h1>
 
-        </div>
-        <h3>Welcome to PetroHub</h3>
-        <p>
-            Fuel trading marketplace. Simple way to manage your Fuel business.
-        </p>
-        <p>Sign Up. To see it in action.</p>
-          <%= simple_form_for @user, class: "m-t" do |f| %>
-          <%= f.input :first_name, label: "First Name" %>
-          <%= f.input :last_name, label: "Last Name" %>
-          <%= f.input :business_name, label: "Business Name" %>
-          <%= f.input :phone_number, label: "Phone Number" %>
-          <%= f.input :cell_number, label: "Cell Number" %>
-          <%= f.input :street_address,label: "Street Address" %>
-          <%= f.input :apt_suite, label: "Apt/Suite" %>
-          <%= f.input :city, label: "City" %>
-          <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
-          <%= f.input :zip_code, label: "Zip Code" %>
-          <%= f.input :tax_id, label: "Tax ID" %>
-          <%= f.input :ssn, label: "SSN" %>
-          <%= f.input :in_biz, label: "How many years in Business?" %>
-          <%= f.input :email, label: "Email"%>
-          <%= f.input :password, label: "Password"%>
-          <%= f.input :password_confirmation, label: "Password Confirmation"%>
-          <%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
-          <%= f.button :submit, class: "btn btn-primary block full-width m-b" %>
-          <%end%>
-        <p class="m-t"> <small>Petrohub &copy; 2015</small> </p>
     </div>
+    <h3>Welcome to PetroHub</h3>
+    <p>
+      Fuel trading marketplace. Simple way to manage your Fuel business.
+    </p>
+    <p>Sign Up. To see it in action.</p>
+    <%= simple_form_for @user, class: "m-t" do |f| %>
+    <%= f.input :first_name, label: "First Name" %>
+    <%= f.input :last_name, label: "Last Name" %>
+    <%= f.input :business_name, label: "Business Name" %>
+    <%= f.input :phone_number, label: "Phone Number" %>
+    <%= f.input :cell_number, label: "Cell Number" %>
+    <%= f.input :street_address,label: "Street Address" %>
+    <%= f.input :apt_suite, label: "Apt/Suite" %>
+    <%= f.input :city, label: "City" %>
+    <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
+    <%= f.input :zip_code, label: "Zip Code" %>
+    <%= f.input :tax_id, label: "Tax ID" %>
+    <%= f.input :ssn, label: "SSN" %>
+    <%= f.input :in_biz, label: "How many years in Business?" %>
+    <%= f.input :email, label: "Email"%>
+    <%= f.input :password, label: "Password"%>
+    <%= f.input :password_confirmation, label: "Password Confirmation"%>
+    <%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
+    <%= f.button :submit, "Apply", class: "btn btn-primary block full-width m-b" %>
+    <%end%>
+    <p class="m-t">
+      <small>Petrohub &copy; 2015</small>
+    </p>
+  </div>
 </div>

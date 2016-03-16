@@ -13,3 +13,10 @@
  *= require animate/animate.css
  *= require style
  */
+ .alert-notice {
+   @extend .alert-success;
+ }
+
+ .alert-alert {
+   @extend .alert-danger;
+ }

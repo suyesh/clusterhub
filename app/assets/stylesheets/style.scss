@@ -66,3 +66,11 @@
 .md-skin .nav-header {
     background-color: #00BFA5;
 }
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
