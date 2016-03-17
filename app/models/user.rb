@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   validates_presence_of :terms, {terms: 1,message: "You have to agree to our terms and conditions."}
 
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
-  enum status: [:active, :denied, :archived, :inactive]
+  enum status: [:inactive,:active, :denied, :archived]
 
 
 

@@ -1,0 +1,2 @@
+module Retailer::DashboardHelper
+end
