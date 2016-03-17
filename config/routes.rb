@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  post '/users' => 'users#create'
   resources :sessions, only: [:new, :create, :destroy]
+  get '/login' => "sessions#new", as: "login"
+
 
 
   namespace :trucking do

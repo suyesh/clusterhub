@@ -1,2 +1,28 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <div>
+
+            <h1 class="logo-name"><%=image_tag("petrohub.png")%></h1>
+
+        </div>
+        <h3>Welcome to Petrohub</h3>
+        <p>
+            Fuel trading marketplace. Simple way to manage your Fuel business.
+        </p>
+        <p>Login in. To make your business easier</p>
+        <form class="m-t" role="form" action="#">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Username" required="">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="">
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+            <a href="#"><small>Forgot password?</small></a>
+            <p class="text-muted text-center"><small>Do not have an account?</small></p>
+            <%= link_to "Apply for an account", new_user_path, class: "btn btn-sm btn-white btn-block"%>
+        </form>
+        <p class="m-t"> <small>Petrohub &copy; 2016</small> </p>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout 'static_application'
   def new
   end
 
