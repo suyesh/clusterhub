@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'retailer/stations'
+
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -19,9 +19,8 @@ Rails.application.routes.draw do
 
   namespace :retailer do
     root to: 'dashboard#index', as: 'dashboard'
-    resources :stations, only: [:new, :create, :edit, :update] do
-      resources :tanks
-    end
+    resources :stations
+    resources :tanks
   end
 
   namespace :admin do

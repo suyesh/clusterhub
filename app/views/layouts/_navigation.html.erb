@@ -23,13 +23,13 @@
                     PH+
                 </div>
             </li>
-            <li class="<%= 'active' if current_page?('/') %>">
-                <%= link_to "/" do %>
+            <li class="<%= 'active' if current_page?retailer_dashboard_url %>">
+                <%= link_to retailer_dashboard_path do %>
                 <i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span>
                 <% end %>
             </li>
-            <li class="<%= 'active' if current_page?('/home/minor') %>">
-                <%= link_to "/home/minor" do %>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to retailer_stations_path do %>
                 <i class="fa fa-beer"></i> <span class="nav-label">My Stations</span>
                 <% end %>
             </li>

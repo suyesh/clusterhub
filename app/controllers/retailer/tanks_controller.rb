@@ -22,12 +22,12 @@ class Retailer::TanksController < ApplicationController
 
   def create
     @tank = @station.tanks.create(tank_params)
-    redirect_to station_path(@station)
+    redirect_to retailer_station_path(@station)
   end
 
   def update
     if @tank.update(tank_params)
-      redirect_to station_tank_path(@station, @tank)
+      redirect_to retailer_station_tank_path(@station, @tank)
     else
       render 'edit'
     end
@@ -35,10 +35,7 @@ class Retailer::TanksController < ApplicationController
 
   def destroy
     @tank.destroy
-    respond_to do |format|
-      format.html { redirect_to station_tanks_path(@station), notice: 'Tank was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to retailer_station_tanks_path(@station), notice: 'Tank was successfully destroyed.'
   end
 
   private

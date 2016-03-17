@@ -19,7 +19,7 @@ class Retailer::StationsController < Retailer::ApplicationController
     @station = Station.new(station_params)
     @station.retailer = current_user
     if @station.save
-      redirect_to @station, notice: 'Station was successfully created.'
+      redirect_to retailer_station_path(@station), notice: 'Station was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Retailer::StationsController < Retailer::ApplicationController
 
   def update
     if @station.update(station_params)
-      redirect_to @station, notice: 'Station was successfully updated.'
+      redirect_to retailer_station_path(@station), notice: 'Station was successfully updated.'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Retailer::StationsController < Retailer::ApplicationController
 
   def destroy
     @station.destroy
-    redirect_to stations_url, notice: 'Station was successfully destroyed.'
+    redirect_to retailer_stations_url, notice: 'Station was successfully destroyed.'
   end
 
   private
