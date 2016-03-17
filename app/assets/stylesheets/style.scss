@@ -50,21 +50,14 @@
 // Your custom style to override base style
 @import "base/custom";
 
+
+
 .nav-header a {
     color: #FFFFFF;
 }
 
-.md-skin .nav-header .text-muted {
-    color: #E0F2F1;
-}
-
-.md-skin .font-bold {
-    font-weight: 500;
-    font-size: 2em;
-}
-
-.md-skin .nav-header {
-    background-color: #00BFA5;
+.nav > li > a {
+    color: white;
 }
 
 .alert-notice {

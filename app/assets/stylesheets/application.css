@@ -20,6 +20,7 @@
  .alert-alert {
    @extend .alert-danger;
  }
- input#user_terms abbr {
-   display: none;
+
+ .md-skin .nav > li > a {
+     color: white;
  }
