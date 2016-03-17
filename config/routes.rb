@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'retailer/stations'
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get '/login' => "sessions#new", as: "login"

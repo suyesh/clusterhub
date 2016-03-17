@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315182807) do
+ActiveRecord::Schema.define(version: 20160317204145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stations", force: :cascade do |t|
+    t.string   "brand"
+    t.string   "business_name"
+    t.string   "tax_id"
+    t.string   "phone_number"
+    t.string   "contact_person"
+    t.string   "cell_number"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "station_reg_number"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "stations", ["user_id"], name: "index_stations_on_user_id", using: :btree
+
+  create_table "tanks", force: :cascade do |t|
+    t.string   "type_of_fuel"
+    t.string   "size"
+    t.string   "registration_id"
+    t.integer  "station_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "tanks", ["station_id"], name: "index_tanks_on_station_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                            null: false
@@ -46,4 +77,5 @@ ActiveRecord::Schema.define(version: 20160315182807) do
   add_index "users", ["ssn"], name: "index_users_on_ssn", unique: true, using: :btree
   add_index "users", ["tax_id"], name: "index_users_on_tax_id", unique: true, using: :btree
 
+  add_foreign_key "tanks", "stations"
 end

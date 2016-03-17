@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
   enum status: [:inactive,:active, :denied, :archived]
 
+  has_many :stations
+
 
 
   # validate :account_number_check
