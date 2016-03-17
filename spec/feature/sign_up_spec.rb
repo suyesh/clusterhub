@@ -109,7 +109,7 @@ RSpec.feature 'Users can sign Up' do
     click_button 'Apply'
 
     expect(page.current_url).to eq users_url
-    expect(page).to have_content "Please provide password and password confirmation."
+    expect(page).to have_content 'Oops! something went wrong. Please check your application and resubmit. Thank you.'
   end
 
   scenario "Wihout agreeing to terms and conditions" do

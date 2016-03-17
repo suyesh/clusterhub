@@ -1,26 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Users can sign In' do
-  user = User.create(
-    first_name: 'John',
-    last_name: 'Doe',
-    business_name: 'ACME inc',
-    phone_number: '2128456789',
-    cell_number: '2123456789',
-    street_address: '81 updown st',
-    apt_suite: '35',
-    city: 'New York',
-    state: 'New York',
-    zip_code: '11367',
-    tax_id: '223103456',
-    ssn: '23456789',
-    in_biz: '3',
-    email: 'apple@yahoo.com',
-    password: 'password',
-    password_confirmation: 'password',
-    terms: 1)
+  let(:user) {
+    FactoryGirl.create(:john_doe)
+  }
 
-  before do
+  before(:each) do
     visit '/'
     click_link 'Log In'
   end
@@ -36,7 +21,7 @@ RSpec.feature 'Users can sign In' do
     expect(page).to have_content 'We are currently reviewing your application. Please contact Petrohub if you have furthur questions.'
   end
 
-  scenario 'With Invalid attirbutes' do
+  scenario 'With Invalid attributes' do
     expect(page.current_url).to eq login_url
 
     fill_in 'Email', with: user.email
