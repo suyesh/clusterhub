@@ -17,6 +17,7 @@ RSpec.feature 'Users can sign In' do
     in_biz: '3',
     email: 'apple@yahoo.com',
     password: 'password',
+    password_confirmation: 'password',
     terms: 1)
 
   before do
