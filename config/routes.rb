@@ -25,6 +25,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'dashboard#index', as: 'dashboard'
+    resources :retailers
+    resources :suppliers
+    resources :truckings
+    resources :users, only: [:index]
     resources :stations do
       resources :tanks
     end

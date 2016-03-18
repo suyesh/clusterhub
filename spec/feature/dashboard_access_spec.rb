@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Dashboard access control" do
   let(:user) {
-    FactoryGirl.create(:john_doe)
+    FactoryGirl.create(:john_doe, :admin)
   }
 
   before do

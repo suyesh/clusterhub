@@ -1,0 +1,44 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span><%=image_tag("rsz_1petrohub.png")%></span><!-- This is for User Image -->
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">user.name</strong>
+                            </span>
+                            <span class="text-muted text-xs block">Options<b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Network</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    PH+
+                </div>
+            </li>
+            <li class="<%= 'active' if current_page?admin_dashboard_url %>">
+                <%= link_to admin_dashboard_path do %>
+                <i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to admin_users_path do %>
+                <i class="fa fa-users <%= 'active' if current_page?admin_users_url %>"></i> <span class="nav-label">Users<span class="fa arrow"></span></span>
+                <% end %>
+                <ul class="nav nav-second-level collapse">
+                    <li class="<%= 'active' if current_page?admin_users_url %>"><%= link_to "All Users", admin_users_path%></li>
+                    <li class="<%= 'active' if current_page?admin_retailers_url %>"><%= link_to "Retailers", admin_retailers_path%></li>
+                    <li class="<%= 'active' if current_page?admin_suppliers_url %>"><%= link_to "Suppliers", admin_suppliers_path%></li>
+                    <li class="<%= 'active' if current_page?admin_truckings_url %>"><%= link_to "Trucking", admin_truckings_path%></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
