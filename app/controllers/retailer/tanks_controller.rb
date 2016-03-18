@@ -1,4 +1,4 @@
-class Retailer::TanksController < ApplicationController
+class Retailer::TanksController < Retailer::ApplicationController
   before_action :set_station
   before_action :set_tank, only: [:show, :edit, :update, :destroy]
 

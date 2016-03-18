@@ -22,4 +22,5 @@ User.create(
   email: 'apple@yahoo.com',
   password: 'password',
   password_confirmation: 'password',
-  terms: 1)
+  terms: 1
+  )

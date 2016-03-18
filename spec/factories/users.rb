@@ -19,5 +19,17 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
     terms 1
+    trait :admin do
+      role :admin
+    end
+    trait :retailer do
+      role :retailer
+    end
+    trait :supplier do
+      role supplier
+    end
+    trait :trucking do
+      role :trucking
+    end
   end
 end
