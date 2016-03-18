@@ -1,4 +1,4 @@
-class Supplier::ApplicationController < ApplicationController
+class Supplier::ApplicationController < LoginrequiredController
   def index
   end
 end

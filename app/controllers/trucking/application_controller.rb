@@ -1,4 +1,4 @@
-class Trucking::ApplicationController < ApplicationController
+class Trucking::ApplicationController < LoginrequiredController
   def index
   end
 end
