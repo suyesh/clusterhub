@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#testing slack
+
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'

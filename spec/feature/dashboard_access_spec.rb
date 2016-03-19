@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Dashboard access control' do
+RSpec.feature 'User Dashboards' do
   let(:user) do
     FactoryGirl.create(:john_doe)
   end
@@ -20,7 +20,11 @@ RSpec.feature 'Dashboard access control' do
 
     expect(page.current_url).to eq retailer_dashboard_url
     expect(page).to have_content 'Login successful'
-    expect(page).to have_content 'My Stations'
+    expect(page).to have_link 'Stations'
+    expect(page).to have_link 'Suppliers'
+    expect(page).to have_link 'Orders'
+    expect(page).to have_link 'Documents'
+    expect(page).to have_link 'Reports'
 
     visit '/admin'
     expect(page).to have_content 'You are not authorized to access that section.'
@@ -45,7 +49,11 @@ RSpec.feature 'Dashboard access control' do
 
     expect(page.current_url).to eq supplier_dashboard_url
     expect(page).to have_content 'Login successful'
-    expect(page).to have_content 'Daily Quotes'
+    expect(page).to have_link 'Fuel Price'
+    expect(page).to have_link 'Retailers'
+    expect(page).to have_link 'Orders'
+    expect(page).to have_link 'Documents'
+    expect(page).to have_link 'Reports'
 
     visit '/admin'
     expect(page).to have_content 'You are not authorized to access that section.'
