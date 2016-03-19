@@ -68,7 +68,7 @@ RSpec.feature 'User Dashboards' do
     expect(page.current_url).to eq supplier_dashboard_url
   end
 
-  scenario "If User is Admin" do
+  scenario 'If User is Admin' do
     user.active!
     user.admin!
     fill_in 'Email', with: user.email
@@ -101,7 +101,7 @@ RSpec.feature 'User Dashboards' do
     expect(page.current_url).to eq admin_dashboard_url
   end
 
-  scenario "If User is Trucking" do
+  scenario 'If User is Trucking' do
     user.active!
     user.trucking!
     fill_in 'Email', with: user.email
