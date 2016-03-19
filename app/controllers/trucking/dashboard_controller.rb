@@ -1,4 +1,4 @@
-class Trucking::DashboardController < ApplicationController
+class Trucking::DashboardController < Trucking::ApplicationController
   def index
   end
 end
