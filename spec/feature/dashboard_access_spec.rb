@@ -67,4 +67,67 @@ RSpec.feature 'User Dashboards' do
     expect(page).to have_content 'You are not authorized to access that section.'
     expect(page.current_url).to eq supplier_dashboard_url
   end
+
+  scenario "If User is Admin" do
+    user.active!
+    user.admin!
+    fill_in 'Email', with: user.email
+    fill_in 'session_password', with: 'password'
+
+    click_button 'Log In'
+
+    expect(page.current_url).to eq admin_dashboard_url
+    expect(page).to have_content 'Login successful'
+    expect(page).to have_link 'Users'
+    expect(page).to have_link 'Retailers'
+    expect(page).to have_link 'Suppliers'
+    expect(page).to have_link 'Trucking'
+    expect(page).to have_link 'Orders'
+    expect(page).to have_link 'Documents'
+    expect(page).to have_link 'Fuel Price'
+    expect(page).to have_link 'Reports'
+    expect(page).to have_link 'Opus Price'
+
+    visit '/supplier'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq admin_dashboard_url
+
+    visit '/retailer'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq admin_dashboard_url
+
+    visit '/trucking'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq admin_dashboard_url
+  end
+
+  scenario "If User is Trucking" do
+    user.active!
+    user.trucking!
+    fill_in 'Email', with: user.email
+    fill_in 'session_password', with: 'password'
+
+    click_button 'Log In'
+
+    expect(page.current_url).to eq trucking_dashboard_url
+    expect(page).to have_content 'Login successful'
+    expect(page).to have_link 'Retailers'
+    expect(page).to have_link 'Suppliers'
+    expect(page).to have_link 'Orders'
+    expect(page).to have_link 'Documents'
+    expect(page).to have_link 'Reports'
+    expect(page).to have_link 'Drivers'
+
+    visit '/supplier'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq trucking_dashboard_url
+
+    visit '/retailer'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq trucking_dashboard_url
+
+    visit '/admin'
+    expect(page).to have_content 'You are not authorized to access that section.'
+    expect(page.current_url).to eq trucking_dashboard_url
+  end
 end
