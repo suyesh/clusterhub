@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
         redirect_to login_url, notice: 'Your account is not active. Please contact us for access.'
       end
     else
-      flash.now[:alert] = 'Something went wrong while we tried to access your account. Please verify your Email and Password and try again.'
-      render 'new'
+      flash[:alert] = 'Something went wrong while we tried to access your account. Please verify your Email and Password and try again.'
+      redirect_to login_url
     end
   end
 

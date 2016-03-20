@@ -28,7 +28,7 @@ RSpec.feature 'Users can sign In' do
     fill_in 'session_password', with: ' '
     click_button 'Log In'
 
-    expect(page.current_url).to eq sessions_url
+    expect(page.current_url).to eq login_url
     expect(page).to have_content 'Something went wrong while we tried to access your account. Please verify your Email and Password and try again.'
   end
 
