@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-  get '/login' => 'sessions#new', as: 'login'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   namespace :trucking do
     root to: 'dashboard#index', as: 'dashboard'

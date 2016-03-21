@@ -13,8 +13,8 @@ RSpec.feature 'User Dashboards' do
   scenario 'If User is Retailer' do
     user.active!
     user.retailer!
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
 
     click_button 'Log In'
 
@@ -43,8 +43,8 @@ RSpec.feature 'User Dashboards' do
   scenario 'If User is Supplier' do
     user.active!
     user.supplier!
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
 
     click_button 'Log In'
 
@@ -73,8 +73,8 @@ RSpec.feature 'User Dashboards' do
   scenario 'If User is Admin' do
     user.active!
     user.admin!
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
 
     click_button 'Log In'
 
@@ -106,8 +106,8 @@ RSpec.feature 'User Dashboards' do
   scenario 'If User is Trucking' do
     user.active!
     user.trucking!
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
 
     click_button 'Log In'
 

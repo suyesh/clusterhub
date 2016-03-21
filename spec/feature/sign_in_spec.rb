@@ -13,8 +13,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'With Valid attributes' do
     expect(page.current_url).to eq login_url
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url
@@ -24,8 +24,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'With Invalid attributes' do
     expect(page.current_url).to eq login_url
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: ' '
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: ' '
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url
@@ -36,8 +36,8 @@ RSpec.feature 'Users can sign In' do
     user.retailer!
     user.active!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq retailer_dashboard_url
@@ -48,8 +48,8 @@ RSpec.feature 'Users can sign In' do
     user.supplier!
     user.active!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq supplier_dashboard_url
@@ -60,8 +60,8 @@ RSpec.feature 'Users can sign In' do
     user.trucking!
     user.active!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq trucking_dashboard_url
@@ -72,8 +72,8 @@ RSpec.feature 'Users can sign In' do
     user.admin!
     user.active!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq admin_dashboard_url
@@ -83,8 +83,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'Retailer with Inactive account' do
     user.retailer!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url
@@ -94,8 +94,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'Supplier with Inactive account' do
     user.supplier!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url
@@ -105,8 +105,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'Trucking with Inactive account' do
     user.trucking!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url
@@ -116,8 +116,8 @@ RSpec.feature 'Users can sign In' do
   scenario 'Admin with Inactive account' do
     user.admin!
 
-    fill_in 'Email', with: user.email
-    fill_in 'session_password', with: 'password'
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: 'password'
     click_button 'Log In'
 
     expect(page.current_url).to eq login_url

@@ -15,7 +15,7 @@
       Fuel trading marketplace. Simple way to manage your Fuel business.
     </p>
     <p>Login in. To make your business easier</p>
-    <%= simple_form_for(:session, url: sessions_path) do |f| %>
+    <%= simple_form_for(@user, url: login_path) do |f| %>
     <%= f.input :email %>
     <%= f.input :password %>
     <%= f.button :submit,  "Log In", class: "btn btn-primary block full-width m-b"%>

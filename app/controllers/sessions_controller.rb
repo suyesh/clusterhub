@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:session][:email], params[:session][:password])
+    if @user = login(params[:user][:email], params[:user][:password])
       if @user.retailer? && @user.active?
         redirect_back_or_to(retailer_dashboard_path, notice: 'Login successful')
       elsif @user.supplier? && @user.active?
@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
         redirect_to login_url, notice: 'Your account is not active. Please contact us for access.'
       end
     else
+      @user = User.new
       flash[:alert] = 'Something went wrong while we tried to access your account. Please verify your Email and Password and try again.'
       redirect_to login_url
     end
@@ -27,6 +28,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(login_path, notice: 'You have Succesfully Logged out.')
+    redirect_to(login_url, notice: 'You have Succesfully Logged out.')
   end
 end
