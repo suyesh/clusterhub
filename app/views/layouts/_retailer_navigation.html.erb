@@ -33,6 +33,26 @@
                 <i class="fa fa-beer"></i> <span class="nav-label">My Stations</span>
                 <% end %>
             </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to root_path do %>
+                <i class="fa fa-users"></i> <span class="nav-label">Suppliers</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to root_path do %>
+                <i class="fa fa-users"></i> <span class="nav-label">Orders</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to root_path do %>
+                <i class="fa fa-users"></i> <span class="nav-label">Documents</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to root_path do %>
+                <i class="fa fa-users"></i> <span class="nav-label">Reports</span>
+                <% end %>
+            </li>
         </ul>
 
     </div>
