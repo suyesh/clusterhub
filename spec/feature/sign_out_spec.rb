@@ -24,7 +24,7 @@ RSpec.feature 'Users can Log out' do
     expect(page).to have_text('You have Succesfully Logged out.')
     expect(current_path).to eq(login_path)
   end
-
+#test
   scenario 'Supplier can Log out of their account.' do
     sign_in_with(supplier.email, 'password')
     expect(page.current_url).to eq supplier_dashboard_url
