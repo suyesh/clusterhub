@@ -8,7 +8,7 @@ RSpec.feature "Supplier can create contacts" do
     visit supplier_dashboard_url
     click_link "Contacts"
     expect(current_url).to eq supplier_contacts_url
-    click_button "Add Contact"
+    click_link "Add Contact"
     expect(current_url).to eq new_supplier_contact_url
   end
 
@@ -20,6 +20,7 @@ RSpec.feature "Supplier can create contacts" do
     fill_in "87", with: 0.02
     fill_in "93", with: 0.22
     fill_in "Diesel", with: 0.11
+    fill_in "Delivery", with: 200
 
     click_button "Add Contact"
 
