@@ -30,13 +30,20 @@
             </li>
             <li class="<%= 'active' if current_page?retailer_stations_url%>">
                 <%= link_to root_path do %>
-                <i class="fa fa-user-plus"></i> <span class="nav-label">Contacts</span>
+                <i class="fa fa-magic <%= 'active' if current_page?admin_users_url %>"></i> <span class="nav-label">PriceMagic<span class="fa arrow"></span></span>
                 <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-usd"></i> <span class="nav-label">Fuel Price</span>
-                <% end %>
+                <ul class="nav nav-second-level collapse">
+                    <li class="<%= 'active' if current_page?admin_users_url %>">
+                        <%= link_to root_path do%>
+                        <i class="fa fa-user-plus"></i> <span class="nav-label">Contacts</span>
+                        <% end %>
+                    </li>
+                    <li class="<%= 'active' if current_page?admin_retailers_url %>">
+                        <%= link_to root_path do%>
+                        <i class="fa fa-usd"></i> <span class="nav-label">Fuel Price</span>
+                        <% end %>
+                    </li>
+                </ul>
             </li>
             <li class="<%= 'active' if current_page?retailer_stations_url%>">
                 <%= link_to root_path do %>
