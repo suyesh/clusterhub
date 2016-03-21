@@ -10,10 +10,8 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <%if current_user %>
                 <%= link_to logout_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i> Log Out
-                <%end%>
                 <%end%>
             </li>
         </ul>
