@@ -107,7 +107,7 @@ User.create(
   tax_id: '2231034569',
   ssn: '234567890',
   in_biz: '3',
-  email: 'trucking@yahoo.com',
+  email: 'admin@yahoo.com',
   password: 'password',
   password_confirmation: 'password',
   terms: 1,
