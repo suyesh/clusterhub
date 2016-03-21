@@ -30,6 +30,11 @@
             </li>
             <li class="<%= 'active' if current_page?retailer_stations_url%>">
                 <%= link_to root_path do %>
+                <i class="fa fa-user-plus"></i> <span class="nav-label">Contacts</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?retailer_stations_url%>">
+                <%= link_to root_path do %>
                 <i class="fa fa-usd"></i> <span class="nav-label">Fuel Price</span>
                 <% end %>
             </li>
