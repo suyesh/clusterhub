@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :supplier do
+  get 'contacts/index'
+  end
+
   resources :users
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :supplier do
     root to: 'dashboard#index', as: 'dashboard'
+    resources :contacts
   end
 
   namespace :retailer do

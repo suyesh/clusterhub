@@ -32,7 +32,7 @@
                 <i class="fa fa-magic <%= 'active' if current_page?admin_users_url %>"></i> <span class="nav-label">PriceMagic<span class="fa arrow"></span></span>
                 <% end %>
                 <ul class="nav nav-second-level collapse">
-                <li class="<%= 'active' if current_page?retailer_dashboard_path%>"><%= link_to "Contacts", root_path %></li>
+                <li class="<%= 'active' if current_page?supplier_contacts_path%>"><%= link_to "Contacts", supplier_contacts_path %></li>
                  <li class="<%= 'active' if current_page?retailer_dashboard_path%>"><%= link_to "Fuel Price", root_path %></li>
                 </ul>
             </li>
