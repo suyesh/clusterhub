@@ -26,10 +26,13 @@ FactoryGirl.define do
       role :retailer
     end
     trait :supplier do
-      role supplier
+      role :supplier
     end
     trait :trucking do
       role :trucking
+    end
+    trait :active do
+      status :active
     end
   end
 end
