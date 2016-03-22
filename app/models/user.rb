@@ -56,3 +56,6 @@ class User < ActiveRecord::Base
   has_many :stations
   has_many :formulas
 end
+
+#belongs_to :contact, class_name: 'User' # contact_id integer
+#belongs_to :supplier, class_name: 'User' # supplier_id integer
