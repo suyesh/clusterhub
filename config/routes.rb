@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   namespace :supplier do
     root to: 'dashboard#index', as: 'dashboard'
-    resources :contacts
+    resources :retailers
   end
 
   namespace :retailer do
