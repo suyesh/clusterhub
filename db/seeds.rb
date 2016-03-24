@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#New User
 User.create(
   first_name: 'John',
   last_name: 'Doe',
@@ -27,6 +29,8 @@ User.create(
   status: 0
 )
 
+
+#Retailer
 User.create(
   first_name: 'John',
   last_name: 'Doe',
@@ -49,6 +53,8 @@ User.create(
   status: 1
 )
 
+
+#Supplier
 User.create(
   first_name: 'John',
   last_name: 'Doe',
@@ -71,6 +77,8 @@ User.create(
   status: 1
 )
 
+
+#Trucking
 User.create(
   first_name: 'John',
   last_name: 'Doe',
@@ -93,6 +101,8 @@ User.create(
   status: 1
 )
 
+
+#ADMIN
 User.create(
   first_name: 'John',
   last_name: 'Doe',
