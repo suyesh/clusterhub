@@ -1,2 +1,33 @@
-<h1>Supplier::FuelPrices#new</h1>
-<p>Find me in app/views/supplier/fuel_prices/new.html.erb</p>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Daily Fuel Price</h2>
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", supplier_dashboard_path%>
+      </li>
+      <li>
+        <strong>Fuel Prices</strong>
+      </li>
+      <li class="active">
+        <strong>New Fuel Price</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+            <div class="ibox-content">
+                <div class="row">
+                        <%= simple_form_for([@supplier, @supplier.fuel_prices.build]) do |f| %>
+                          <%= f.input :regular, label: "Regular" %>
+                          <%= f.input :medium, label: "Medium"%>
+                          <%= f.input :premium, label: "Premium" %>
+                          <%= f.input :diesel, label: "Diesel" %>
+                        <%= f.button :submit, "Update"%>
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

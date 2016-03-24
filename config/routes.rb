@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#index', as: 'dashboard'
     resources :retailers
     resources :fuel_prices
+    
   end
 
   namespace :retailer do

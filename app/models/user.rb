@@ -55,6 +55,7 @@ class User < ActiveRecord::Base
 
   has_many :stations
   has_many :formulas
+  has_many :fuel_prices, foreign_key: :supplier_id
 
 end
 

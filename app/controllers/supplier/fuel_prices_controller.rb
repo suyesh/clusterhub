@@ -1,22 +1,31 @@
-class Supplier::FuelPricesController < ApplicationController
+class Supplier::FuelPricesController < Supplier::ApplicationController
+  before_action :set_supplier
+
   def index
   end
 
   def new
+    @fuel_price = @supplier.fuel_prices.build
   end
 
   def create
+    @fuel_price = @supplier.fuel_prices.build(fuel_price_params)
+    if @fuel_price.save
+      flash[:notice] = "You have successfully Added new Fuel Price."
+      redirect_to supplier_fuel_prices_path
+    else
+      flash.now[:alert] = "Something went wrong. Please try again."
+      render "new"
+    end
   end
 
-  def show
+  private
+
+  def fuel_price_params
+    params.require(:fuel_price).permit(:regular, :medium, :premium, :diesel)
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def set_supplier
+    @supplier = User.find_by(params[:supplier_id])
   end
 end
