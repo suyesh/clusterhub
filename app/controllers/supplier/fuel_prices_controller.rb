@@ -28,6 +28,6 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
   end
 
   def set_supplier
-    @supplier = User.find_by(params[:supplier_id])
+    @supplier = User.find_by(params[:id])
   end
 end
