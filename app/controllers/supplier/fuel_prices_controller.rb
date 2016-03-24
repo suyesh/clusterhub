@@ -2,6 +2,8 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
   before_action :set_supplier
 
   def index
+    @fuel_prices = @supplier.fuel_prices.all.order("created_at DESC")
+    @latest_fuel_price = @supplier.fuel_prices.last
   end
 
   def new

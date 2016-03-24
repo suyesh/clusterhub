@@ -34,6 +34,6 @@ RSpec.feature 'Supplier can create Fuel_Price' do
     expect(page).to have_content "1.34"
     expect(page).to have_content "1.48"
     expect(page).to have_content "1.82"
-    expect(page).to have_content "2.00"
+    expect(page).to have_content "2.0"
   end
 end

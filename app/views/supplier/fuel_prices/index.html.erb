@@ -30,18 +30,25 @@
               <th>Status</th>
             </tr>
           </thead>
+          <% @fuel_prices.each do |f|%>
           <tbody>
             <tr class="gradeX">
-              <td class="mycell">Trident</td>
+              <td class="mycell"><strong><%= f.created_at.strftime("%m/%d/%Y") %></strong></td>
+              <% if f.id == @latest_fuel_price.id %>
+              <td class="mycell2"><strong><span class="label label-success">Today's Latest</span></strong></td>
+              <%elsif f.created_at.strftime("%m/%d/%Y") == @latest_fuel_price.created_at.strftime("%m/%d/%Y") %>
+              <td class="mycell2"><strong><span class="label label-warning">Today's Old</span></strong></td>
+              <%else%>
+              <td class="mycell2"><strong><span class="label label-danger">Old</span></strong></td>
+              <%end%>
               <td class="mycell">
-                Internet Explorer 4.0
+                <%= f.regular %>
               </td>
-              <td class="mycell">Win 95+</td>
-              <td class="mycell">4</td>
-              <td class="mycell">X</td>
-              <td class="mycell">latest</td>
+              <td class="mycell"><%= f.medium %></td>
+              <td class="mycell"><%= f.premium %></td>
+              <td class="mycell"><%= f.diesel %></td>
             </tr>
-
+<%end%>
           </tbody>
 
         </table>
