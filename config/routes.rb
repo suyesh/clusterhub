@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :supplier do
-  get 'contacts/index'
-  end
 
   resources :users
   get 'login' => 'sessions#new'
@@ -15,6 +12,7 @@ Rails.application.routes.draw do
   namespace :supplier do
     root to: 'dashboard#index', as: 'dashboard'
     resources :retailers
+    resources :fuel_prices
   end
 
   namespace :retailer do

@@ -3,17 +3,18 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  username: suyesh
+  password: mustang4
 
 development:
   <<: *default
-  database: petox_dev
-  username: suyesh
-  password: mustang4
+  database: petrox_dev
+
 
 
 test:
   <<: *default
-  database: petox_test
+  database: petrox_test
 
 
 production:

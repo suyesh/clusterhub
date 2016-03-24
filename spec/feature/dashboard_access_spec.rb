@@ -50,7 +50,6 @@ RSpec.feature 'User Dashboards' do
 
     expect(page.current_url).to eq supplier_dashboard_url
     expect(page).to have_content 'Login successful'
-    expect(page).to have_link 'Contacts'
     expect(page).to have_link 'Fuel Price'
     expect(page).to have_link 'Retailers'
     expect(page).to have_link 'Orders'

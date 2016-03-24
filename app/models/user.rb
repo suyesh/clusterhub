@@ -55,8 +55,7 @@ class User < ActiveRecord::Base
 
   has_many :stations
   has_many :formulas
-  has_many :retailers, through: :connnections, class_name: "User"
-  has_many :suppliers, through: :connections, class_name: "User"
+
 end
 
 #belongs_to :contact, class_name: 'User' # contact_id integer
