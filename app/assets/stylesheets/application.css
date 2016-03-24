@@ -24,3 +24,14 @@
  .md-skin .nav > li > a {
      color: white;
  }
+
+ .mycell {
+     max-width: 20px;
+ }
+ .mycell2 {
+     max-width: 10px;
+ }
+
+ .no-price {
+   color: white;
+ }
