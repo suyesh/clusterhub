@@ -2,7 +2,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy, :show]
 
   def index
-    @contacts = current_user.contacts.all
+    @contacts = current_user.contacts.all.order("created_at DESC")
   end
 
   def new
@@ -14,7 +14,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
     @contact = current_user.contacts.build(contacts_params)
     if @contact.save
       flash[:notice] = 'Retailer has been successfully added.'
-      redirect_to supplier_retailers_path
+      redirect_to supplier_contacts_path
     else
       flash.now[:alert] = 'Something went wrong. Check your form and re-try.'
       render 'new'
@@ -40,6 +40,6 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def set_contact
-    @retailer = Contact.find(:id)
+    @contact = Contact.find(:id)
   end
 end

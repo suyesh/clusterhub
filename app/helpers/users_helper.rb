@@ -57,22 +57,5 @@ module UsersHelper
     ]
   end
 
-  def mobile_carrier
-    [
-      'TMobile',
-      'ATT',
-      'Verizon',
-      'Sprint',
-      'US Cellular',
-      'Ultra Mobile',
-      'Simple Mobile',
-      'Lyca Mobile',
-      'H2O',
-      'Red Pocket',
-      'Ting',
-      'Net10',
-      'Tracfone',
-      'PagePlus'
-    ]
-  end
+  
 end

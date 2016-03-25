@@ -1,2 +1,0 @@
-module Supplier::RetailersHelper
-end

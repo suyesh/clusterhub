@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :supplier do
-    get 'retailers/index'
-  end
 
   resources :users
   get 'login' => 'sessions#new'

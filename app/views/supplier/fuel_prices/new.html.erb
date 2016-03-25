@@ -19,7 +19,7 @@
   <div class="col-lg-12">
     <div class="ibox-content">
       <div class="row">
-        <%= simple_form_for @fuel_price, url: supplier_fuel_prices_path(@supplier), class: "m-t" do |f| %>
+        <%= simple_form_for @fuel_price, url: supplier_fuel_prices_path, class: "m-t" do |f| %>
         <%= f.input :regular, label: "Regular" %>
         <%= f.input :medium, label: "Medium"%>
         <%= f.input :premium, label: "Premium" %>

@@ -1,0 +1,55 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2><%= current_user.first_name %>'s Dashboard</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", supplier_dashboard_path %>
+            </li>
+            <li class="active">
+                <strong>Contacts</strong>
+            </li>
+            <%= link_to "Add New", new_supplier_contact_path, class: "btn btn-primary pull-right"%>
+        </ol>
+    </div>
+</div>
+  <%current_user.contacts.all do |contact| %>
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+
+    <div class="col-lg-3">
+        <div class="contact-box center-version">
+
+            <a href="profile.html">
+
+                <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
+
+
+                <h3 class="m-b-xs"><strong><%= contact_full_name(contact)%></strong></h3>
+
+                <div class="font-bold"><%= contact.business_name%></div>
+                <address class="m-t-md">
+                    <strong>Mobile: <%= contact.cell_number %></strong><br>
+                    <%= contact.street_address %><br>
+                    <%= contact.city%>, <%= contact.state %>, <%= contact.zip_code%><br>
+                    <abbr title="Phone">Phone:</abbr><%= contact.phone_number%>
+                </address>
+
+            </a>
+            <div class="contact-box-footer">
+              <h1>Margins</h1>
+                <div class="m-t-xs btn-group">
+                    <a class="btn btn-xs btn-white">87OCT: $<%= contact.c_regular%></a>
+                    <a class="btn btn-xs btn-white">91OCT: $<%= contact.c_medium%></a>
+                    <a class="btn btn-xs btn-white">93OCT: $<%= contact.c_premium %></a>
+                    <a class="btn btn-xs btn-white">Diesel: $<%= contact.c_diesel%></a>
+                    <a class="btn btn-xs btn-white">Delivery: $<%= contact.c_delivery%></a>
+                    <%= link_to "Edit", edit_supplier_contact_path(contact), class: "btn btn-xs btn-red"%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%end%>
+</div>
+
+</div>
