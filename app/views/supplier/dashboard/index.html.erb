@@ -84,7 +84,7 @@
   </div>
   <%end%>
 </div>
-
+<% unless current_user.fuel_prices.empty?%>
 <div class="col-md-6">
   <div class="ibox float-e-margins">
     <div class="ibox-title">
@@ -123,3 +123,4 @@
 
   </div>
 </div>
+<%end%>
