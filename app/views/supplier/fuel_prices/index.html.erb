@@ -40,7 +40,7 @@
               <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
                 <td class="mycell2"><strong><span class="label label-success">Today's Latest</span></strong></td>
               <%elsif f.id != @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-                <td class="mycell2"><strong><span class="label label-warning">Previous Price</span></strong></td>
+                <td class="mycell2"><strong><span class="label label-warning">Expired Price</span></strong></td>
               <%else%>
                 <td class="mycell2"><strong><span class="label label-danger">Ancient Price</span></strong></td>
               <%end%>
