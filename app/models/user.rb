@@ -46,8 +46,8 @@ class User < ActiveRecord::Base
   validates_presence_of :city
   validates_presence_of :state
   validates_presence_of :zip_code
-  validates_presence_of :tax_id
-  validates_presence_of :ssn
+  #validates_presence_of :tax_id
+  #validates_presence_of :ssn
   validates_presence_of :terms, terms: 1, message: 'You have to agree to our terms and conditions.'
 
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
