@@ -2,17 +2,17 @@ class Supplier::ContactsController < Supplier::ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy, :show]
 
   def index
-    @retailer = current_user.contacts.all
+    @contacts = current_user.contacts.all
   end
 
   def new
-    @retailer = current_user.contacts.build
-    @latest_retailer = current_user.contacts.last
+    @contact = current_user.contacts.build
+    @latest_contact = current_user.contacts.last
   end
 
   def create
-    @retailer = current_user.contacts.build(contacts_params)
-    if @retailer.save
+    @contact = current_user.contacts.build(contacts_params)
+    if @contact.save
       flash[:notice] = 'Retailer has been successfully added.'
       redirect_to supplier_retailers_path
     else

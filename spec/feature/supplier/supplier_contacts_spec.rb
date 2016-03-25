@@ -34,6 +34,11 @@ RSpec.feature 'Supplier can create contacts' do
     select 'New York', from: 'State'
     fill_in 'Zip Code', with: '11104'
     select 'TMobile', from: 'Mobile Carriers'
+    fill_in "Regular", with: 1.2
+    fill_in "Medium", with: 1.2
+    fill_in "Premium", with: 1.2
+    fill_in "Diesel", with: 1.2
+    fill_in "Delivery Charges", with: 200
     # fill_in 'Tax ID', with: '12345678'
     # fill_in 'SSN', with: '124000987'
     # fill_in 'How many years in Business?', with: '5'
@@ -42,5 +47,9 @@ RSpec.feature 'Supplier can create contacts' do
     # fill_in 'user_password_confirmation', with: 'password'
     # check('user_terms')
     click_button 'Add Retailer'
+    expect{supplier.contacts}.to change{supplier.contacts.count}.by(1)
+
+    expect(page).to have_content "Retailer has been successfully added."
+    expect(page.current_url).to eq supplier_contacts_url
   end
 end
