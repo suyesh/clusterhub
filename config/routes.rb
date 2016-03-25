@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
   namespace :supplier do
-  get 'retailers/index'
+    get 'retailers/index'
   end
 
   resources :users
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#index', as: 'dashboard'
     resources :retailers
     resources :fuel_prices
-    
+    resources :contacts
   end
 
   namespace :retailer do

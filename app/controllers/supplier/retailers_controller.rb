@@ -1,4 +1,6 @@
-class Supplier::RetailersController < Supplier::ApplicationController
+class Supplier::ContactsController < Supplier::ApplicationController
+  before_action :set_contact, only: [:edit, :update, :destroy, :show]
+
   def index
     @retailer = current_user.contacts.all
   end
@@ -19,6 +21,9 @@ class Supplier::RetailersController < Supplier::ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
   end
 
@@ -32,5 +37,9 @@ class Supplier::RetailersController < Supplier::ApplicationController
 
   def contacts_params
     params.require(:contact).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code,:in_biz,:email)
+  end
+
+  def set_contact
+    @retailer = Contact.find(:id)
   end
 end
