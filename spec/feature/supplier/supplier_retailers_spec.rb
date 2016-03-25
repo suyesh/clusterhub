@@ -7,7 +7,7 @@ RSpec.feature 'Supplier can create contacts' do
     visit '/'
     click_link 'Log In'
 
-    fill_in 'user_email', with: user.email
+    fill_in 'user_email', with: supplier.email
     fill_in 'user_password', with: 'password'
     click_button 'Log In'
   end
