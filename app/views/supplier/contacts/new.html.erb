@@ -31,10 +31,8 @@
         <%= f.input :city, label: "City" %>
         <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
         <%= f.input :zip_code, :label => "Zip Code"%>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <%= f.input :c_regular, :label => "Regular", class:  "form-control" %>
-        </div>
+        <%= f.input :c_regular, :label => "Regular", class:  "form-control" %>
+
         <%= f.input :c_medium, :label => "Medium"%>
         <%= f.input :c_premium, :label => "Premium"%>
         <%= f.input :c_diesel, :label => "Diesel"%>

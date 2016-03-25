@@ -40,6 +40,6 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def set_contact
-    @contact = Contact.find(:id)
+    @contact = Contact.find(params[:id])
   end
 end

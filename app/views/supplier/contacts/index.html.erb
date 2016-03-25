@@ -12,43 +12,41 @@
         </ol>
     </div>
 </div>
-  <%current_user.contacts.all do |contact| %>
+
 <div class="wrapper wrapper-content animated fadeInRight">
 <div class="row">
+  <% @contacts.each do |contact| %>
+      <div class="col-lg-3">
+          <div class="contact-box center-version">
 
-    <div class="col-lg-3">
-        <div class="contact-box center-version">
+              <a href="profile.html">
 
-            <a href="profile.html">
-
-                <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
+                  <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
 
 
-                <h3 class="m-b-xs"><strong><%= contact_full_name(contact)%></strong></h3>
+                  <h3 class="m-b-xs"><strong><%=contact_full_name(contact) %></strong></h3>
 
-                <div class="font-bold"><%= contact.business_name%></div>
-                <address class="m-t-md">
-                    <strong>Mobile: <%= contact.cell_number %></strong><br>
-                    <%= contact.street_address %><br>
-                    <%= contact.city%>, <%= contact.state %>, <%= contact.zip_code%><br>
-                    <abbr title="Phone">Phone:</abbr><%= contact.phone_number%>
-                </address>
+                  <div class="font-bold"><%= contact.business_name%></div>
+                  <address class="m-t-md">
+                      <strong>Mobile:<%=  contact.cell_number %></strong><br>
+                    <%=   contact.street_address %><br>
+                      <%= contact.city%>,<%=contact.state %> , <%= contact.zip_code%><br>
+                      <abbr title="Phone">Phone:</abbr><%= contact.phone_number%>
+                  </address>
 
-            </a>
-            <div class="contact-box-footer">
-              <h1>Margins</h1>
-                <div class="m-t-xs btn-group">
-                    <a class="btn btn-xs btn-white">87OCT: $<%= contact.c_regular%></a>
-                    <a class="btn btn-xs btn-white">91OCT: $<%= contact.c_medium%></a>
-                    <a class="btn btn-xs btn-white">93OCT: $<%= contact.c_premium %></a>
-                    <a class="btn btn-xs btn-white">Diesel: $<%= contact.c_diesel%></a>
-                    <a class="btn btn-xs btn-white">Delivery: $<%= contact.c_delivery%></a>
-                    <%= link_to "Edit", edit_supplier_contact_path(contact), class: "btn btn-xs btn-red"%>
-                </div>
-            </div>
-        </div>
-    </div>
-
+              </a>
+              <div class="contact-box-footer">
+                <h1>Margins</h1>
+                  <div class="m-t-xs btn-group">
+                     <%= link_to "87: #{contact.c_regular}", edit_supplier_contact_path(contact), class: "btn btn-xs btn-white" %>
+                     <%= link_to "91: #{contact.c_medium}", edit_supplier_contact_path(contact), class: "btn btn-xs btn-white" %>
+                     <%= link_to "93: #{contact.c_premium}", edit_supplier_contact_path(contact), class: "btn btn-xs btn-white" %>
+                     <%= link_to "Diesel: #{contact.c_diesel}", edit_supplier_contact_path(contact), class: "btn btn-xs btn-white" %>
+                     <%= link_to "Delivery: #{contact.c_delivery}", edit_supplier_contact_path(contact), class: "btn btn-xs btn-white" %> 
+                  </div>
+              </div>
+          </div>
+      </div>
 <%end%>
 </div>
 
