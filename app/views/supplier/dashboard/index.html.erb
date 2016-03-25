@@ -1,87 +1,107 @@
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
     <h2>Dashboard</h2>
-    <ol class="breadcrumb">
-
-    </ol>
+    <ol class="breadcrumb"></ol>
   </div>
-  <div class="col-lg-2"></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<% if current_user.fuel_prices.empty?%>
-<div class="col-lg-12">
+  <% if current_user.fuel_prices.empty?%>
+  <div class="col-lg-12">
     <div class="widget style1 red-bg">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa fa-exclamation-triangle fa-5x"></i>
-            </div>
-            <div class="col-xs-8 text-right">
-                <span><strong>No Fuel Price Found!</strong></span>
-                <h2 class="font-bold"><a href="supplier/fuel_prices/" class="no-price">Click here to add your latest Fuel Price.</h2></a>
-            </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-exclamation-triangle fa-5x"></i>
         </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>No Fuel Price Found!</strong>
+          </span>
+          <h2 class="font-bold">
+            <a href="supplier/fuel_prices/" class="no-price">Click here to add your latest Fuel Price.</h2>
+          </a>
+        </div>
+      </div>
     </div>
-</div>
-<%else%>
-<div class="col-lg-3 pull-right">
+  </div>
+  <%else%>
+  <div class="col-lg-3 pull-right">
     <div class="widget style1 blue-bg">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa fa-usd fa-5x"></i>
-            </div>
-            <div class="col-xs-8 text-right">
-                <span><strong>Current price for Diesel</strong></span>
-                <h2 class="font-bold"><%= @latest_fuel_price.diesel %></h2>
-            </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
         </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Diesel</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.diesel %></h2>
+        </div>
+      </div>
     </div>
-</div>
-<div class="col-lg-3 pull-right">
+  </div>
+  <div class="col-lg-3 pull-right">
     <div class="widget style1 lazur-bg">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa fa-usd fa-5x"></i>
-            </div>
-            <div class="col-xs-8 text-right">
-                <span><strong>Current price for Premium</strong></span>
-                <h2 class="font-bold"><%= @latest_fuel_price.premium %></h2>
-            </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
         </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Premium</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.premium %></h2>
+        </div>
+      </div>
     </div>
-</div>
-<div class="col-lg-3 pull-right">
+  </div>
+  <div class="col-lg-3 pull-right">
     <div class="widget style1 navy-bg">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa fa-usd fa-5x"></i>
-            </div>
-            <div class="col-xs-8 text-right">
-                <span><strong>Current price for Medium</strong></span>
-                <h2 class="font-bold"><%= @latest_fuel_price.medium%></h2>
-            </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
         </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Medium</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.medium%></h2>
+        </div>
+      </div>
     </div>
-</div>
-<div class="col-lg-3 pull-right">
+  </div>
+  <div class="col-lg-3 pull-right">
     <div class="widget style1 yellow-bg">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa fa-usd fa-5x"></i>
-            </div>
-            <div class="col-xs-8 text-right">
-                <span><strong>Current price for Regular</strong></span>
-                <h2 class="font-bold"><%= @latest_fuel_price.regular %></h2>
-            </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
         </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Regular</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.regular %></h2>
+        </div>
+      </div>
     </div>
+  </div>
+  <%end%>
 </div>
-<%end%>
+
+<div class="col-md-6">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Price Changes</h5>
+      <div class="ibox-tools"></div>
+    </div>
+    <div class="ibox-content no-padding">
+      <div class="flot-chart m-t-lg" style="height: 55px;">
+        <div class="flot-chart-content" id="flot-chart1">
+          <%= line_chart [
+  {name: "Regular", data: @latest_fuel_price.regular},
+  {name: "Medium", data: @latest_fuel_price.medium},
+  {name: "Premium", data: @latest_fuel_price.premium},
+  {name: "Diesel", data: @latest_fuel_price.diesel}
+] %></div>
+      </div>
+    </div>
+
+  </div>
+</div>
