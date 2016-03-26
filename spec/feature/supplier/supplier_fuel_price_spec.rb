@@ -14,7 +14,7 @@ RSpec.feature 'Supplier can create Fuel_Price' do
 
   end
 
-  scenario "Supplier can navigate to Fuel Price" do
+  scenario "Supplier Updates the  Fuel Price" do
     click_link 'Fuel Price'
     expect(current_url).to eq supplier_fuel_prices_url
     click_link "New Price"

@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'rails_12factor', group: :production
 gem 'sorcery', '~> 0.9.0'
 gem 'twilio-ruby'
-gem "chartkick"
+
 
 
 group :development, :test do
