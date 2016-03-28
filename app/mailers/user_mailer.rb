@@ -5,10 +5,8 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def welcome(user)
+    @user = user
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -16,9 +14,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.activated.subject
   #
-  def activated
-    @greeting = "Hi"
+  def activated(user)
+    @user= user
+  end
 
-    mail to: "to@example.org"
+  def fuel_price(supplier, retailers)
+    retailers.each do |retailer|
+    end
   end
 end
