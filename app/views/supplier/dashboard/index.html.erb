@@ -1,7 +1,11 @@
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
     <h2>Dashboard</h2>
-    <ol class="breadcrumb"></ol>
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Your current Base Price", supplier_fuel_prices_path%>
+      </li>
+    </ol>
   </div>
   <% if current_user.fuel_prices.empty?%>
   <div class="col-lg-12">

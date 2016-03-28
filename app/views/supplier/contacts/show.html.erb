@@ -1,1 +1,77 @@
-<%= @contact_price.r_regular %>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Dashboard</h2>
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", supplier_dashboard_path%>
+      </li>
+      <li>
+        <strong>Contacts</strong>
+      </li>
+      <li class="active">
+        <strong>Current Fuel Price for: <%= @contact.first_name%> </strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 blue-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Diesel</strong>
+          </span>
+          <h2 class="font-bold"><%= @contact_price.r_diesel %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 lazur-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Premium</strong>
+          </span>
+          <h2 class="font-bold"><%= @contact_price.r_premium %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 navy-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Medium</strong>
+          </span>
+          <h2 class="font-bold"><%= @contact_price.r_medium %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 yellow-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Regular</strong>
+          </span>
+          <h2 class="font-bold"><%= @contact_price.r_regular %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

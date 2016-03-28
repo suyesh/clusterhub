@@ -15,7 +15,7 @@ before_action :set_fuel_price, only: [:edit, :update]
     if @fuel_price.save
       unless current_user.contacts.empty?
       current_user.contacts.each do |contact|
-        contact.retail_prices.build(r_regular: current_user.fuel_prices.last.regular + contact.c_regular,
+        contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + contact.c_regular,
                                     r_medium: current_user.fuel_prices.last.medium + contact.c_medium,
                                     r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                     r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
@@ -36,6 +36,15 @@ before_action :set_fuel_price, only: [:edit, :update]
 
   def update
     if @fuel_price.update(fuel_price_params)
+      unless current_user.contacts.empty?
+      current_user.contacts.each do |contact|
+        contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + contact.c_regular,
+                                    r_medium: current_user.fuel_prices.last.medium + contact.c_medium,
+                                    r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
+                                    r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
+                                  )
+       end
+     end
       flash[:notice] = "Fuel Price has been successfully updated"
       redirect_to supplier_fuel_prices_path
     else

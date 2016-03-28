@@ -13,6 +13,11 @@ class Supplier::ContactsController < Supplier::ApplicationController
   def create
     @contact = current_user.contacts.build(contacts_params)
     if @contact.save
+    @contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + @contact.c_regular,
+                                    r_medium: current_user.fuel_prices.last.medium + @contact.c_medium,
+                                    r_premium: current_user.fuel_prices.last.premium + @contact.c_premium,
+                                    r_diesel: current_user.fuel_prices.last.diesel + @contact.c_diesel
+                                  )
       flash[:notice] = 'Retailer has been successfully added.'
       redirect_to supplier_contacts_path
     else
@@ -22,7 +27,6 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def show
-    @contact = current_user.contacts.find(params[:id])
     @contact_price = @contact.retail_prices.last
   end
 
@@ -31,6 +35,11 @@ class Supplier::ContactsController < Supplier::ApplicationController
 
   def update
     if @contact.update(contacts_params)
+      @contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + @contact.c_regular,
+                                      r_medium: current_user.fuel_prices.last.medium + @contact.c_medium,
+                                      r_premium: current_user.fuel_prices.last.premium + @contact.c_premium,
+                                      r_diesel: current_user.fuel_prices.last.diesel + @contact.c_diesel
+                                    )
       flash[:notice] = "Contact successfully Updated."
       redirect_to supplier_contacts_path
     else
@@ -45,10 +54,10 @@ class Supplier::ContactsController < Supplier::ApplicationController
   private
 
   def contacts_params
-    params.require(:contact).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code,:in_biz,:email)
+    params.require(:contact).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code,:in_biz,:email, :c_regular, :c_medium, :c_premium, :c_diesel)
   end
 
   def set_contact
-    @contact = Contact.find(params[:id])
+    @contact = current_user.contacts.find(params[:id])
   end
 end
