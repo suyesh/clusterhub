@@ -63,3 +63,11 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+.md-skin .nav > li > a.accountNumber {
+  color: #7E57C2;
+}
+
+#today {
+  margin-top: 20px;
+}
