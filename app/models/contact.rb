@@ -24,4 +24,5 @@
 
 class Contact < ActiveRecord::Base
   belongs_to :supplier, class_name: "User"
+  has_one :retail_price
 end

@@ -57,6 +57,7 @@ class User < ActiveRecord::Base
   has_many :formulas
   has_many :fuel_prices,foreign_key: :supplier_id
   has_many :contacts, foreign_key: :supplier_id
+  has_many :retail_prices, foreign_key: :contact_id
 
 end
 

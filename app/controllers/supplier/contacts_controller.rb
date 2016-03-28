@@ -22,6 +22,8 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def show
+    @contact = current_user.contacts.find(params[:id])
+    @contact_price = @contact.retail_prices.last
   end
 
   def edit

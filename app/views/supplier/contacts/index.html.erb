@@ -19,7 +19,7 @@
       <div class="col-lg-3">
           <div class="contact-box center-version">
 
-              <a href="profile.html">
+              <%= link_to supplier_contact_path(contact) do %>
 
                   <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
 
@@ -34,7 +34,7 @@
                       <abbr title="Phone">Phone:</abbr><%= contact.phone_number%>
                   </address>
 
-              </a>
+              <%end%>
               <div class="contact-box-footer">
                 <h1>Margins</h1>
                   <div class="m-t-xs btn-group">

@@ -1,1 +1,83 @@
-<h1>Retailer::Dashboard#index</h1>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Dashboard</h2>
+    <ol class="breadcrumb"></ol>
+  </div>
+  <% if current_user.retail_prices.empty?%>
+  <div class="col-lg-12">
+    <div class="widget style1 red-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-exclamation-triangle fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <h2 class="font-bold">
+            <a href="#" class="no-price">Click here to request your latest Fuel Price.</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%else%>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 blue-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Diesel</strong>
+          </span>
+          <h2 class="font-bold"><%= @retail_price_latest.r_diesel %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 lazur-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Premium</strong>
+          </span>
+          <h2 class="font-bold"><%= @retail_price_latest.r_premium %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 navy-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Medium</strong>
+          </span>
+          <h2 class="font-bold"><%= @retail_price_latest.r_medium%></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 pull-right">
+    <div class="widget style1 yellow-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Current price for Regular</strong>
+          </span>
+          <h2 class="font-bold"><%= @retail_price_latest.r_regular %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>
