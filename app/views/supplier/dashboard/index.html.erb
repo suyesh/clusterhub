@@ -4,7 +4,7 @@
               <div class="title">
                 <h3 id="today">Today's latest price</h3>
               </div>
-              <% if @latest_fuel_price.nil? %>
+              <% if current_user.fuel_prices.empty? %>
               <div class="col-lg-10">
                 <div class="widget style1 red-bg">
                   <div class="row">
