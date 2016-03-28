@@ -1,72 +1,61 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
-  <div class="sidebar-collapse">
-    <ul class="nav metismenu" id="side-menu">
-      <li class="nav-header">
-        <div class="dropdown profile-element">
-          <span><%=image_tag("rsz_1petrohub.png")%></span>
-          <!-- This is for User Image -->
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <span class="clear">
-              <span class="block m-t-xs">
-                <strong class="font-bold">Account# NJREX234</strong>
-              </span>
-              <span class="text-muted text-xs block">Options<b class="caret"></b>
-              </span>
-            </span>
-          </a>
-          <ul class="dropdown-menu animated fadeInRight m-t-xs">
-            <li>
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Network</a>
-            </li>
-            <li>
-              <a href="#">Billing</a>
-            </li>
-          </ul>
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom white-bg">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <i class="fa fa-reorder"></i>
+            </button>
+            <%= link_to "Petrohub", supplier_dashboard_path, class:"navbar-brand"%>
         </div>
-        <div class="logo-element">
-          PH+
-        </div>
-      </li>
-      <li class="<%= 'active' if current_page?supplier_dashboard_url %>">
-        <%= link_to supplier_dashboard_path do %>
-        <i class="fa fa-dashboard"></i>
-        <span class="nav-label">Dashboard</span>
-        <% end %>
-      </li>
-      <li class="<%= 'active' if current_page?supplier_fuel_prices_path%>">
-        <%= link_to supplier_fuel_prices_path do %>
-        <i class="fa fa-money"></i>
-        <span class="nav-label">Fuel Price</span>
-        <% end %>
-      </li>
-      <li class="<%= 'active' if current_page?supplier_retailers_path%>">
-        <%= link_to supplier_contacts_path do %>
-        <i class="fa fa-users"></i>
-        <span class="nav-label">Retailers</span>
-        <% end %>
-      </li>
-      <li class="<%= 'active' if current_page?retailer_stations_url%>">
-        <%= link_to root_path do %>
-        <i class="fa fa-filter"></i>
-        <span class="nav-label">Orders</span>
-        <% end %>
-      </li>
-      <li class="<%= 'active' if current_page?retailer_stations_url%>">
-        <%= link_to root_path do %>
-        <i class="fa fa-file-text-o"></i>
-        <span class="nav-label">Documents</span>
-        <% end %>
-      </li>
-      <li class="<%= 'active' if current_page?retailer_stations_url%>">
-        <%= link_to root_path do %>
-        <i class="fa fa-bar-chart"></i>
-        <span class="nav-label">Reports</span>
-        <% end %>
-      </li>
-    </ul>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <%= link_to "NJSUP84567", supplier_dashboard_path %>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> PriceMagic <span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><%= link_to "Fuel Price", supplier_fuel_prices_path %></li>
+                        <li><%= link_to "Contacts", supplier_contacts_path %></li>
+                        <li><a href="">Mass Send</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Options <span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Profile</a></li>
+                        <li><a href="">Billing</a></li>
+                        <li><a href="">Network</a></li>
+                        <li><a href="">Resolution Center</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Orders<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Latest</a></li>
+                        <li><a href="">Pending</a></li>
+                        <li><a href="">Completed</a></li>
+                        <li><a href="">Order Reports</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Privates<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Documents</a></li>
+                        <li><a href="">Reports</a></li>
+                        <li><a href="">Opus Price</a></li>
+                    </ul>
+                </li>
 
-  </div>
-</nav>
+            </ul>
+            <ul class="nav navbar-top-links navbar-right">
+              <li>
+                  <%= link_to logout_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i> Log Out
+                  <%end%>
+              </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
