@@ -29,6 +29,7 @@
               <th>Medium</th>
               <th>Premium</th>
               <th>Diesel</th>
+              <th>Action</th>
 
             </tr>
           </thead>
@@ -50,6 +51,12 @@
               <td class="mycell"><%= f.medium %></td>
               <td class="mycell"><%= f.premium %></td>
               <td class="mycell"><%= f.diesel %></td>
+              <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
+              <td class="mycell"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
+              <%else%>
+                <td class="mycell"><strong><span class="label label-danger">Uneditable</span></strong></td>
+              <%end%>
+
             </tr>
 <%end%>
           </tbody>

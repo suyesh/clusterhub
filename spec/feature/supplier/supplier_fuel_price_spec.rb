@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Supplier can create Fuel_Price' do
   let(:supplier) { FactoryGirl.create(:john_doe, :supplier, :active) }
+  let(:fuel_price) {FactoryGirl.create(:fuel_price, :supplier)}
+
 
   before(:each) do
     visit '/'
@@ -10,8 +12,6 @@ RSpec.feature 'Supplier can create Fuel_Price' do
     fill_in 'user_email', with: supplier.email
     fill_in 'user_password', with: 'password'
     click_button 'Log In'
-
-
   end
 
   scenario "Supplier Updates the  Fuel Price" do
@@ -35,5 +35,22 @@ RSpec.feature 'Supplier can create Fuel_Price' do
     expect(page).to have_content "1.48"
     expect(page).to have_content "1.82"
     expect(page).to have_content "2.0"
+  end
+
+  scenario "Supplier can edit the Fuel Price" do
+    click_link 'Fuel Price'
+    expect(current_url).to eq supplier_fuel_prices_url
+    click_button "Edit"
+    expect(current_url).to eq supplier_fuel_price_edit_url(fuel_price.id)
+    fill_in "Regular", with: 2
+    fill_in "Medium", with: 2
+    fill_in "Premium", with: 2
+    fill_in "Diesel", with: 2
+    click_button "Edit"
+
+    expect(current_url).to eq supplier_fuel_prices_url
+    expect(page).to have_content "You have successfully Edited the Fuel Price."
+    expect(page).to have_content "2"
+    expect(page).to have_content "Edited"
   end
 end
