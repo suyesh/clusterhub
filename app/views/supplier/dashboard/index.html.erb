@@ -4,6 +4,24 @@
               <div class="title">
                 <h3 id="today">Today's latest price</h3>
               </div>
+              <% if @latest_fuel_price.nil? %>
+              <div class="col-lg-10">
+                <div class="widget style1 red-bg">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                      <span>
+                        <strong>No Fuel Price Found</strong>
+                      </span>
+                      <h2 class="font-bold"><%= link_to "Please Add Fuel Price", supplier_new_fuel_price_path %></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%else%>
+
               <div class="col-lg-3">
                 <div class="widget style1 red-bg">
                   <div class="row">
@@ -65,6 +83,7 @@
                   </div>
                 </div>
               </div>
+              <%end%>
             </div>
                 <div class="row">
                     <div class="col-lg-8">
