@@ -28,6 +28,13 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def update
+    if @contact.update(contacts_params)
+      flash[:notice] = "Contact successfully Updated."
+      redirect_to supplier_contacts_path
+    else
+      flash.now[:alert] = 'Something went wrong. Check your form and re-try.'
+      render 'edit'
+    end
   end
 
   def destroy

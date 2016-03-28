@@ -64,7 +64,7 @@ RSpec.feature 'Supplier can create contacts' do
    expect(page).to have_content "John"
    click_link "Edit"
 
-   expect(page.current_url).to eq edit_supplier_contact_path(john.id)
+   expect(page.current_url).to eq edit_supplier_contact_url(john.id)
 
    fill_in 'First Name', with: 'Jack'
    fill_in 'Last Name', with: 'Doe'

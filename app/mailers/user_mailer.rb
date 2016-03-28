@@ -18,7 +18,7 @@ class UserMailer < ApplicationMailer
     @user= user
   end
 
-  def fuel_price(supplier, retailers)
+  def fuel_price_sender(supplier, retailers)
     retailers.each do |retailer|
     end
   end
