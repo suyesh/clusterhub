@@ -5,7 +5,7 @@
                 <h3 id="today">Today's latest price</h3>
               </div>
               <% if current_user.fuel_prices.empty? %>
-              <div class="col-lg-10">
+              <div class="col-lg-12">
                 <div class="widget style1 red-bg">
                   <div class="row">
                     <div class="col-xs-3">
@@ -15,7 +15,7 @@
                       <span>
                         <strong>No Fuel Price Found</strong>
                       </span>
-                      <h2 class="font-bold"><%= link_to "Please Add Fuel Price", new_supplier_fuel_price_path %></h2>
+                      <h2 class="font-bold"><%= link_to "Please click here to Add your latest Fuel Price", new_supplier_fuel_price_path, class: "no-fuel" %></h2>
                     </div>
                   </div>
                 </div>

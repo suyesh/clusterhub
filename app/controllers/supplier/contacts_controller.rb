@@ -54,7 +54,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
   private
 
   def contacts_params
-    params.require(:contact).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code,:in_biz,:email, :c_regular, :c_medium, :c_premium, :c_diesel)
+    params.require(:contact).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code,:in_biz,:email, :c_regular, :c_medium, :c_premium, :c_diesel, :c_delivery)
   end
 
   def set_contact
