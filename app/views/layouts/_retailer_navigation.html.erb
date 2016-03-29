@@ -1,63 +1,64 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav metismenu" id="side-menu">
-            <li class="nav-header">
-                <div class="dropdown profile-element">
-                    <span><%=image_tag("rsz_1petrohub.png")%></span><!-- This is for User Image -->
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear">
-                            <span class="block m-t-xs">
-                                <strong class="font-bold">Account# NJREX234</strong>
-                            </span>
-                            <span class="text-muted text-xs block">Options<b class="caret"></b></span>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Network</a></li>
-                        <li><a href="#">Billing</a></li>
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom white-bg">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <i class="fa fa-reorder"></i>
+            </button>
+            <%= link_to "pH+", retailer_dashboard_path, class:"navbar-brand"%>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="accountNumber">
+                    <%= link_to retailer_dashboard_path, class: "accountNumber" do %>
+                    <i class="fa fa-user"></i><strong>NJRET2347</strong>
+                    <%end%>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-beer"></i><strong>My Stations</strong> <span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><%= link_to "Gas stations", retailer_stations_path %></li>
+                        <li><%= link_to "Suppliers", retailer_dashboard_path %></li>
                     </ul>
-                </div>
-                <div class="logo-element">
-                    PH+
-                </div>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_dashboard_url %>">
-                <%= link_to retailer_dashboard_path do %>
-                <i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to retailer_stations_path do %>
-                <i class="fa fa-beer"></i> <span class="nav-label">My Stations</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-users"></i> <span class="nav-label">Suppliers</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-usd"></i> <span class="nav-label">Fuel Price</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-filter"></i> <span class="nav-label">Orders</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-file-text-o"></i> <span class="nav-label">Documents</span>
-                <% end %>
-            </li>
-            <li class="<%= 'active' if current_page?retailer_stations_url%>">
-                <%= link_to root_path do %>
-                <i class="fa fa-bar-chart"></i> <span class="nav-label">Reports</span>
-                <% end %>
-            </li>
-        </ul>
+                </li>
 
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money"> </i><strong>Orders</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Latest</a></li>
+                        <li><a href="">Pending</a></li>
+                        <li><a href="">Completed</a></li>
+                        <li><a href="">Order Reports</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i><strong>Briefcase</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Documents</a></li>
+                        <li><a href="">Reports</a></li>
+                        <li><a href="">Opis Price</a></li>
+                        <li><a href="">Bank</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i><strong>Options</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Profile</a></li>
+                        <li><a href="">Billing</a></li>
+                        <li><a href="">Network</a></li>
+                        <li><a href="">Resolution Center</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-top-links navbar-right">
+              <li>
+                  <%= link_to logout_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i> <strong>Log Out</strong>
+                  <%end%>
+              </li>
+            </ul>
+        </div>
+    </nav>
     </div>
-</nav>
