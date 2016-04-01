@@ -2,6 +2,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy, :show]
   before_action :set_twilio, only: [:create, :update]
   before_action :check_fuel_price, only: [:create]
+  
 
   def index
     @contacts = current_user.contacts.all.order("created_at DESC")
