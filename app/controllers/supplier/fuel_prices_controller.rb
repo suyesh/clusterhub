@@ -28,7 +28,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
           )
         end
       end
-      flash[:notice] = 'You have successfully Added new Fuel Price.'
+      flash[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.contacts.count} Text messages with updated price to your #{current_user.contacts.count} retailers."
       redirect_to supplier_fuel_prices_path
     else
       flash.now[:alert] = 'Something went wrong. Please try again.'
@@ -55,7 +55,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
         )
         end
       end
-      flash[:notice] = 'Fuel Price has been successfully updated'
+      flash[:notice] = 'Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers.'
       redirect_to supplier_fuel_prices_path
     else
       flash.now[:alert] = 'Something went wrong. Please try again'
