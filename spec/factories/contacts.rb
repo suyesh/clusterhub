@@ -4,7 +4,7 @@ FactoryGirl.define do
     last_name 'Doe'
     business_name 'Acme Inc'
     phone_number '2124567890'
-    cell_number '5202124567'
+    cell_number '3479016698'
     carrier "TMobile"
     street_address '212 Wise St'
     apt_suite '410'

@@ -6,7 +6,7 @@ FactoryGirl.define do
     last_name 'Doe'
     business_name 'ACME inc'
     phone_number '2128456789'
-    cell_number '2123456789'
+    cell_number '3479016698'
     street_address '81 updown st'
     apt_suite '35'
     city 'New York'

@@ -13,7 +13,7 @@ RSpec.feature 'Users can sign Up' do
     fill_in 'Last Name', with: 'Doe'
     fill_in 'Business Name', with: 'Acme Inc'
     fill_in 'Phone Number', with: '2124567890'
-    fill_in 'Cell Number', with: '5202124567'
+    fill_in 'Cell Number', with: '3479016698'
     fill_in 'Street Address', with: '212 Wise St'
     fill_in 'Apt/Suite', with: '410'
     fill_in 'City', with: 'New york'
