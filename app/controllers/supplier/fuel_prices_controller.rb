@@ -24,7 +24,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{contact.cell_number}",
-          body: "Hey there! #{contact.first_name}. Today's Fuel Price from #{current_user.first_name} are as follows. Regular: #{contact.retail_prices.last.r_regular}, Medium: #{contact.retail_prices.last.r_medium},Premium: #{contact.retail_prices.last.r_premium}, Diesel: #{contact.retail_prices.last.r_diesel}"
+          body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
           )
         end
       end
@@ -51,7 +51,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{contact.cell_number}",
-          body: "Hey there! #{contact.first_name}. Today's Fuel Price was updated by #{current_user.first_name} are as follows. Regular: #{contact.retail_prices.last.r_regular}, Medium: #{contact.retail_prices.last.r_medium},Premium: #{contact.retail_prices.last.r_premium}, Diesel: #{contact.retail_prices.last.r_diesel}"
+          body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
         )
         end
       end
