@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Supplier can create contacts' do
   let(:supplier) { FactoryGirl.create(:john_doe, :supplier, :active) }
   let(:john) {FactoryGirl.create(:contact)}
+  # let(:fuel_price) {FactoryGirl.create(:fuel_price, supplier_id: supplier.id)}
 
   before(:each) do
     visit '/'
@@ -14,14 +15,17 @@ RSpec.feature 'Supplier can create contacts' do
   end
 
   scenario 'Supplier can Create Contacts' do
+    FactoryGirl.create(:fuel_price, supplier_id: supplier.id)
+
     expect(page.current_url).to eq supplier_dashboard_url
 
-    click_link 'Retailers'
 
+    # TODO: move it to an isolated test
+    click_link 'Retailers'
     expect(page.current_url).to eq supplier_contacts_url
 
+    # TODO: move it to an isolated test
     click_link 'Add New'
-
     expect(page.current_url).to eq new_supplier_contact_url
 
     fill_in 'First Name', with: 'John'
@@ -47,8 +51,11 @@ RSpec.feature 'Supplier can create contacts' do
     # fill_in 'user_password', with: 'password'
     # fill_in 'user_password_confirmation', with: 'password'
     # check('user_terms')
-    click_button 'Add Retailer'
+
     # expect{supplier.contacts}.to change{supplier.contacts.count}.by(1)
+    expect {
+      click_button 'Add Retailer'
+    }.to change{supplier.contacts.count}.by(1)
 
     expect(page).to have_content 'Retailer has been successfully added.'
     expect(page.current_url).to eq supplier_contacts_url
@@ -56,6 +63,7 @@ RSpec.feature 'Supplier can create contacts' do
 
   scenario "Supplier can edit Contacts" do
    supplier.contacts << john
+   FactoryGirl.create(:fuel_price, supplier_id: supplier.id)
 
    visit "/supplier"
    click_link "Retailers"

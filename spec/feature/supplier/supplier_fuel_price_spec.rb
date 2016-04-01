@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Supplier can create Fuel_Price' do
   let(:supplier) { FactoryGirl.create(:john_doe, :supplier, :active) }
-  let(:fuel_price) {FactoryGirl.create(:fuel_price, :supplier)}
+
 
 
   before(:each) do
@@ -38,19 +38,19 @@ RSpec.feature 'Supplier can create Fuel_Price' do
   end
 
   scenario "Supplier can edit the Fuel Price" do
+    fuel_price = FactoryGirl.create(:fuel_price, supplier_id: supplier.id)
     click_link 'Fuel Price'
     expect(current_url).to eq supplier_fuel_prices_url
-    click_button "Edit"
-    expect(current_url).to eq supplier_fuel_price_edit_url(fuel_price.id)
+    click_link "Edit"
+    expect(current_url).to eq edit_supplier_fuel_price_url(fuel_price.id)
     fill_in "Regular", with: 2
     fill_in "Medium", with: 2
     fill_in "Premium", with: 2
     fill_in "Diesel", with: 2
-    click_button "Edit"
+    click_button "Update"
 
     expect(current_url).to eq supplier_fuel_prices_url
-    expect(page).to have_content "You have successfully Edited the Fuel Price."
+    expect(page).to have_content "Fuel Price has been successfully updated"
     expect(page).to have_content "2"
-    expect(page).to have_content "Edited"
   end
 end

@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'byebug'
+  gem 'figaro'
 end
 
 group :development do
