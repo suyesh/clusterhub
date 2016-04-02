@@ -13,13 +13,13 @@ class UsersController < ApplicationController
         from: '+18482299159',
         to: "+1#{@user.cell_number}",
         body: "Hey there! #{@user.first_name}. Thank you for signing up for  PetroHub. We will contact you shortly. If you have any questions please feel free to call us at 7329866193. thank you."
-        )
-      @slack.chat_postMessage(channel: '#new_signups', text: "#{@user.created_at.strftime('%FT%T')} - New signup alert!! #{@user.first_name} from #{@user.business_name} just signed up for PetroHub account. More info, Email: #{@user.email}, Mobile: #{@user.cell_number}, Phone: #{@user.phone_number}, Business: #{@user.business_name}, Address: #{@user.street_address}, #{@user.city}, #{@user.state}, #{@user.zip_code}", as_user: true)
+      )
+      @slack.chat_postMessage(channel: '#new_signups', text: "#{@user.created_at.strftime('%F')} - New signup alert!! #{@user.first_name} from #{@user.business_name} just signed up for PetroHub account. More info, Email: #{@user.email}, Mobile: #{@user.cell_number}, Phone: #{@user.phone_number}, Business: #{@user.business_name}, Address: #{@user.street_address}, #{@user.city}, #{@user.state}, #{@user.zip_code}", as_user: true)
       flash[:notice] = 'Thank you for Applying for PetroHub account. We are currently reviewing your application, which might take upto 24hrs.'
       redirect_to new_user_path
     else
       flash[:alert] = 'Oops! something went wrong. Please check your application and resubmit. Thank you.'
-      render "new"
+      render 'new'
     end
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def set_twilio
-    require "twilio-ruby"
-    @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+    require 'twilio-ruby'
+    @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
   end
 end
