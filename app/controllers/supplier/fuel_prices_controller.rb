@@ -16,15 +16,15 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
     if @fuel_price.save
       unless current_user.contacts.empty?
         current_user.contacts.each do |contact|
-        contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + contact.c_regular,
+          contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + contact.c_regular,
                                        r_medium: current_user.fuel_prices.last.medium + contact.c_medium,
                                        r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                        r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
                                       )
-        @client.messages.create(
-          from: '+18482299159',
-          to: "+1#{contact.cell_number}",
-          body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
+          @client.messages.create(
+            from: '+18482299159',
+            to: "+1#{contact.cell_number}",
+            body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
           )
         end
       end
@@ -48,11 +48,23 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                                        r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                        r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
                                       )
-        @client.messages.create(
-          from: '+18482299159',
-          to: "+1#{contact.cell_number}",
-          body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
-        )
+
+          # TODO: what happens if there is an error sending a message?
+          @client.messages.create(
+            from: '+18482299159',
+            to: "+1#{contact.cell_number}",
+            body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
+          )
+          # current_user.sent_messages << Messages.new(to: "+1#{contact.cell_number}")
+
+          # User.find(1).messages_sent(month, year)
+
+          # def messages_sent(month, year)
+          #   beginning_of_month = Date.new(....).beggining_of_the_month
+          #   end_of_the_month = ...
+          # search rails api for DateAndTime::Calculations
+          #   self.find(1).where("created_at > ? and created_at <= ?", beginning_of_month, end_of_month").count
+          # end
         end
       end
       flash[:notice] = 'Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers.'
@@ -66,8 +78,8 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
   private
 
   def set_twilio
-    require "twilio-ruby"
-    @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+    require 'twilio-ruby'
+    @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
   end
 
   def fuel_price_params
