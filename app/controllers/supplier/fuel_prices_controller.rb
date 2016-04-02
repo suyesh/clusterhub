@@ -27,9 +27,9 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
             to: "+1#{contact.cell_number}",
             body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
           )
-          @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%FT%T')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
         end
       end
+      @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%FT%T')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
       flash[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.contacts.count} Text messages with updated price to your #{current_user.contacts.count} retailers."
       redirect_to supplier_fuel_prices_path
     else
@@ -57,7 +57,6 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
             to: "+1#{contact.cell_number}",
             body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
           )
-          @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%FT%T')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
           # current_user.sent_messages << Messages.new(to: "+1#{contact.cell_number}")
 
           # User.find(1).messages_sent(month, year)
@@ -70,6 +69,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
           # end
         end
       end
+      @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%FT%T')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
       flash[:notice] = 'Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers.'
       redirect_to supplier_fuel_prices_path
     else
