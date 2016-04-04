@@ -15,8 +15,8 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
     if @user.update(user_params)
-      case @user
-      when @user.retailer? && @user.active?
+
+      if @user.retailer? && @user.active?
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
@@ -25,7 +25,7 @@ class Admin::UsersController < Admin::ApplicationController
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Retailer.", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_retailers_path
-      when @user.supplier? && @user.active?
+      elsif @user.supplier? && @user.active?
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
@@ -34,7 +34,7 @@ class Admin::UsersController < Admin::ApplicationController
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Supplier.", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_suppliers_path
-      when @user.trucking? && @user.active?
+      elsif @user.trucking? && @user.active?
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
@@ -43,7 +43,7 @@ class Admin::UsersController < Admin::ApplicationController
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Trucking provider.", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_truckings_path
-      when @user.denied?
+      elsif @user.denied?
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
@@ -51,6 +51,9 @@ class Admin::UsersController < Admin::ApplicationController
         )
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just Denied application for #{@user.first_name} from #{@user.business_name}.", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
+        redirect_to admin_dashboard_path
+      else
+        flash[:notice] = "User was modified but no action was taken because user is still #{@user.status}."
         redirect_to admin_dashboard_path
       end
     else

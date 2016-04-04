@@ -38,6 +38,7 @@
               <div class="contact-box-footer">
                   <div class="m-t-xs btn-group">
                      <%= link_to "Edit", edit_admin_supplier_path(supplier), class: "btn btn-xs btn-primary" %>
+                     <%= link_to "Status: #{supplier.status}", edit_admin_supplier_path(supplier), class: "btn btn-xs btn-#{supplier.active? ? 'primary' : 'danger'}" %>
                   </div>
               </div>
           </div>
