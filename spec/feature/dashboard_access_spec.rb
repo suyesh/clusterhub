@@ -22,7 +22,7 @@ RSpec.feature 'User Dashboards' do
     expect(page).to have_content 'Login successful'
     expect(page).to have_link 'Stations'
     expect(page).to have_link 'Suppliers'
-    expect(page).to have_link 'Orders'
+    #expect(page).to have_link 'Orders'
     expect(page).to have_link 'Fuel Price'
     expect(page).to have_link 'Documents'
     expect(page).to have_link 'Reports'
@@ -52,7 +52,7 @@ RSpec.feature 'User Dashboards' do
     expect(page).to have_content 'Login successful'
     expect(page).to have_link 'Fuel Price'
     expect(page).to have_link 'Retailers'
-    expect(page).to have_link 'Orders'
+    #expect(page).to have_link 'Orders'
     expect(page).to have_link 'Documents'
     expect(page).to have_link 'Reports'
 

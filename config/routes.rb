@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resources :retailers
     resources :suppliers
     resources :truckings
-    resources :users
+    resources :users, only: [:index, :edit, :update]
     resources :stations do
       resources :tanks
     end

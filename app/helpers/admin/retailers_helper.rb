@@ -6,20 +6,20 @@ module Admin::RetailersHelper
 
   def roles
     [
-      :pending,
-      :retailer,
-      :supplier,
-      :trucking,
-      :admin
+      ["Pending", :pending],
+      ["Retailer", :retailer],
+      ["Supplier", :supplier],
+      ["Trucking", :trucking],
+      ["Admin", :admin]
     ]
   end
 
   def status
     [
-      :inactive,
-      :active,
-      :denied,
-      :archived
+      ["Inactive", :inactive],
+      ["Active", :active],
+      ["Denied", :denied],
+      ["Archive", :archived]
     ]
   end
 

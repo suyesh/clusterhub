@@ -1,0 +1,60 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2><%= current_user.first_name %>'s Dashboard</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", admin_dashboard_path %>
+            </li>
+            <li class="active">
+                <strong>Retailers</strong>
+            </li>
+            <%= link_to "Add New", new_admin_retailer_path, class: "btn btn-primary pull-right"%>
+        </ol>
+    </div>
+</div>
+
+  <% if @user.errors.any? || flash[:notice]%>
+  <div id="errors_explanation">
+    <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %>">
+      <%= message %>
+    </div>
+    <% end %>
+    <h2><%= pluralize(@user.errors.count, "errors")%>
+      prohibited you from submitting this application:</h2>
+  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+  <div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+
+    <%= simple_form_for @user, url: admin_user_path, class: "m-t" do |f| %>
+    <%= f.input :first_name, label: "First Name" %>
+    <%= f.input :last_name, label: "Last Name" %>
+    <%= f.input :business_name, label: "Business Name" %>
+    <%= f.input :phone_number, label: "Phone Number" %>
+    <%= f.input :cell_number, label: "Cell Number" %>
+    <%= f.input :street_address,label: "Street Address" %>
+    <%= f.input :apt_suite, label: "Apt/Suite" %>
+    <%= f.input :city, label: "City" %>
+    <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
+    <%= f.input :zip_code, label: "Zip Code" %>
+    <%= f.input :tax_id, label: "Tax ID" %>
+    <%= f.input :ssn, label: "SSN" %>
+    <%= f.input :in_biz, label: "How many years in Business?" %>
+    <%= f.input :role, :label => "Role", :collection => roles, :selected => "#{@user.role}"%>
+    <%= f.input :status, :label => "Status", :collection => status, :selected => "#{@user.status}"%>
+    <%= f.input :email, label: "Email"%>
+    <%= f.input :password, label: "Password"%>
+    <%= f.input :password_confirmation, label: "Password Confirmation"%>
+    <%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
+    <%= f.button :submit, "Update", class: "btn btn-primary block full-width m-b" %>
+    <%end%>
+</div>
+</div>
