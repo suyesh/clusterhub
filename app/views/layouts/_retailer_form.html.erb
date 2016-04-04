@@ -1,0 +1,22 @@
+<%= simple_form_for @retailer, class: "m-t" do |f| %>
+<%= f.input :first_name, label: "First Name" %>
+<%= f.input :last_name, label: "Last Name" %>
+<%= f.input :business_name, label: "Business Name" %>
+<%= f.input :phone_number, label: "Phone Number" %>
+<%= f.input :cell_number, label: "Cell Number" %>
+<%= f.input :street_address,label: "Street Address" %>
+<%= f.input :apt_suite, label: "Apt/Suite" %>
+<%= f.input :city, label: "City" %>
+<%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
+<%= f.input :zip_code, label: "Zip Code" %>
+<!--<%= f.input :tax_id, label: "Tax ID" %>
+<%= f.input :ssn, label: "SSN" %>-->
+<%= f.input :in_biz, label: "How many years in Business?" %>
+<%= f.input :role, :label => "Role", :collection => roles, :selected => "#{@retailer.role}"%>
+<%= f.input :status, :label => "Status", :collection => status, :selected => "#{@retailer.status}"%>
+<%= f.input :email, label: "Email"%>
+<%= f.input :password, label: "Password"%>
+<%= f.input :password_confirmation, label: "Password Confirmation"%>
+<%= f.input :terms, :as => :boolean, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
+<%= f.button :submit, "Update", class: "btn btn-primary block full-width m-b" %>
+<%end%>
