@@ -26,7 +26,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
       @client.messages.create(
         from: '+18482299159',
         to: "+1#{@contact.cell_number}",
-        body: "Hey there! #{@contact.first_name}. #{current_user.first_name.capitalize} from #{current_user.business_name} just added you to PetroHub.com"
+        body: "Hey there! #{@contact.first_name}. #{current_user.first_name.capitalize} from #{current_user.business_name} just added you to PetroHub.com so you can get daily fuel price updates."
                  )
 
       flash[:notice] = 'Retailer has been successfully added.'
