@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd215a00b37d374d24dfe136cb89927690669275
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
