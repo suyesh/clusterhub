@@ -45,8 +45,8 @@
     <%= f.input :city, label: "City" %>
     <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
     <%= f.input :zip_code, label: "Zip Code" %>
-    <%= f.input :tax_id, label: "Tax ID" %>
-    <%= f.input :ssn, label: "SSN" %>
+  <!--  <%= f.input :tax_id, label: "Tax ID" %>
+    <%= f.input :ssn, label: "SSN" %> -->
     <%= f.input :in_biz, label: "How many years in Business?" %>
     <%= f.input :role, :label => "Role", :collection => roles, :selected => "#{@user.role}"%>
     <%= f.input :status, :label => "Status", :collection => status, :selected => "#{@user.status}"%>
