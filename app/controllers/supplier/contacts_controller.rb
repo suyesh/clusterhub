@@ -1,7 +1,7 @@
 class Supplier::ContactsController < Supplier::ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy, :show]
   before_action :set_twilio, only: [:create, :update]
-  before_action :check_fuel_price, only: [:create]
+  #before_action :check_fuel_price, only: [:create]
 
 
   def index
@@ -80,10 +80,10 @@ class Supplier::ContactsController < Supplier::ApplicationController
     @contact = current_user.contacts.find(params[:id])
   end
 
-  def check_fuel_price
-    unless !current_user.fuel_prices.empty?
-      flash[:alert] = "You cannot create contact before setting you Fuel base price. Please add Fuel Price first."
-      redirect_to new_supplier_fuel_price_path
-    end
-  end
+  #def check_fuel_price
+  #  unless !current_user.fuel_prices.empty?
+  #    flash[:alert] = "You cannot create contact before setting you Fuel base price. Please add Fuel Price first."
+  #    redirect_to new_supplier_fuel_price_path
+  #  end
+  # end
 end
