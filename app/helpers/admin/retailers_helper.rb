@@ -9,8 +9,7 @@ module Admin::RetailersHelper
       ["Pending", :pending],
       ["Retailer", :retailer],
       ["Supplier", :supplier],
-      ["Trucking", :trucking],
-      ["Admin", :admin]
+      ["Trucking", :trucking]
     ]
   end
 

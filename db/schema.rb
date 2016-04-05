@@ -116,8 +116,6 @@ ActiveRecord::Schema.define(version: 20160328160702) do
 
   add_index "users", ["account_number"], name: "index_users_on_account_number", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  #add_index "users", ["ssn"], name: "index_users_on_ssn", unique: true, using: :btree
-  #add_index "users", ["tax_id"], name: "index_users_on_tax_id", unique: true, using: :btree
 
   add_foreign_key "tanks", "stations"
 end
