@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>spinners.scss - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/suppliers_coffee.html">suppliers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/truckings_coffee.html">truckings.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/inspinia_js.html">inspinia.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/loginrequired_coffee.html">loginrequired.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer_coffee.html">retailer.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/stations_coffee.html">stations.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/tanks_coffee.html">tanks.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/sessions_coffee.html">sessions.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/contacts_coffee.html">contacts.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/fuel_prices_coffee.html">fuel_prices.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/users_coffee.html">users.coffee</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/suppliers_scss.html">suppliers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/truckings_scss.html">truckings.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/badgets_labels_scss.html">badgets_labels.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/base_scss.html">base.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/buttons_scss.html">buttons.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/chat_scss.html">chat.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/custom_scss.html">custom.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/elements_scss.html">elements.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/landing_scss.html">landing.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/md-skin_scss.html">md-skin.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/media_scss.html">media.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/metismenu_scss.html">metismenu.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/mixins_scss.html">mixins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/navigation_scss.html">navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/pages_scss.html">pages.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/rtl_scss.html">rtl.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/sidebar_scss.html">sidebar.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/skins_scss.html">skins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/spinners_scss.html">spinners.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/theme-config_scss.html">theme-config.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/top_navigation_scss.html">top_navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/typography_scss.html">typography.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/variables_scss.html">variables.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/loginrequired_scss.html">loginrequired.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer_scss.html">retailer.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/stations_scss.html">stations.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/tanks_scss.html">tanks.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/sessions_scss.html">sessions.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/style_scss.html">style.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/contacts_scss.html">contacts.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/fuel_prices_scss.html">fuel_prices.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../../log/test_log.html">test.log</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/activated.html">activated</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/welcome.html">welcome</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/jquery/jquery-2_1_1_js.html">jquery-2.1.1.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/metisMenu/jquery_metisMenu_js.html">jquery.metisMenu.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/pace/pace_min_js.html">pace.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/slimscroll/jquery_slimscroll_min_js.html">jquery.slimscroll.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/stylesheets/animate/animate_css.html">animate.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/stylesheets/base/spinners.scss">
+
+<pre>Usage:
+
+  &lt;div class=&quot;sk-spinner sk-spinner-rotating-plane&quot;&gt;&lt;/div&gt;</pre>
+
+<p>.sk-spinner-rotating-plane.sk-spinner {</p>
+
+<pre>width: 30px;
+height: 30px;
+background-color: $spin-color;
+margin: $spin-margin;
+-webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+animation: sk-rotatePlane 1.2s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-rotatePlane {</p>
+
+<pre>0% {
+  -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+}
+
+50% {
+  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+}
+
+100% {
+  -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-rotatePlane {</p>
+
+<pre>0% {
+  -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+}
+
+50% {
+  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+}
+
+100% {
+  -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+}</pre>
+
+<p>}</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-double-bounce&quot;&gt;
+      &lt;div class=&quot;sk-double-bounce1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-double-bounce2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-double-bounce.sk-spinner {</p>
+
+<pre>width: 40px;
+height: 40px;
+position: relative;
+margin: $spin-margin;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-double-bounce .sk-double-bounce1, .sk-spinner-double-bounce
+.sk-double-bounce2 {</p>
+
+<pre>width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: $spin-color;
+opacity: 0.6;
+position: absolute;
+top: 0;
+left: 0;
+-webkit-animation: sk-doubleBounce 2s infinite ease-in-out;
+animation: sk-doubleBounce 2s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-double-bounce .sk-double-bounce2 {</p>
+
+<pre>-webkit-animation-delay: -1s;
+animation-delay: -1s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-doubleBounce {</p>
+
+<pre>0%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+50% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-doubleBounce {</p>
+
+<pre>0%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+50% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-wave&quot;&gt;
+      &lt;div class=&quot;sk-rect1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-rect2&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-rect3&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-rect4&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-rect5&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-wave.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 50px;
+height: 30px;
+text-align: center;
+font-size: 10px;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wave div {</p>
+
+<pre>background-color: $spin-color;
+height: 100%;
+width: 6px;
+display: inline-block;
+-webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+animation: sk-waveStretchDelay 1.2s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wave .sk-rect2 {</p>
+
+<pre>-webkit-animation-delay: -1.1s;
+animation-delay: -1.1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wave .sk-rect3 {</p>
+
+<pre>-webkit-animation-delay: -1s;
+animation-delay: -1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wave .sk-rect4 {</p>
+
+<pre>-webkit-animation-delay: -0.9s;
+animation-delay: -0.9s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wave .sk-rect5 {</p>
+
+<pre>-webkit-animation-delay: -0.8s;
+animation-delay: -0.8s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-waveStretchDelay {</p>
+
+<pre>0%, 40%, 100% {
+  -webkit-transform: scaleY(0.4);
+  transform: scaleY(0.4);
+}
+
+20% {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-waveStretchDelay {</p>
+
+<pre>0%, 40%, 100% {
+  -webkit-transform: scaleY(0.4);
+  transform: scaleY(0.4);
+}
+
+20% {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-wandering-cubes&quot;&gt;
+      &lt;div class=&quot;sk-cube1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-wandering-cubes.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 32px;
+height: 32px;
+position: relative;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wandering-cubes .sk-cube1, .sk-spinner-wandering-cubes
+.sk-cube2 {</p>
+
+<pre>background-color: $spin-color;
+width: 10px;
+height: 10px;
+position: absolute;
+top: 0;
+left: 0;
+-webkit-animation: sk-wanderingCubeMove 1.8s infinite ease-in-out;
+animation: sk-wanderingCubeMove 1.8s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wandering-cubes .sk-cube2 {</p>
+
+<pre>-webkit-animation-delay: -0.9s;
+animation-delay: -0.9s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-wanderingCubeMove {</p>
+
+<pre>25% {
+  -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  transform: translateX(42px) rotate(-90deg) scale(0.5);
+}
+
+50% {
+  /* Hack to make FF rotate in the right direction   
+  -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  transform: translateX(42px) translateY(42px) rotate(-179deg);
+}
+
+50.1% {
+  -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  transform: translateX(42px) translateY(42px) rotate(-180deg);
+}
+
+75% {
+  -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+}
+
+100% {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-wanderingCubeMove {</p>
+
+<pre>25% {
+  -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  transform: translateX(42px) rotate(-90deg) scale(0.5);
+}
+
+50% {
+  /* Hack to make FF rotate in the right direction */
+  -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  transform: translateX(42px) translateY(42px) rotate(-179deg);
+}
+
+50.1% {
+  -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  transform: translateX(42px) translateY(42px) rotate(-180deg);
+}
+
+75% {
+  -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+}
+
+100% {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-pulse&quot;&gt;&lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-pulse.sk-spinner {</p>
+
+<pre>width: 40px;
+height: 40px;
+margin: $spin-margin;
+background-color: $spin-color;
+border-radius: 100%;
+-webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+animation: sk-pulseScaleOut 1s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-pulseScaleOut {</p>
+
+<pre>0% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+100% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 0;
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-pulseScaleOut {</p>
+
+<pre>0% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+100% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 0;
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-chasing-dots&quot;&gt;
+      &lt;div class=&quot;sk-dot1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-dot2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-chasing-dots.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 40px;
+height: 40px;
+position: relative;
+text-align: center;
+-webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+animation: sk-chasingDotsRotate 2s infinite linear;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-chasing-dots .sk-dot1, .sk-spinner-chasing-dots .sk-dot2 {</p>
+
+<pre>width: 60%;
+height: 60%;
+display: inline-block;
+position: absolute;
+top: 0;
+background-color: $spin-color;
+border-radius: 100%;
+-webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+animation: sk-chasingDotsBounce 2s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-chasing-dots .sk-dot2 {</p>
+
+<pre>top: auto;
+bottom: 0;
+-webkit-animation-delay: -1s;
+animation-delay: -1s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-chasingDotsRotate {</p>
+
+<pre>100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-chasingDotsRotate {</p>
+
+<pre>100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-chasingDotsBounce {</p>
+
+<pre>0%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+50% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-chasingDotsBounce {</p>
+
+<pre>0%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+50% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-three-bounce&quot;&gt;
+      &lt;div class=&quot;sk-bounce1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-bounce2&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-bounce3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-three-bounce.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 70px;
+text-align: center;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-three-bounce div {</p>
+
+<pre>width: 18px;
+height: 18px;
+background-color: $spin-color;
+border-radius: 100%;
+display: inline-block;
+-webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+/* Prevent first frame from flickering when animation starts */
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-three-bounce .sk-bounce1 {</p>
+
+<pre>-webkit-animation-delay: -0.32s;
+animation-delay: -0.32s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-three-bounce .sk-bounce2 {</p>
+
+<pre>-webkit-animation-delay: -0.16s;
+animation-delay: -0.16s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-threeBounceDelay {</p>
+
+<pre>0%, 80%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+40% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-threeBounceDelay {</p>
+
+<pre>0%, 80%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+40% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-circle&quot;&gt;
+      &lt;div class=&quot;sk-circle1 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle2 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle3 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle4 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle5 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle6 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle7 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle8 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle9 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle10 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle11 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle12 sk-circle&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-circle.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 22px;
+height: 22px;
+position: relative;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle {</p>
+
+<pre>width: 100%;
+height: 100%;
+position: absolute;
+left: 0;
+top: 0;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle:before {</p>
+
+<pre>content: &#39;&#39;;
+display: block;
+margin: $spin-margin;
+width: 20%;
+height: 20%;
+background-color: $spin-color;
+border-radius: 100%;
+-webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out;
+animation: sk-circleBounceDelay 1.2s infinite ease-in-out;
+/* Prevent first frame from flickering when animation starts */
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle2 {</p>
+
+<pre>-webkit-transform: rotate(30deg);
+-ms-transform: rotate(30deg);
+transform: rotate(30deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle3 {</p>
+
+<pre>-webkit-transform: rotate(60deg);
+-ms-transform: rotate(60deg);
+transform: rotate(60deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle4 {</p>
+
+<pre>-webkit-transform: rotate(90deg);
+-ms-transform: rotate(90deg);
+transform: rotate(90deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle5 {</p>
+
+<pre>-webkit-transform: rotate(120deg);
+-ms-transform: rotate(120deg);
+transform: rotate(120deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle6 {</p>
+
+<pre>-webkit-transform: rotate(150deg);
+-ms-transform: rotate(150deg);
+transform: rotate(150deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle7 {</p>
+
+<pre>-webkit-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+transform: rotate(180deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle8 {</p>
+
+<pre>-webkit-transform: rotate(210deg);
+-ms-transform: rotate(210deg);
+transform: rotate(210deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle9 {</p>
+
+<pre>-webkit-transform: rotate(240deg);
+-ms-transform: rotate(240deg);
+transform: rotate(240deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle10 {</p>
+
+<pre>-webkit-transform: rotate(270deg);
+-ms-transform: rotate(270deg);
+transform: rotate(270deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle11 {</p>
+
+<pre>-webkit-transform: rotate(300deg);
+-ms-transform: rotate(300deg);
+transform: rotate(300deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle12 {</p>
+
+<pre>-webkit-transform: rotate(330deg);
+-ms-transform: rotate(330deg);
+transform: rotate(330deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle2:before {</p>
+
+<pre>-webkit-animation-delay: -1.1s;
+animation-delay: -1.1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle3:before {</p>
+
+<pre>-webkit-animation-delay: -1s;
+animation-delay: -1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle4:before {</p>
+
+<pre>-webkit-animation-delay: -0.9s;
+animation-delay: -0.9s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle5:before {</p>
+
+<pre>-webkit-animation-delay: -0.8s;
+animation-delay: -0.8s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle6:before {</p>
+
+<pre>-webkit-animation-delay: -0.7s;
+animation-delay: -0.7s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle7:before {</p>
+
+<pre>-webkit-animation-delay: -0.6s;
+animation-delay: -0.6s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle8:before {</p>
+
+<pre>-webkit-animation-delay: -0.5s;
+animation-delay: -0.5s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle9:before {</p>
+
+<pre>-webkit-animation-delay: -0.4s;
+animation-delay: -0.4s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle10:before {</p>
+
+<pre>-webkit-animation-delay: -0.3s;
+animation-delay: -0.3s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle11:before {</p>
+
+<pre>-webkit-animation-delay: -0.2s;
+animation-delay: -0.2s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-circle .sk-circle12:before {</p>
+
+<pre>-webkit-animation-delay: -0.1s;
+animation-delay: -0.1s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-circleBounceDelay {</p>
+
+<pre>0%, 80%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+40% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-circleBounceDelay {</p>
+
+<pre>0%, 80%, 100% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+40% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-cube-grid&quot;&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-cube&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-cube-grid {</p>
+
+<pre>/*
+   Spinner positions
+   1 2 3
+   4 5 6
+   7 8 9
+  /</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid.sk-spinner {</p>
+
+<pre>width: 30px;
+height: 30px;
+margin: $spin-margin;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube {</p>
+
+<pre>width: 33%;
+height: 33%;
+background-color: $spin-color;
+float: left;
+-webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(1) {</p>
+
+<pre>-webkit-animation-delay: 0.2s;
+animation-delay: 0.2s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(2) {</p>
+
+<pre>-webkit-animation-delay: 0.3s;
+animation-delay: 0.3s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(3) {</p>
+
+<pre>-webkit-animation-delay: 0.4s;
+animation-delay: 0.4s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(4) {</p>
+
+<pre>-webkit-animation-delay: 0.1s;
+animation-delay: 0.1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(5) {</p>
+
+<pre>-webkit-animation-delay: 0.2s;
+animation-delay: 0.2s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(6) {</p>
+
+<pre>-webkit-animation-delay: 0.3s;
+animation-delay: 0.3s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(7) {</p>
+
+<pre>-webkit-animation-delay: 0s;
+animation-delay: 0s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(8) {</p>
+
+<pre>-webkit-animation-delay: 0.1s;
+animation-delay: 0.1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-cube-grid .sk-cube:nth-child(9) {</p>
+
+<pre>-webkit-animation-delay: 0.2s;
+animation-delay: 0.2s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-cubeGridScaleDelay {</p>
+
+<pre>0%, 70%, 100% {
+  -webkit-transform: scale3D(1, 1, 1);
+  transform: scale3D(1, 1, 1);
+}
+
+35% {
+  -webkit-transform: scale3D(0, 0, 1);
+  transform: scale3D(0, 0, 1);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-cubeGridScaleDelay {</p>
+
+<pre>0%, 70%, 100% {
+  -webkit-transform: scale3D(1, 1, 1);
+  transform: scale3D(1, 1, 1);
+}
+
+35% {
+  -webkit-transform: scale3D(0, 0, 1);
+  transform: scale3D(0, 0, 1);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-wordpress&quot;&gt;
+      &lt;span class=&quot;sk-inner-circle&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-wordpress.sk-spinner {</p>
+
+<pre>background-color: $spin-color;
+width: 30px;
+height: 30px;
+border-radius: 30px;
+position: relative;
+margin: $spin-margin;
+-webkit-animation: sk-innerCircle 1s linear infinite;
+animation: sk-innerCircle 1s linear infinite;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-wordpress .sk-inner-circle {</p>
+
+<pre>display: block;
+background-color: #fff;
+width: 8px;
+height: 8px;
+position: absolute;
+border-radius: 8px;
+top: 5px;
+left: 5px;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-innerCircle {</p>
+
+<pre>0% {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-innerCircle {</p>
+
+<pre>0% {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>  Usage:
+
+    &lt;div class=&quot;sk-spinner sk-spinner-fading-circle&quot;&gt;
+      &lt;div class=&quot;sk-circle1 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle2 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle3 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle4 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle5 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle6 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle7 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle8 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle9 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle10 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle11 sk-circle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sk-circle12 sk-circle&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+/</pre>
+
+<p>.sk-spinner-fading-circle.sk-spinner {</p>
+
+<pre>margin: $spin-margin;
+width: 22px;
+height: 22px;
+position: relative;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle {</p>
+
+<pre>width: 100%;
+height: 100%;
+position: absolute;
+left: 0;
+top: 0;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle:before {</p>
+
+<pre>content: &#39;&#39;;
+display: block;
+margin: $spin-margin;
+width: 18%;
+height: 18%;
+background-color: $spin-color;
+border-radius: 100%;
+-webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out;
+animation: sk-circleFadeDelay 1.2s infinite ease-in-out;
+/* Prevent first frame from flickering when animation starts */
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle2 {</p>
+
+<pre>-webkit-transform: rotate(30deg);
+-ms-transform: rotate(30deg);
+transform: rotate(30deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle3 {</p>
+
+<pre>-webkit-transform: rotate(60deg);
+-ms-transform: rotate(60deg);
+transform: rotate(60deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle4 {</p>
+
+<pre>-webkit-transform: rotate(90deg);
+-ms-transform: rotate(90deg);
+transform: rotate(90deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle5 {</p>
+
+<pre>-webkit-transform: rotate(120deg);
+-ms-transform: rotate(120deg);
+transform: rotate(120deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle6 {</p>
+
+<pre>-webkit-transform: rotate(150deg);
+-ms-transform: rotate(150deg);
+transform: rotate(150deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle7 {</p>
+
+<pre>-webkit-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+transform: rotate(180deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle8 {</p>
+
+<pre>-webkit-transform: rotate(210deg);
+-ms-transform: rotate(210deg);
+transform: rotate(210deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle9 {</p>
+
+<pre>-webkit-transform: rotate(240deg);
+-ms-transform: rotate(240deg);
+transform: rotate(240deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle10 {</p>
+
+<pre>-webkit-transform: rotate(270deg);
+-ms-transform: rotate(270deg);
+transform: rotate(270deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle11 {</p>
+
+<pre>-webkit-transform: rotate(300deg);
+-ms-transform: rotate(300deg);
+transform: rotate(300deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle12 {</p>
+
+<pre>-webkit-transform: rotate(330deg);
+-ms-transform: rotate(330deg);
+transform: rotate(330deg);</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle2:before {</p>
+
+<pre>-webkit-animation-delay: -1.1s;
+animation-delay: -1.1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle3:before {</p>
+
+<pre>-webkit-animation-delay: -1s;
+animation-delay: -1s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle4:before {</p>
+
+<pre>-webkit-animation-delay: -0.9s;
+animation-delay: -0.9s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle5:before {</p>
+
+<pre>-webkit-animation-delay: -0.8s;
+animation-delay: -0.8s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle6:before {</p>
+
+<pre>-webkit-animation-delay: -0.7s;
+animation-delay: -0.7s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle7:before {</p>
+
+<pre>-webkit-animation-delay: -0.6s;
+animation-delay: -0.6s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle8:before {</p>
+
+<pre>-webkit-animation-delay: -0.5s;
+animation-delay: -0.5s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle9:before {</p>
+
+<pre>-webkit-animation-delay: -0.4s;
+animation-delay: -0.4s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle10:before {</p>
+
+<pre>-webkit-animation-delay: -0.3s;
+animation-delay: -0.3s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle11:before {</p>
+
+<pre>-webkit-animation-delay: -0.2s;
+animation-delay: -0.2s;</pre>
+
+<p>}</p>
+
+<p>.sk-spinner-fading-circle .sk-circle12:before {</p>
+
+<pre>-webkit-animation-delay: -0.1s;
+animation-delay: -0.1s;</pre>
+
+<p>}</p>
+
+<p>@-webkit-keyframes sk-circleFadeDelay {</p>
+
+<pre>0%, 39%, 100% {
+  opacity: 0;
+}
+
+40% {
+  opacity: 1;
+}</pre>
+
+<p>}</p>
+
+<p>@keyframes sk-circleFadeDelay {</p>
+
+<pre>0%, 39%, 100% {
+  opacity: 0;
+}
+
+40% {
+  opacity: 1;
+}</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: suyesh
+  password: mustang4
+
+development:
+  <<: *default
+  database: petrox_dev
+
+
+
+test:
+  <<: *default
+  database: petrox_test
+
+
+production:
+  <<: *default
+  database: petrox_production
+  username: petrox
+  password: <%= ENV['PETROX_DATABASE_PASSWORD'] %>

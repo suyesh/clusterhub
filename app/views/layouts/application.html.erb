@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetroHub</title>
+
+    <!-- Main css styles -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <!-- Main javascript files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body class="md-skin top-navigation">
+
+    <!-- Wrapper-->
+      <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+
+        <div class="container">
+      <!-- Navigation -->
+      <%= user_navigation(current_user)%>
+
+
+      <!-- Page wraper -->
+
+
+        <!-- Page wrapper -->
+
+        <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %>">
+          <%= message %>
+        </div>
+        <% end %>
+        <!-- Main view  -->
+        <%= yield %>
+
+        <!-- Footer -->
+
+
+
+      <!-- End page wrapper-->
+
+</div>
+
+  </div>
+
+</div>
+<div class="footer">
+    <div>
+        <strong>Copyright</strong> Petrohub &copy; 2016-2017
+    </div>
+</div>
+    <!-- End wrapper-->
+
+  </body>
+</html>

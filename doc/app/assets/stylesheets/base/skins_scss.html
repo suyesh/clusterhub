@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>skins.scss - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/suppliers_coffee.html">suppliers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/truckings_coffee.html">truckings.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/inspinia_js.html">inspinia.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/loginrequired_coffee.html">loginrequired.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer_coffee.html">retailer.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/stations_coffee.html">stations.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/tanks_coffee.html">tanks.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/sessions_coffee.html">sessions.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/contacts_coffee.html">contacts.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/fuel_prices_coffee.html">fuel_prices.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/users_coffee.html">users.coffee</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/suppliers_scss.html">suppliers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/truckings_scss.html">truckings.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/badgets_labels_scss.html">badgets_labels.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/base_scss.html">base.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/buttons_scss.html">buttons.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/chat_scss.html">chat.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/custom_scss.html">custom.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/elements_scss.html">elements.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/landing_scss.html">landing.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/md-skin_scss.html">md-skin.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/media_scss.html">media.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/metismenu_scss.html">metismenu.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/mixins_scss.html">mixins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/navigation_scss.html">navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/pages_scss.html">pages.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/rtl_scss.html">rtl.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/sidebar_scss.html">sidebar.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/skins_scss.html">skins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/spinners_scss.html">spinners.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/theme-config_scss.html">theme-config.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/top_navigation_scss.html">top_navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/typography_scss.html">typography.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/variables_scss.html">variables.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/loginrequired_scss.html">loginrequired.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer_scss.html">retailer.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/stations_scss.html">stations.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/tanks_scss.html">tanks.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/sessions_scss.html">sessions.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/style_scss.html">style.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/contacts_scss.html">contacts.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/fuel_prices_scss.html">fuel_prices.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../../log/test_log.html">test.log</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/activated.html">activated</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/welcome.html">welcome</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/jquery/jquery-2_1_1_js.html">jquery-2.1.1.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/metisMenu/jquery_metisMenu_js.html">jquery.metisMenu.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/pace/pace_min_js.html">pace.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/slimscroll/jquery_slimscroll_min_js.html">jquery.slimscroll.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/stylesheets/animate/animate_css.html">animate.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/stylesheets/base/skins.scss">
+
+<pre>SKIN 1 - INSPINIA - Responsive Admin Theme
+NAME - Blue light</pre>
+
+<p>// Main colors $skin-1-color: #0e9aef; $skin-1-nav-bg: #3e495f;
+$skin-1-a-color: #9ea6b9; $skin-1-page-bg: f4f6fa;</p>
+
+<p>// Custom style .skin-1 .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .navbar-top-links li:last-child {</p>
+
+<pre>margin-right: 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-1.fixed-nav .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .spin-icon {</p>
+
+<pre>background: $skin-1-color !important;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav-header {</p>
+
+<pre>background: $skin-1-color;
+background: url(&#39;patterns/header-profile-skin-1.png&#39;);</pre>
+
+<p>}</p>
+
+<p>.skin-1.mini-navbar .nav-second-level {</p>
+
+<pre>background: $skin-1-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .breadcrumb {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .page-heading {</p>
+
+<pre>border: none;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav &gt; li.active {</p>
+
+<pre>background: darken($skin-1-nav-bg, 2%);</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav &gt; li &gt; a {</p>
+
+<pre>color: $skin-1-a-color;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav &gt; li.active &gt; a {</p>
+
+<pre>color: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .navbar-minimalize {</p>
+
+<pre>background: $skin-1-color;
+border-color: $skin-1-color;</pre>
+
+<p>}</p>
+
+<p>body.skin-1 {</p>
+
+<pre>background: $skin-1-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .navbar-static-top {</p>
+
+<pre>background: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .dashboard-header {</p>
+
+<pre>background: transparent;
+border-bottom: none !important;
+border-top: none;
+padding: 20px 30px 10px 30px;</pre>
+
+<p>}</p>
+
+<p>.fixed-nav.skin-1 .navbar-fixed-top {</p>
+
+<pre>background: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .wrapper-content {</p>
+
+<pre>padding: 30px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 page-wrapper {</p>
+
+<pre>background: $skin-1-page-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .ibox-title, .skin-1 .ibox-content {</p>
+
+<pre>border-width: 1px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .ibox-content:last-child {</p>
+
+<pre>border-style: solid solid solid solid;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav &gt; li.active {</p>
+
+<pre>border: none;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav-header {</p>
+
+<pre>padding: 35px 25px 25px 25px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav-header a.dropdown-toggle {</p>
+
+<pre>color: #fff;
+margin-top: 10px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav-header a.dropdown-toggle .text-muted {</p>
+
+<pre>color: #fff;
+opacity: 0.8;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .profile-element {</p>
+
+<pre>text-align: center;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .img-circle {</p>
+
+<pre>border-radius: 5px;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .navbar-default .nav &gt; li &gt; a:hover, .skin-1 .navbar-default
+.nav &gt; li &gt; a:focus {</p>
+
+<pre>background: darken($skin-1-nav-bg, 2%);
+color: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav.nav-tabs &gt; li.active &gt; a {</p>
+
+<pre>color: #555;</pre>
+
+<p>}</p>
+
+<p>.skin-1 .nav.nav-tabs &gt; li.active {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>    SKIN 2 - INSPINIA - Responsive Admin Theme
+    NAME - Inspinia Ultra
+
+/</pre>
+
+<p>// Main colors $skin-2-color: #23c6c8; $skin-2-nav-bg: ededed;
+$skin-2-nav-top-bg: #213a53;</p>
+
+<p>// Custom style</p>
+
+<p>body.skin-2 {</p>
+
+<pre>color: #565758 !important;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 25px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .navbar-top-links li:last-child {</p>
+
+<pre>margin-right: 25px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .spin-icon {</p>
+
+<pre>background: $skin-2-color !important;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav-header {</p>
+
+<pre>background: $skin-2-color;
+background: url(&#39;patterns/header-profile-skin-2.png&#39;);</pre>
+
+<p>}</p>
+
+<p>.skin-2.mini-navbar .nav-second-level {</p>
+
+<pre>background: $skin-2-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .breadcrumb {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+
+<p>.skin-2.fixed-nav .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .page-heading {</p>
+
+<pre>border: none;
+background: rgba(255, 255, 255, 0.7);</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav &gt; li.active {</p>
+
+<pre>background: #e0e0e0;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .logo-element {</p>
+
+<pre>padding: 17px 0;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav &gt; li &gt; a, .skin-2 .welcome-message {</p>
+
+<pre>color: #edf6ff;</pre>
+
+<p>}</p>
+
+<p>.skin-2 top-search::-moz-placeholder {</p>
+
+<pre>color: #edf6ff;
+opacity: 0.5;</pre>
+
+<p>}</p>
+
+<p>.skin-2 side-menu &gt; li &gt; a, .skin-2 .nav.nav-second-level &gt; li
+&gt; a {</p>
+
+<pre>color: #586b7d;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav &gt; li.active &gt; a {</p>
+
+<pre>color: $skin-2-nav-top-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-2.mini-navbar .nav-header {</p>
+
+<pre>background: $skin-2-nav-top-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .navbar-minimalize {</p>
+
+<pre>background: $skin-2-color;
+border-color: $skin-2-color;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .border-bottom {</p>
+
+<pre>border-bottom: none !important;</pre>
+
+<p>}</p>
+
+<p>.skin-2 top-search {</p>
+
+<pre>color: #fff;</pre>
+
+<p>}</p>
+
+<p>body.skin-2 wrapper {</p>
+
+<pre>background-color: $skin-2-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .navbar-static-top {</p>
+
+<pre>background: $skin-2-nav-top-bg;</pre>
+
+<p>}</p>
+
+<p>.fixed-nav.skin-2 .navbar-fixed-top {</p>
+
+<pre>background: $skin-2-nav-top-bg;
+border-bottom: none !important;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav-header {</p>
+
+<pre>padding: 30px 25px 30px 25px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .dashboard-header {</p>
+
+<pre>background: rgba(255, 255, 255, 0.4);
+border-bottom: none !important;
+border-top: none;
+padding: 20px 30px 20px 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .wrapper-content {</p>
+
+<pre>padding: 30px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .dashoard-1 .wrapper-content {</p>
+
+<pre>padding: 0 30px 25px 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .ibox-title {</p>
+
+<pre>background: rgba(255, 255, 255, 0.7);
+border: none;
+margin-bottom: 1px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .ibox-content {</p>
+
+<pre>background: rgba(255, 255, 255, 0.4);
+border: none !important;</pre>
+
+<p>}</p>
+
+<p>.skin-2 page-wrapper {</p>
+
+<pre>background: rgba(246, 246, 246, 1);
+background: -webkit-radial-gradient(center, ellipse cover, rgba(246, 246, 246, 1) 20%, rgba(213, 213, 213, 1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(246, 246, 246, 1) 20%, rgba(213, 213, 213, 1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(246, 246, 246, 1) 20%, rgba(213, 213, 213, 1) 100%);
+background: radial-gradient(ellipse at center, rgba(246, 246, 246, 1) 20%, rgba(213, 213, 213, 1) 100%);
+-ms-filter: &quot;progid:DXImageTransform.Microsoft.gradient(startColorstr=#f6f6f6, endColorstr=#d5d5d5)&quot;;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .ibox-title, .skin-2 .ibox-content {</p>
+
+<pre>border-width: 1px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .ibox-content:last-child {</p>
+
+<pre>border-style: solid solid solid solid;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav &gt; li.active {</p>
+
+<pre>border: none;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav-header a.dropdown-toggle {</p>
+
+<pre>color: #edf6ff;
+margin-top: 10px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav-header a.dropdown-toggle .text-muted {</p>
+
+<pre>color: #edf6ff;
+opacity: 0.8;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .img-circle {</p>
+
+<pre>border-radius: 10px;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav.navbar-top-links &gt; li &gt; a:hover, .skin-2
+.nav.navbar-top-links &gt; li &gt; a:focus {</p>
+
+<pre>background: darken($skin-2-nav-top-bg, 5%);</pre>
+
+<p>}</p>
+
+<p>.skin-2 .navbar-default .nav &gt; li &gt; a:hover, .skin-2 .navbar-default
+.nav &gt; li &gt; a:focus {</p>
+
+<pre>background: #e0e0e0;
+color: #213a53;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav.nav-tabs &gt; li.active &gt; a {</p>
+
+<pre>color: #555;</pre>
+
+<p>}</p>
+
+<p>.skin-2 .nav.nav-tabs &gt; li.active {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre>    SKIN 3 - INSPINIA - Responsive Admin Theme
+    NAME - Yellow/purple
+
+/</pre>
+
+<p>// Main colors $skin-3-color: ecba52; $skin-3-nav-bg: #3e2c42;
+$skin-3-a-color: #948b96; $skin-3-page-bg: f4f6fa;</p>
+
+<p>// Custom style .skin-3 .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .navbar-top-links li:last-child {</p>
+
+<pre>margin-right: 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-3.fixed-nav .minimalize-styl-2 {</p>
+
+<pre>margin: 14px 5px 5px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .spin-icon {</p>
+
+<pre>background: $skin-3-color !important;</pre>
+
+<p>}</p>
+
+<p>body.boxed-layout.skin-3 wrapper {</p>
+
+<pre>background: $skin-3-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav-header {</p>
+
+<pre>background: $skin-3-color;
+background: url(&#39;patterns/header-profile-skin-3.png&#39;);</pre>
+
+<p>}</p>
+
+<p>.skin-3.mini-navbar .nav-second-level {</p>
+
+<pre>background: $skin-3-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .breadcrumb {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .page-heading {</p>
+
+<pre>border: none;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav &gt; li.active {</p>
+
+<pre>background: darken($skin-3-nav-bg, 2%);</pre>
+
+<p>}</p>
+
+<p>.fixed-nav.skin-3 .navbar-fixed-top {</p>
+
+<pre>background: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav &gt; li &gt; a {</p>
+
+<pre>color: $skin-3-a-color;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav &gt; li.active &gt; a {</p>
+
+<pre>color: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .navbar-minimalize {</p>
+
+<pre>background: $skin-3-color;
+border-color: $skin-3-color;</pre>
+
+<p>}</p>
+
+<p>body.skin-3 {</p>
+
+<pre>background: $skin-3-nav-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .navbar-static-top {</p>
+
+<pre>background: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .dashboard-header {</p>
+
+<pre>background: transparent;
+border-bottom: none !important;
+border-top: none;
+padding: 20px 30px 10px 30px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .wrapper-content {</p>
+
+<pre>padding: 30px 15px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 page-wrapper {</p>
+
+<pre>background: $skin-3-page-bg;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .ibox-title, .skin-3 .ibox-content {</p>
+
+<pre>border-width: 1px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .ibox-content:last-child {</p>
+
+<pre>border-style: solid solid solid solid;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav &gt; li.active {</p>
+
+<pre>border: none;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav-header {</p>
+
+<pre>padding: 35px 25px 25px 25px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav-header a.dropdown-toggle {</p>
+
+<pre>color: #fff;
+margin-top: 10px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav-header a.dropdown-toggle .text-muted {</p>
+
+<pre>color: #fff;
+opacity: 0.8;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .profile-element {</p>
+
+<pre>text-align: center;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .img-circle {</p>
+
+<pre>border-radius: 5px;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .navbar-default .nav &gt; li &gt; a:hover, .skin-3 .navbar-default
+.nav &gt; li &gt; a:focus {</p>
+
+<pre>background: darken($skin-3-nav-bg, 2%);
+color: #fff;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav.nav-tabs &gt; li.active &gt; a {</p>
+
+<pre>color: #555;</pre>
+
+<p>}</p>
+
+<p>.skin-3 .nav.nav-tabs &gt; li.active {</p>
+
+<pre>background: transparent;</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

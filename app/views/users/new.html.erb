@@ -1,0 +1,38 @@
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+
+  <% if @user.errors.any? || flash[:notice]%>
+  <div id="errors_explanation">
+    <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %>">
+      <%= message %>
+    </div>
+    <% end %>
+    <h2><%= pluralize(@user.errors.count, "errors")%>
+      prohibited you from submitting this application:</h2>
+  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+
+  <div>
+    <div>
+
+      <h1 class="logo-name">pH+</h1>
+
+    </div>
+    <h3>Welcome to PetroHub</h3>
+    <p>
+      Fuel trading marketplace. Simple way to manage your Fuel business.
+    </p>
+    <p>Sign Up. To see it in action.</p>
+    <%= render "layouts/user_form"%>
+    <p class="m-t">
+      <small>Petrohub &copy; 2015</small>
+    </p>
+  </div>
+</div>

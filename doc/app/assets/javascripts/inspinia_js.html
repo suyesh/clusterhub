@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>inspinia.js - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../app/assets/javascripts/admin/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/admin/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/admin/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/admin/suppliers_coffee.html">suppliers.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/admin/truckings_coffee.html">truckings.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/inspinia_js.html">inspinia.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/loginrequired_coffee.html">loginrequired.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/retailer_coffee.html">retailer.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/retailer/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/retailer/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/retailer/stations_coffee.html">stations.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/retailer/tanks_coffee.html">tanks.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/sessions_coffee.html">sessions.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/supplier/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/supplier/contacts_coffee.html">contacts.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/supplier/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/supplier/fuel_prices_coffee.html">fuel_prices.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/supplier/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/trucking/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/trucking/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../app/assets/javascripts/users_coffee.html">users.coffee</a>
+  
+    <li><a href="../../../app/assets/stylesheets/admin/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/admin/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/admin/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/admin/suppliers_scss.html">suppliers.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/admin/truckings_scss.html">truckings.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/badgets_labels_scss.html">badgets_labels.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/base_scss.html">base.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/buttons_scss.html">buttons.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/chat_scss.html">chat.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/custom_scss.html">custom.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/elements_scss.html">elements.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/landing_scss.html">landing.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/md-skin_scss.html">md-skin.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/media_scss.html">media.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/metismenu_scss.html">metismenu.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/mixins_scss.html">mixins.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/navigation_scss.html">navigation.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/pages_scss.html">pages.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/rtl_scss.html">rtl.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/sidebar_scss.html">sidebar.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/skins_scss.html">skins.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/spinners_scss.html">spinners.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/theme-config_scss.html">theme-config.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/top_navigation_scss.html">top_navigation.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/typography_scss.html">typography.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/base/variables_scss.html">variables.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/loginrequired_scss.html">loginrequired.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/retailer_scss.html">retailer.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/retailer/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/retailer/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/retailer/stations_scss.html">stations.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/retailer/tanks_scss.html">tanks.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/sessions_scss.html">sessions.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/style_scss.html">style.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/supplier/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/supplier/contacts_scss.html">contacts.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/supplier/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/supplier/fuel_prices_scss.html">fuel_prices.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/supplier/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/trucking/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/trucking/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../log/test_log.html">test.log</a>
+  
+    <li><a href="../../../spec/fixtures/user_mailer/activated.html">activated</a>
+  
+    <li><a href="../../../spec/fixtures/user_mailer/welcome.html">welcome</a>
+  
+    <li><a href="../../../vendor/assets/javascripts/jquery/jquery-2_1_1_js.html">jquery-2.1.1.js</a>
+  
+    <li><a href="../../../vendor/assets/javascripts/metisMenu/jquery_metisMenu_js.html">jquery.metisMenu.js</a>
+  
+    <li><a href="../../../vendor/assets/javascripts/pace/pace_min_js.html">pace.min.js</a>
+  
+    <li><a href="../../../vendor/assets/javascripts/slimscroll/jquery_slimscroll_min_js.html">jquery.slimscroll.min.js</a>
+  
+    <li><a href="../../../vendor/assets/stylesheets/animate/animate_css.html">animate.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/javascripts/inspinia.js">
+
+<pre>INSPINIA - Responsive Admin Theme
+version 2.4</pre>
+
+<p>$(document).ready(function () {</p>
+
+<pre>// Add body-small class if window less than 768px
+if ($(this).width() &lt; 769) {
+    $(&#39;body&#39;).addClass(&#39;body-small&#39;)
+} else {
+    $(&#39;body&#39;).removeClass(&#39;body-small&#39;)
+}
+
+// MetsiMenu
+$(&#39;#side-menu&#39;).metisMenu();
+
+// Collapse ibox function
+$(&#39;.collapse-link&#39;).click(function () {
+    var ibox = $(this).closest(&#39;div.ibox&#39;);
+    var button = $(this).find(&#39;i&#39;);
+    var content = ibox.find(&#39;div.ibox-content&#39;);
+    content.slideToggle(200);
+    button.toggleClass(&#39;fa-chevron-up&#39;).toggleClass(&#39;fa-chevron-down&#39;);
+    ibox.toggleClass(&#39;&#39;).toggleClass(&#39;border-bottom&#39;);
+    setTimeout(function () {
+        ibox.resize();
+        ibox.find(&#39;[id^=map-]&#39;).resize();
+    }, 50);
+});
+
+// Close ibox function
+$(&#39;.close-link&#39;).click(function () {
+    var content = $(this).closest(&#39;div.ibox&#39;);
+    content.remove();
+});
+
+// Fullscreen ibox function
+$(&#39;.fullscreen-link&#39;).click(function () {
+    var ibox = $(this).closest(&#39;div.ibox&#39;);
+    var button = $(this).find(&#39;i&#39;);
+    $(&#39;body&#39;).toggleClass(&#39;fullscreen-ibox-mode&#39;);
+    button.toggleClass(&#39;fa-expand&#39;).toggleClass(&#39;fa-compress&#39;);
+    ibox.toggleClass(&#39;fullscreen&#39;);
+    setTimeout(function () {
+        $(window).trigger(&#39;resize&#39;);
+    }, 100);
+});
+
+// Close menu in canvas mode
+$(&#39;.close-canvas-menu&#39;).click(function () {
+    $(&quot;body&quot;).toggleClass(&quot;mini-navbar&quot;);
+    SmoothlyMenu();
+});
+
+// Run menu of canvas
+$(&#39;body.canvas-menu .sidebar-collapse&#39;).slimScroll({
+    height: &#39;100%&#39;,
+    railOpacity: 0.9
+});
+
+// Open close right sidebar
+$(&#39;.right-sidebar-toggle&#39;).click(function () {
+    $(&#39;#right-sidebar&#39;).toggleClass(&#39;sidebar-open&#39;);
+});
+
+// Initialize slimscroll for right sidebar
+$(&#39;.sidebar-container&#39;).slimScroll({
+    height: &#39;100%&#39;,
+    railOpacity: 0.4,
+    wheelStep: 10
+});
+
+// Open close small chat
+$(&#39;.open-small-chat&#39;).click(function () {
+    $(this).children().toggleClass(&#39;fa-comments&#39;).toggleClass(&#39;fa-remove&#39;);
+    $(&#39;.small-chat-box&#39;).toggleClass(&#39;active&#39;);
+});
+
+// Initialize slimscroll for small chat
+$(&#39;.small-chat-box .content&#39;).slimScroll({
+    height: &#39;234px&#39;,
+    railOpacity: 0.4
+});
+
+// Small todo handler
+$(&#39;.check-link&#39;).click(function () {
+    var button = $(this).find(&#39;i&#39;);
+    var label = $(this).next(&#39;span&#39;);
+    button.toggleClass(&#39;fa-check-square&#39;).toggleClass(&#39;fa-square-o&#39;);
+    label.toggleClass(&#39;todo-completed&#39;);
+    return false;
+});
+
+// Minimalize menu
+$(&#39;.navbar-minimalize&#39;).click(function () {
+    $(&quot;body&quot;).toggleClass(&quot;mini-navbar&quot;);
+    SmoothlyMenu();
+
+});
+
+// Tooltips demo
+$(&#39;.tooltip-demo&#39;).tooltip({
+    selector: &quot;[data-toggle=tooltip]&quot;,
+    container: &quot;body&quot;
+});
+
+// Move modal to body
+// Fix Bootstrap backdrop issu with animation.css
+$(&#39;.modal&#39;).appendTo(&quot;body&quot;);
+
+// Full height of sidebar
+function fix_height() {
+    var heightWithoutNavbar = $(&quot;body &gt; #wrapper&quot;).height() - 61;
+    $(&quot;.sidebard-panel&quot;).css(&quot;min-height&quot;, heightWithoutNavbar + &quot;px&quot;);
+
+    var navbarHeigh = $(&#39;nav.navbar-default&#39;).height();
+    var wrapperHeigh = $(&#39;#page-wrapper&#39;).height();
+
+    if (navbarHeigh &gt; wrapperHeigh) {
+        $(&#39;#page-wrapper&#39;).css(&quot;min-height&quot;, navbarHeigh + &quot;px&quot;);
+    }
+
+    if (navbarHeigh &lt; wrapperHeigh) {
+        $(&#39;#page-wrapper&#39;).css(&quot;min-height&quot;, $(window).height() + &quot;px&quot;);
+    }
+
+    if ($(&#39;body&#39;).hasClass(&#39;fixed-nav&#39;)) {
+        if (navbarHeigh &gt; wrapperHeigh) {
+            $(&#39;#page-wrapper&#39;).css(&quot;min-height&quot;, navbarHeigh - 60 + &quot;px&quot;);
+        } else {
+            $(&#39;#page-wrapper&#39;).css(&quot;min-height&quot;, $(window).height() - 60 + &quot;px&quot;);
+        }
+    }
+
+}
+
+fix_height();
+
+// Fixed Sidebar
+$(window).bind(&quot;load&quot;, function () {
+    if ($(&quot;body&quot;).hasClass(&#39;fixed-sidebar&#39;)) {
+        $(&#39;.sidebar-collapse&#39;).slimScroll({
+            height: &#39;100%&#39;,
+            railOpacity: 0.9
+        });
+    }
+});
+
+// Move right sidebar top after scroll
+$(window).scroll(function () {
+    if ($(window).scrollTop() &gt; 0 &amp;&amp; !$(&#39;body&#39;).hasClass(&#39;fixed-nav&#39;)) {
+        $(&#39;#right-sidebar&#39;).addClass(&#39;sidebar-top&#39;);
+    } else {
+        $(&#39;#right-sidebar&#39;).removeClass(&#39;sidebar-top&#39;);
+    }
+});
+
+$(window).bind(&quot;load resize scroll&quot;, function () {
+    if (!$(&quot;body&quot;).hasClass(&#39;body-small&#39;)) {
+        fix_height();
+    }
+});
+
+$(&quot;[data-toggle=popover]&quot;)
+    .popover();
+
+// Add slimscroll to element
+$(&#39;.full-height-scroll&#39;).slimscroll({
+    height: &#39;100%&#39;
+})</pre>
+
+<p>});</p>
+
+<p>// Minimalize menu when screen is less than 768px $(window).bind(“resize”,
+function () {</p>
+
+<pre>if ($(this).width() &lt; 769) {
+    $(&#39;body&#39;).addClass(&#39;body-small&#39;)
+} else {
+    $(&#39;body&#39;).removeClass(&#39;body-small&#39;)
+}</pre>
+
+<p>});</p>
+
+<p>// Local Storage functions // Set proper body class and plugins based on
+user configuration $(document).ready(function () {</p>
+
+<pre>if (localStorageSupport) {
+
+    var collapse = localStorage.getItem(&quot;collapse_menu&quot;);
+    var fixedsidebar = localStorage.getItem(&quot;fixedsidebar&quot;);
+    var fixednavbar = localStorage.getItem(&quot;fixednavbar&quot;);
+    var boxedlayout = localStorage.getItem(&quot;boxedlayout&quot;);
+    var fixedfooter = localStorage.getItem(&quot;fixedfooter&quot;);
+
+    var body = $(&#39;body&#39;);
+
+    if (fixedsidebar == &#39;on&#39;) {
+        body.addClass(&#39;fixed-sidebar&#39;);
+        $(&#39;.sidebar-collapse&#39;).slimScroll({
+            height: &#39;100%&#39;,
+            railOpacity: 0.9
+        });
+    }
+
+    if (collapse == &#39;on&#39;) {
+        if (body.hasClass(&#39;fixed-sidebar&#39;)) {
+            if (!body.hasClass(&#39;body-small&#39;)) {
+                body.addClass(&#39;mini-navbar&#39;);
+            }
+        } else {
+            if (!body.hasClass(&#39;body-small&#39;)) {
+                body.addClass(&#39;mini-navbar&#39;);
+            }
+
+        }
+    }
+
+    if (fixednavbar == &#39;on&#39;) {
+        $(&quot;.navbar-static-top&quot;).removeClass(&#39;navbar-static-top&#39;).addClass(&#39;navbar-fixed-top&#39;);
+        body.addClass(&#39;fixed-nav&#39;);
+    }
+
+    if (boxedlayout == &#39;on&#39;) {
+        body.addClass(&#39;boxed-layout&#39;);
+    }
+
+    if (fixedfooter == &#39;on&#39;) {
+        $(&quot;.footer&quot;).addClass(&#39;fixed&#39;);
+    }
+}</pre>
+
+<p>});</p>
+
+<p>// check if browser support HTML5 local storage function
+localStorageSupport() {</p>
+
+<pre>return ((&#39;localStorage&#39; in window) &amp;&amp; window[&#39;localStorage&#39;] !== null)</pre>
+
+<p>}</p>
+
+<p>// For demo purpose - animation css script function animationHover(element,
+animation) {</p>
+
+<pre>element = $(element);
+element.hover(
+    function () {
+        element.addClass(&#39;animated &#39; + animation);
+    },
+    function () {
+        //wait for animation to finish before removing classes
+        window.setTimeout(function () {
+            element.removeClass(&#39;animated &#39; + animation);
+        }, 2000);
+    });</pre>
+
+<p>}</p>
+
+<p>function SmoothlyMenu() {</p>
+
+<pre>if (!$(&#39;body&#39;).hasClass(&#39;mini-navbar&#39;) || $(&#39;body&#39;).hasClass(&#39;body-small&#39;)) {
+    // Hide menu in order to smoothly turn on when maximize menu
+    $(&#39;#side-menu&#39;).hide();
+    // For smoothly turn on menu
+    setTimeout(
+        function () {
+            $(&#39;#side-menu&#39;).fadeIn(400);
+        }, 200);
+} else if ($(&#39;body&#39;).hasClass(&#39;fixed-sidebar&#39;)) {
+    $(&#39;#side-menu&#39;).hide();
+    setTimeout(
+        function () {
+            $(&#39;#side-menu&#39;).fadeIn(400);
+        }, 100);
+} else {
+    // Remove all inline style from jquery fadeIn function to reset menu state
+    $(&#39;#side-menu&#39;).removeAttr(&#39;style&#39;);
+}</pre>
+
+<p>}</p>
+
+<p>// Dragable panels function WinMove() {</p>
+
+<pre>var element = &quot;[class*=col]&quot;;
+var handle = &quot;.ibox-title&quot;;
+var connect = &quot;[class*=col]&quot;;
+$(element).sortable(
+    {
+        handle: handle,
+        connectWith: connect,
+        tolerance: &#39;pointer&#39;,
+        forcePlaceholderSize: true,
+        opacity: 0.8
+    })
+    .disableSelection();</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

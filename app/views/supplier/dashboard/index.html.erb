@@ -1,0 +1,252 @@
+<div class="row">
+  <div class="title">
+    <h3 id="today">Today's latest price</h3>
+  </div>
+  <% if current_user.fuel_prices.empty? %>
+  <div class="col-lg-12">
+    <div class="widget style1 red-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>No Fuel Price Found</strong>
+          </span>
+          <h2 class="font-bold"><%= link_to "Please click here to Add your latest Fuel Price", new_supplier_fuel_price_path, class: "no-fuel" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%else%>
+
+  <div class="col-lg-3">
+    <div class="widget style1 red-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>Diesel</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.diesel %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="widget style1 blue-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>87 Octane</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.regular %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div class="widget style1 yellow-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>91 Octane</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.medium %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="widget style1 lazur-bg">
+      <div class="row">
+        <div class="col-xs-3">
+          <i class="fa fa-usd fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+          <span>
+            <strong>93 Octane</strong>
+          </span>
+          <h2 class="font-bold"><%= @latest_fuel_price.premium %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <div>
+          <span class="pull-right text-right">
+            <small>Data for New Jersey:
+              <strong>New Jersey</strong>
+            </small>
+            <br/>
+            Average Margin: $0.012
+          </span>
+          <h3 class="font-bold no-margins">
+            <i class="fa fa-rocket"></i>PriceRocket Stats
+          </h3>
+          <small>Stats include number of emails.</small>
+        </div>
+
+        <div class="m-t-sm">
+
+          <div class="row">
+            <div class="col-md-8">
+              <div>
+                <canvas id="lineChart" height="114"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <ul class="stat-list m-t-lg">
+                <li>
+                  <h2 class="no-margins">200</h2>
+                  <small>Texts sent this period.</small>
+                  <div class="progress progress-mini">
+                    <div class="progress-bar" style="width: 48%;"></div>
+                  </div>
+                </li>
+                <li>
+                  <h2 class="no-margins ">280</h2>
+                  <small>Texts sent last month</small>
+                  <div class="progress progress-mini">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="m-t-md">
+          <small class="pull-right">
+            <i class="fa fa-clock-o"></i>
+            Update on 16.07.2015
+          </small>
+          <small>
+            <strong>Analysis of Margin:</strong>
+            Calculated based on the margin set on all contacts.
+          </small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h3>Apps</h3>
+      </div>
+      <div class="ibox-content">
+        <div class="row">
+          <div class="col-xs-4">
+            <small class="stats-label"><strong>Mass Send</strong></small>
+            <h1><i class="fa fa-users"></i></h1><span class="label label-success">Installed</span>
+          </div>
+
+          <div class="col-xs-4">
+            <small class="stats-label"><strong>PriceRocket</strong></small>
+            <h1><i class="fa fa-rocket"></i></h1><span class="label label-success">Installed</span>
+          </div>
+          <div class="col-xs-4">
+            <strong class="stats-label">pH+ Reports</strong>
+            <h1><i class="fa fa-bar-chart"></i></h1><span class="label label-warning">Coming soon</span>
+          </div>
+        </div>
+      </div>
+      <div class="ibox-content">
+        <div class="row">
+          <div class="col-xs-4">
+            <small class="stats-label"><strong>Opus Price</strong></small>
+            <h1><i class="fa fa-usd"></i><i class="fa fa-usd"></i><i class="fa fa-usd"></i></h1><span class="label label-warning">Coming soon</span>
+          </div>
+
+          <div class="col-xs-4">
+            <strong class="stats-label">pH+ Pager</strong>
+            <h1><i class="fa fa-bolt"></i><i class="fa fa-bolt"></i><i class="fa fa-bolt"></i></h1><span class="label label-warning">Coming soon</span>
+          </div>
+          <div class="col-xs-4">
+            <strong class="stats-label">pH+ Score</strong>
+            <h1><i class="fa fa-star-half-o"></i><i class="fa fa-star-half-o"></i></h1><span class="label label-warning">Coming soon</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Mass Send
+        </h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-wrench"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li>
+              <a href="#">Config option 1</a>
+            </li>
+            <li>
+              <a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content">
+        <div class="row">
+          <div class="col-sm-9 m-b-xs">
+            <div data-toggle="buttons" class="btn-group">
+              <label class="btn btn-sm btn-white">
+                <input type="radio" id="option1" name="options">
+                Day
+              </label>
+              <label class="btn btn-sm btn-white active">
+                <input type="radio" id="option2" name="options">
+                Week
+              </label>
+              <label class="btn btn-sm btn-white">
+                <input type="radio" id="option3" name="options">
+                Month
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-sm btn-primary">
+                  Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
