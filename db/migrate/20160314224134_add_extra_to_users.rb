@@ -16,8 +16,8 @@ class AddExtraToUsers < ActiveRecord::Migration
     add_column :users, :in_biz, :string
     add_column :users, :role, :integer, default: 0
     add_column :users, :status, :integer, default: 0
-    add_index :users, :tax_id, unique: true
-    add_index :users, :ssn, unique: true
+    #add_index :users, :tax_id, unique: true
+    #add_index :users, :ssn, unique: true
     add_index :users, :account_number, unique: true
   end
 end
