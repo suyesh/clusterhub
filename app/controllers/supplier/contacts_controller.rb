@@ -38,7 +38,8 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def show
-    @contact_price = @contact.retail_prices.last
+    @contact_prices = @contact.retail_prices.all.order("created_at DESC").offset(1)
+    @latest_price = @contact.retail_prices.last
   end
 
   def edit
