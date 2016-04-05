@@ -2,7 +2,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy, :show]
   before_action :set_twilio, only: [:create, :update]
   before_action :check_fuel_price, only: [:create]
-  
+
 
   def index
     @contacts = current_user.contacts.all.order("created_at DESC")
@@ -15,6 +15,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
 
   def create
     @contact = current_user.contacts.build(contacts_params)
+    unless current_user.fuel_prices.empty?
     if @contact.save
       @contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + @contact.c_regular,
                                     r_medium: current_user.fuel_prices.last.medium + @contact.c_medium,
@@ -28,6 +29,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
                  )
       flash[:notice] = 'Retailer has been successfully added.'
       redirect_to supplier_contacts_path
+    end
     else
       flash.now[:alert] = 'Something went wrong. Check your form and re-try.'
       render 'new'
