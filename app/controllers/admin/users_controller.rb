@@ -22,7 +22,7 @@ class Admin::UsersController < Admin::ApplicationController
           to: "+1#{@user.cell_number}",
           body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Retailer. You can now login with your email #{@user.email} and follow your suppliers for their daily pricing and much more. Thank you for being a part of Petrohub."
         )
-        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Retailer.", as_user: true)
+        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Retailer. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_retailers_path
       elsif @user.supplier? && @user.active?
@@ -31,7 +31,7 @@ class Admin::UsersController < Admin::ApplicationController
           to: "+1#{@user.cell_number}",
           body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Supplier. You can now login with your email #{@user.email} and follow your retailers and send them daily pricing and much more.. Thank you for being a part of Petrohub."
         )
-        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Supplier.", as_user: true)
+        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Supplier. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_suppliers_path
       elsif @user.trucking? && @user.active?
@@ -40,7 +40,7 @@ class Admin::UsersController < Admin::ApplicationController
           to: "+1#{@user.cell_number}",
           body: "Hey there! #{@user.first_name}. Petrohub just approved your account as Trucking Provider. Expect and email from us with futhur details."
         )
-        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Trucking provider.", as_user: true)
+        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Trucking provider. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_truckings_path
       elsif @user.denied?
@@ -49,7 +49,7 @@ class Admin::UsersController < Admin::ApplicationController
           to: "+1#{@user.cell_number}",
           body: "Hey there! #{@user.first_name}. Unfortunately Petrohub was unable to approve your account. You can now login with your email #{@user.email} and follow your suppliers for their daily pricing and much more. Thank you for being a part of Petrohub."
         )
-        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just Denied application for #{@user.first_name} from #{@user.business_name}.", as_user: true)
+        @slack.chat_postMessage(channel: '#admin_activities', text: "#{current_user.first_name} just DENIED application for #{@user.first_name} from #{@user.business_name}. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
         redirect_to admin_dashboard_path
       else
