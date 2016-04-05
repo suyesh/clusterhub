@@ -14,7 +14,3 @@
 
 # Ignore application configuration
 /config/application.yml
-<<<<<<< HEAD
-=======
-/db/seeds.rb
->>>>>>> bd215a00b37d374d24dfe136cb89927690669275
