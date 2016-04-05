@@ -15,8 +15,8 @@ class Supplier::ContactsController < Supplier::ApplicationController
 
   def create
     @contact = current_user.contacts.build(contacts_params)
-    unless current_user.fuel_prices.empty?
     if @contact.save
+      unless current_user.fuel_prices.empty?
       @contact.retail_prices.create(r_regular: current_user.fuel_prices.last.regular + @contact.c_regular,
                                     r_medium: current_user.fuel_prices.last.medium + @contact.c_medium,
                                     r_premium: current_user.fuel_prices.last.premium + @contact.c_premium,
@@ -27,9 +27,9 @@ class Supplier::ContactsController < Supplier::ApplicationController
         to: "+1#{@contact.cell_number}",
         body: "Hey there! #{@contact.first_name}. #{current_user.first_name.capitalize} from #{current_user.business_name} just added you to PetroHub.com, Today's Fuel Prices are as follows. Regular: $#{@contact.retail_prices.last.r_regular}, Medium: $#{@contact.retail_prices.last.r_medium},Premium: $#{@contact.retail_prices.last.r_premium}, Diesel: $#{@contact.retail_prices.last.r_diesel}"
                  )
+      end
       flash[:notice] = 'Retailer has been successfully added.'
       redirect_to supplier_contacts_path
-    end
     else
       flash.now[:alert] = 'Something went wrong. Check your form and re-try.'
       render 'new'
