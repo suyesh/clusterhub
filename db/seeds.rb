@@ -1,126 +1,43 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-#New User
 User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  business_name: 'ACME inc',
-  phone_number: '2128456789',
-  cell_number: '2123456789',
-  street_address: '81 updown st',
-  apt_suite: '35',
-  city: 'New York',
-  state: 'New York',
-  zip_code: '11367',
-  tax_id: '2231034561',
-  ssn: '234567892',
-  in_biz: '3',
-  email: 'new@yahoo.com',
-  password: 'password',
-  password_confirmation: 'password',
-  terms: 1,
-  role: 0,
-  status: 0
-)
-
-
-#Retailer
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  business_name: 'ACME inc',
-  phone_number: '2128456789',
-  cell_number: '2123456789',
-  street_address: '81 updown st',
-  apt_suite: '35',
-  city: 'New York',
-  state: 'New York',
-  zip_code: '11367',
-  tax_id: '2231034563',
-  ssn: '234567894',
-  in_biz: '3',
-  email: 'retailer@yahoo.com',
-  password: 'password',
-  password_confirmation: 'password',
-  terms: 1,
-  role: 1,
-  status: 1
-)
-
-
-#Supplier
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  business_name: 'ACME inc',
-  phone_number: '2128456789',
-  cell_number: '2123456789',
-  street_address: '81 updown st',
-  apt_suite: '35',
-  city: 'New York',
-  state: 'New York',
-  zip_code: '11367',
-  tax_id: '2231034565',
-  ssn: '234567896',
-  in_biz: '3',
-  email: 'supplier@yahoo.com',
-  password: 'password',
-  password_confirmation: 'password',
-  terms: 1,
-  role: 2,
-  status: 1
-)
-
-
-#Trucking
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  business_name: 'ACME inc',
-  phone_number: '2128456789',
-  cell_number: '2123456789',
-  street_address: '81 updown st',
-  apt_suite: '35',
-  city: 'New York',
-  state: 'New York',
-  zip_code: '11367',
-  tax_id: '2231034567',
-  ssn: '234567898',
-  in_biz: '3',
-  email: 'trucking@yahoo.com',
-  password: 'password',
-  password_confirmation: 'password',
-  terms: 1,
-  role: 3,
-  status: 1
-)
-
-
-#ADMIN
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  business_name: 'ACME inc',
-  phone_number: '2128456789',
-  cell_number: '2123456789',
-  street_address: '81 updown st',
-  apt_suite: '35',
-  city: 'New York',
-  state: 'New York',
-  zip_code: '11367',
-  tax_id: '2231034569',
-  ssn: '234567890',
-  in_biz: '3',
-  email: 'admin@yahoo.com',
-  password: 'password',
-  password_confirmation: 'password',
+  first_name: 'Mohamed',
+  last_name: 'Nasr',
+  business_name: 'PetroHub.org',
+  phone_number: '2676073876',
+  cell_number: '7329866193',
+  street_address: '209 Main st',
+  apt_suite: '2nd Floor',
+  city: 'Woodbridge',
+  state: "New Jersey",
+  zip_code: "07095",
+  tax_id: "0",
+  ssn: "0",
+  in_biz: "2",
+  email:"sales@petrohub.org",
+  password: "2Hard4you!",
+  password_confirmation: "2Hard4you!",
   terms: 1,
   role: 4,
   status: 1
-)
+  )
+
+  User.create(
+    first_name: 'Suyesh',
+    last_name: 'Bhandari',
+    business_name: 'PetroHub.org',
+    phone_number: '2676073876',
+    cell_number: '3479016698',
+    street_address: '209 Main st',
+    apt_suite: '2nd Floor',
+    city: 'Woodbridge',
+    state: "New Jersey",
+    zip_code: "07095",
+    tax_id: "0",
+    ssn: "0",
+    in_biz: "2",
+    email:"suyeshb@gmail.com",
+    password: "juaN9841%",
+    password_confirmation: "juaN9841%",
+    terms: 1,
+    role: 4,
+    status: 1
+    )
