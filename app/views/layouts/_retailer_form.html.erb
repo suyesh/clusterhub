@@ -1,4 +1,4 @@
-<%= simple_form_for @retailer, class: "m-t" do |f| %>
+<%= simple_form_for @retailer, url: admin_user_path, class: "m-t" do |f| %>
 <%= f.input :first_name, label: "First Name" %>
 <%= f.input :last_name, label: "Last Name" %>
 <%= f.input :business_name, label: "Business Name" %>
