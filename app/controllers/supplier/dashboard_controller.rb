@@ -3,7 +3,8 @@ class Supplier::DashboardController < Supplier::ApplicationController
 
   def index
     @latest_fuel_price = current_user.fuel_prices.last
-    @texts = 750.00 #current_user.texts.all()
+    @texts = current_user.pricerockets.where('created_at >= ? and created_at <= ?', Time.now.beginning_of_month, Time.now.end_of_month)
+    @prev_texts = 200
   end
 
 
