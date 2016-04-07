@@ -29,7 +29,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
   def update
     if @fuel_price.update(fuel_price_params)
       @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.updated_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
-      flash[:notice] = 'Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers.'
+      flash[:notice] = "Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers."
       redirect_to supplier_fuel_prices_path
     else
       flash.now[:alert] = 'Something went wrong. Please try again'
