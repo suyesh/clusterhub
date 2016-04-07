@@ -25,8 +25,5 @@
 class Contact < ActiveRecord::Base
   belongs_to :supplier, class_name: "User"
   has_many :retail_prices
-
-
-
-
+  has_many :price_rockets
 end
