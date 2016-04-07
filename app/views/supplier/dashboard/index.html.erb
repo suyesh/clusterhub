@@ -93,11 +93,11 @@
               <strong><%= current_user.state%></strong>
             </small>
             <br/>
-            <span class="label label-success">Average Margin: $<%= calculate_average(current_user)%></span>
+          Average Margin: $<%= calculate_average(current_user)%>
 
           </span>
           <h3 class="font-bold no-margins">
-            <i class="fa fa-rocket"></i>&nbsp;PriceRocket Stats
+            <i class="fa fa-rocket" style="color:#EF5350"></i>&nbsp;Price<span style="color:#EF5350">Rocket</span> Stats
           </h3>
           <small>Stats include number of emails.</small>
         </div>
@@ -113,14 +113,14 @@
             <div class="col-md-4">
               <ul class="stat-list m-t-lg">
                 <li>
-                  <h2 class="no-margins"><i class="fa fa-rocket"></i>&nbsp;<%= @texts.count%>&nbsp;/&nbsp;2000</h2>
+                  <h2 class="no-margins"><i class="fa fa-rocket" style="color:#EF5350"></i>&nbsp;<%= @texts.count%>&nbsp;/&nbsp;2000</h2>
                   <small>PriceRockets sent this period.</small>
                   <div class="progress progress-mini">
                     <div class="progress-bar" style="width: <%= to_percentage(@texts.count)%>%;"></div>
                   </div>
                 </li>
                 <li>
-                  <h2 class="no-margins "><i class="fa fa-rocket"></i>&nbsp;<%= @prev_texts.count%>&nbsp;/&nbsp;2000</h2>
+                  <h2 class="no-margins "><i class="fa fa-rocket" style="color:#EF5350"></i>&nbsp;<%= @prev_texts.count%>&nbsp;/&nbsp;2000</h2>
                   <small>PriceRockets sent last month</small>
                   <div class="progress progress-mini">
                     <div class="progress-bar" style="width: <%= to_percentage(@prev_texts.count)%>%;"></div>
