@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160407143710) do
   end
 
   create_table "pricerockets", force: :cascade do |t|
-    t.integer  "texts"
     t.integer  "supplier_id"
     t.string   "to"
     t.text     "body"

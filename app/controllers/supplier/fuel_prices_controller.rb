@@ -22,11 +22,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                                        r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                        r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
                                       )
-          @client.messages.create(
-            from: '+18482299159',
-            to: "+1#{contact.cell_number}",
-            body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
-          )
+          current_user.pricerockets.create(to: contact.cell_number, body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"  )
         end
       end
       @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
@@ -50,13 +46,9 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                                        r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                        r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
                                       )
-          
+          current_user.pricerockets.create(to: contact.cell_number, body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"  )
           # TODO: what happens if there is an error sending a message?
-          @client.messages.create(
-            from: '+18482299159',
-            to: "+1#{contact.cell_number}",
-            body: "Hey there! #{contact.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
-          )
+
           # current_user.sent_messages << Messages.new(to: "+1#{contact.cell_number}")
 
           # User.find(1).messages_sent(month, year)
