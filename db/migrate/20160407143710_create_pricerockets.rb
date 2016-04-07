@@ -3,6 +3,8 @@ class CreatePricerockets < ActiveRecord::Migration
     create_table :pricerockets do |t|
       t.integer :texts
       t.integer :supplier_id
+      t.string :to
+      t.text :body
       t.timestamps null: false
     end
   end

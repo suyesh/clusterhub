@@ -50,7 +50,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                                        r_premium: current_user.fuel_prices.last.premium + contact.c_premium,
                                        r_diesel: current_user.fuel_prices.last.diesel + contact.c_diesel
                                       )
-
+          
           # TODO: what happens if there is an error sending a message?
           @client.messages.create(
             from: '+18482299159',
