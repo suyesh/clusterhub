@@ -1,0 +1,2 @@
+module Supplier::TextHistoryHelper
+end

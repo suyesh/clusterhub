@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   resources :users
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :supplier do
     root to: 'dashboard#index', as: 'dashboard'
+    get 'pricerocket_history' => 'text_history#index'
     resources :retailers
     resources :fuel_prices
     resources :contacts
