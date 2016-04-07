@@ -112,14 +112,14 @@
             <div class="col-md-4">
               <ul class="stat-list m-t-lg">
                 <li>
-                  <h2 class="no-margins"><%= @texts.count%>/2000</h2>
+                  <h2 class="no-margins"><i class="fa fa-rocket"></i><%= @texts.count%>/2000</h2>
                   <small>PriceRockets sent this period.</small>
                   <div class="progress progress-mini">
                     <div class="progress-bar" style="width: <%= to_percentage(@texts.count)%>%;"></div>
                   </div>
                 </li>
                 <li>
-                  <h2 class="no-margins "><%= @prev_texts.count%>/2000</h2>
+                  <h2 class="no-margins "><i class="fa fa-rocket"></i><%= @prev_texts.count%>/2000</h2>
                   <small>PriceRockets sent last month</small>
                   <div class="progress progress-mini">
                     <div class="progress-bar" style="width: <%= to_percentage(@prev_texts.count)%>%;"></div>
