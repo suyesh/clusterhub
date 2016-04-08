@@ -1,0 +1,2 @@
+module Supplier::MassSendHelper
+end
