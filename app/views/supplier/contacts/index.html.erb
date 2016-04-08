@@ -73,11 +73,11 @@
       <div class="modal-body">
         <%= simple_form_for(@contact, url: supplier_contacts_path,wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
         :horizontal_boolean }) do |f| %>
-        <%= f.input :first_name, label: "First Name" %>
-        <%= f.input :last_name, label: "Last Name"%>
-        <%= f.input :business_name, label: "Business Name" %>
+        <%= f.input :first_name, label: "First Name", placeholder: "John" %>
+        <%= f.input :last_name, label: "Last Name", placeholder: "Doe"%>
+        <%= f.input :business_name, label: "Business Name", placeholder: "ACME Fuel Supply inc" %>
         <!--  <%= f.input :phone_number, label: "Phone Number" %> -->
-        <%= f.input :cell_number, label: "Mobile Number" %>
+        <%= f.input :cell_number, label: "Mobile Number", placeholder: "2120000000" %>
       <!--  <%= f.input :carrier, :label => "Mobile Carrier", :collection => mobile_carrier, :selected => "Tmobile"%> -->
         <!--  <%= f.input :street_address, label: "Street Address" %>
                                           <%= f.input :apt_suite, label: "Apt/Suite" %>
