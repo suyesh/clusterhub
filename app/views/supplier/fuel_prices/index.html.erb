@@ -21,103 +21,127 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newFuelPrice">New Price</button>
         </div>
         <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Regular</th>
-              <th>Medium</th>
-              <th>Premium</th>
-              <th>Diesel</th>
-              <th>Action</th>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Regular</th>
+                <th>Medium</th>
+                <th>Premium</th>
+                <th>Diesel</th>
+                <th>Action</th>
 
-            </tr>
-          </thead>
-          <% @fuel_prices.each do |f|%>
-          <tbody>
-            <tr class="gradeX">
-              <td class="mycell col-md-1"><strong><%= f.created_at.strftime('%F') %></strong></td>
-              <% t = Time.zone.now %>
-              <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-                <td class="mycell col-md-1"><strong><span class="label label-success">Latest</span></strong></td>
-              <%elsif f.id != @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-                <td class="mycell col-md-1"><strong><span class="label label-warning">Expired</span></strong></td>
-              <%else%>
-                <td class="mycell col-md-1"><strong><span class="label label-danger">Ancient Price</span></strong></td>
+              </tr>
+            </thead>
+            <% @fuel_prices.each do |f|%>
+            <tbody>
+              <tr class="gradeX">
+                <td class="mycell col-md-1">
+                  <strong><%= f.created_at.strftime('%F') %></strong>
+                </td>
+                <% t = Time.zone.now %>
+                <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
+                <td class="mycell col-md-1">
+                  <strong>
+                    <span class="label label-success">Latest</span>
+                  </strong>
+                </td>
+                <%elsif f.id != @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
+                <td class="mycell col-md-1">
+                  <strong>
+                    <span class="label label-warning">Expired</span>
+                  </strong>
+                </td>
+                <%else%>
+                <td class="mycell col-md-1">
+                  <strong>
+                    <span class="label label-danger">Ancient Price</span>
+                  </strong>
+                </td>
+                <%end%>
+                <td class="mycell col-md-1">
+                  <%= f.regular %>
+                </td>
+                <td class="mycell col-md-1"><%= f.medium %></td>
+                <td class="mycell col-md-1"><%= f.premium %></td>
+                <td class="mycell col-md-1"><%= f.diesel %></td>
+                <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
+                <td class="mycell col-md-1"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
+                <%else%>
+                <td class="mycell col-md-1">
+                  <strong>
+                    <span class="label label-danger">Uneditable</span>
+                  </strong>
+                </td>
+                <%end%>
+
+              </tr>
               <%end%>
-              <td class="mycell col-md-1">
-                <%= f.regular %>
-              </td>
-              <td class="mycell col-md-1"><%= f.medium %></td>
-              <td class="mycell col-md-1"><%= f.premium %></td>
-              <td class="mycell col-md-1"><%= f.diesel %></td>
-              <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-              <td class="mycell col-md-1"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
-              <%else%>
-                <td class="mycell col-md-1"><strong><span class="label label-danger">Uneditable</span></strong></td>
-              <%end%>
+            </tbody>
 
-            </tr>
-<%end%>
-          </tbody>
+          </table>
 
-        </table>
-
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="modal inmodal" id="newFuelPrice" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content animated bounceInRight">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <i class="fa fa-usd modal-icon" style="color:#1ab394"></i>
+          <h4 class="modal-title">Add New Fuel Price</h4>
+          <span class="font-bold">Your contacts will get text message of your latest price</span>
+        </br>
+        <span class="font-bold">As (your fuel price + the formula).</span>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@fuel_price, url: supplier_fuel_prices_path, wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
+        :horizontal_boolean }) do |f| %>
+        <%= f.input :regular, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price for Regular" do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :regular, class: "form-control", placeholder: "1.25" %>
+        <%end%>
+        <%= f.input :medium, label: "Medium", wrapper: :vertical_input_group, hint: "Your base price for Medium" do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :medium, class: "form-control", placeholder: "1.25" %>
+        <%end%>
+        <%= f.input :premium, label: "Premium", wrapper: :vertical_input_group, hint: "Your base price for Premium" do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :premium, class: "form-control", placeholder: "1.25" %>
+        <%end%>
+        <%= f.input :diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Your base price for Diesel" do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :diesel, class: "form-control", placeholder: "1.25" %>
+        <%end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+        <%= f.button :submit, "Update", class: "btn btn-primary"%>
+      </div>
+      <%end%>
+    </div>
+  </div>
 </div>
-
-
-<div class="modal inmodal" id="newFuelPrice" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <i class="fa fa-usd modal-icon" style="color:#1ab394"></i>
-                                            <h4 class="modal-title">Add New Fuel Price</h4>
-                                            <span class="font-bold">Your contacts will get text message of your latest price</span></br>
-                                            <span class="font-bold">As (your fuel price + the formula).</span>
-                                        </div>
-                                        <div class="modal-body">
-                                          <%= simple_form_for(@fuel_price, url: supplier_fuel_prices_path, wrapper: :vertical_form,
-        wrapper_mappings: {
-          check_boxes: :horizontal_radio_and_checkboxes,
-          radio_buttons: :horizontal_radio_and_checkboxes,
-          file: :horizontal_file_input,
-          boolean: :horizontal_boolean
-        }) do |f| %>
-                                            <%= f.input :regular, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price for Regular" do %>
-                                               <span class="input-group-btn">
-                                                 <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
-                                               </span>
-                                               <%= f.input_field :regular, class: "form-control", placeholder: "1.25" %>
-                                          <%end%>
-                                          <%= f.input :medium, label: "Medium", wrapper: :vertical_input_group, hint: "Your base price for Medium" do %>
-                                             <span class="input-group-btn">
-                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
-                                             </span>
-                                             <%= f.input_field :medium, class: "form-control", placeholder: "1.25" %>
-                                        <%end%>
-                                          <%= f.input :premium, label: "Premium", wrapper: :vertical_input_group, hint: "Your base price for Premium" do %>
-                                             <span class="input-group-btn">
-                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
-                                             </span>
-                                             <%= f.input_field :premium, class: "form-control", placeholder: "1.25" %>
-                                        <%end%>
-                                          <%= f.input :diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Your base price for Diesel" do %>
-                                             <span class="input-group-btn">
-                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
-                                             </span>
-                                             <%= f.input_field :diesel, class: "form-control", placeholder: "1.25" %>
-                                        <%end%>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                           <%= f.button :submit, "Update", class: "btn btn-primary"%>
-                                        </div>
-                                          <%end%>
-                                    </div>
-                                </div>
-                            </div>

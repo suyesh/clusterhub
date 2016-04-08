@@ -16,39 +16,36 @@
   <body class="md-skin top-navigation">
 
     <!-- Wrapper-->
-      <div id="wrapper">
-        <div id="page-wrapper" class="gray-bg">
+    <div id="wrapper">
+      <div id="page-wrapper" class="gray-bg">
 
         <div class="container">
-      <!-- Navigation -->
-      <%= user_navigation(current_user)%>
+          <!-- Navigation -->
+          <%= user_navigation(current_user)%>
 
+          <!-- Page wraper -->
 
-      <!-- Page wraper -->
+          <!-- Page wrapper -->
 
+          <% flash.each do |key, message| %>
+          <div class="alert alert-<%= key %>">
+            <%= message %>
+          </div>
+          <% end %>
+          <!-- Main view  -->
 
-        <!-- Page wrapper -->
+          <%= yield %>
 
-        <% flash.each do |key, message| %>
-        <div class="alert alert-<%= key %>">
-          <%= message %>
+          <!-- Footer -->
+
+          <%= render "layouts/footer" %>
+          <!-- End page wrapper-->
+
         </div>
-        <% end %>
-        <!-- Main view  -->
 
-        <%= yield %>
+      </div>
 
-
-        <!-- Footer -->
-
-<%= render "layouts/footer" %>
-      <!-- End page wrapper-->
-
-</div>
-
-  </div>
-
-</div>
+    </div>
 
     <!-- End wrapper-->
 

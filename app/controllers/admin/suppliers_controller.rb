@@ -17,9 +17,9 @@ class Admin::SuppliersController < Admin::ApplicationController
   def update
   end
 
-private
+  private
 
-def set_supplier
-  @supplier = User.find(params[:id])
-end
+  def set_supplier
+    @supplier = User.find(params[:id])
+  end
 end

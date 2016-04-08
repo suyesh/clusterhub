@@ -46,22 +46,20 @@ class User < ActiveRecord::Base
   validates_presence_of :city
   validates_presence_of :state
   validates_presence_of :zip_code
-  #validates :tax_id, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
-  #validates :ssn, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
+  # validates :tax_id, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
+  # validates :ssn, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
   validates_presence_of :terms, terms: 1, message: 'You have to agree to our terms and conditions.'
 
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
   enum status: [:inactive, :active, :denied, :archived]
 
-  has_many :stations,foreign_key: :retailer_id
+  has_many :stations, foreign_key: :retailer_id
   has_many :formulas
-  has_many :fuel_prices,foreign_key: :supplier_id
+  has_many :fuel_prices, foreign_key: :supplier_id
   has_many :contacts, foreign_key: :supplier_id
   has_many :retail_prices, foreign_key: :contact_id
   has_many :pricerockets, foreign_key: :supplier_id
-
-
 end
 
-#belongs_to :contact, class_name: 'User' # contact_id integer
-#belongs_to :supplier, class_name: 'User' # supplier_id integer
+# belongs_to :contact, class_name: 'User' # contact_id integer
+# belongs_to :supplier, class_name: 'User' # supplier_id integer

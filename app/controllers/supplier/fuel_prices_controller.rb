@@ -48,7 +48,6 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
     @slack = Slack::Web::Client.new
   end
 
-
   def fuel_price_params
     params.require(:fuel_price).permit(:regular, :medium, :premium, :diesel)
   end

@@ -1,39 +1,39 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-12">
-        <h2><%= current_user.first_name %>'s Dashboard</h2>
-        <ol class="breadcrumb">
-            <li>
-                <%= link_to "Home", admin_dashboard_path %>
-            </li>
-            <li class="active">
-                <strong>Retailers</strong>
-            </li>
-            <%= link_to "Add New", new_admin_retailer_path, class: "btn btn-primary pull-right"%>
-        </ol>
-    </div>
+  <div class="col-lg-12">
+    <h2><%= current_user.first_name %>'s Dashboard</h2>
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", admin_dashboard_path %>
+      </li>
+      <li class="active">
+        <strong>Retailers</strong>
+      </li>
+      <%= link_to "Add New", new_admin_retailer_path, class: "btn btn-primary pull-right"%>
+    </ol>
+  </div>
 </div>
 
-  <% if @retailer.errors.any? || flash[:notice]%>
-  <div id="errors_explanation">
-    <% flash.each do |key, message| %>
-    <div class="alert alert-<%= key %>">
-      <%= message %>
-    </div>
-    <% end %>
-    <h2><%= pluralize(@retailer.errors.count, "errors")%>
-      prohibited you from submitting this application:</h2>
+<% if @retailer.errors.any? || flash[:notice]%>
+<div id="errors_explanation">
+  <% flash.each do |key, message| %>
+  <div class="alert alert-<%= key %>">
+    <%= message %>
   </div>
-  <ul>
-    <% @retailer.errors.full_messages.each do |msg| %>
-    <li>
-      <%= msg %>
-    </li>
-    <%end%>
-  </ul>
+  <% end %>
+  <h2><%= pluralize(@retailer.errors.count, "errors")%>
+    prohibited you from submitting this application:</h2>
+</div>
+<ul>
+  <% @retailer.errors.full_messages.each do |msg| %>
+  <li>
+    <%= msg %>
+  </li>
   <%end%>
-  <div class="wrapper wrapper-content animated fadeInRight">
+</ul>
+<%end%>
+<div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
 
     <%= render "layouts/retailer_form"%>
-</div>
+  </div>
 </div>

@@ -17,8 +17,8 @@ class Supplier::ApplicationController < LoginrequiredController
   end
 
   def authenticate_supplier!
-    if !current_user.supplier?
-      redirect_to dashboard_path, alert: "You are not authorized to access that section."
+    unless current_user.supplier?
+      redirect_to dashboard_path, alert: 'You are not authorized to access that section.'
     end
   end
 end

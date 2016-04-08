@@ -17,8 +17,8 @@ class Trucking::ApplicationController < LoginrequiredController
   end
 
   def authenticate_trucking!
-    if !current_user.trucking?
-      redirect_to dashboard_path, alert: "You are not authorized to access that section."
+    unless current_user.trucking?
+      redirect_to dashboard_path, alert: 'You are not authorized to access that section.'
     end
   end
 end
