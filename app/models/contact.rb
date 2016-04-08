@@ -23,6 +23,7 @@
 class Contact < ActiveRecord::Base
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'Oops! Looks like the email you provided is not valid. Please fix and resubmit the form.'
   validates_presence_of :first_name
+  validates_presence_of :email
   validates_presence_of :last_name
   validates_presence_of :cell_number
   validates_presence_of :c_regular
