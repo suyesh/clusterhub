@@ -53,13 +53,13 @@ class User < ActiveRecord::Base
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
   enum status: [:inactive, :active, :denied, :archived]
 
-  has_many :stations
+  has_many :stations,foreign_key: :retailer_id
   has_many :formulas
   has_many :fuel_prices,foreign_key: :supplier_id
   has_many :contacts, foreign_key: :supplier_id
   has_many :retail_prices, foreign_key: :contact_id
   has_many :pricerockets, foreign_key: :supplier_id
-  
+
 
 end
 
