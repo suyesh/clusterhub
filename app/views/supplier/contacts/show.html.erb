@@ -78,6 +78,7 @@
     </div>
   </div>
 </div>
+<%= unless @contact_prices.empty? %>
 <% @contact_prices.each do |contact| %>
 <div class="panel panel-danger">
   <div class="panel-heading">
@@ -149,6 +150,7 @@
   </div>
 
 </div>
+<%end%>
 <%end%>
 </div>
 </div>
