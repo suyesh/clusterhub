@@ -37,25 +37,25 @@
           <% @fuel_prices.each do |f|%>
           <tbody>
             <tr class="gradeX">
-              <td class="mycell"><strong><%= f.created_at.strftime("%m/%d") %></strong></td>
+              <td class="mycell col-md-1"><strong><%= f.created_at.strftime('%F') %></strong></td>
               <% t = Time.zone.now %>
               <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-                <td class="mycell2"><strong><span class="label label-success">Latest</span></strong></td>
+                <td class="mycell col-md-1"><strong><span class="label label-success">Latest</span></strong></td>
               <%elsif f.id != @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-                <td class="mycell2"><strong><span class="label label-warning">Expired</span></strong></td>
+                <td class="mycell col-md-1"><strong><span class="label label-warning">Expired</span></strong></td>
               <%else%>
-                <td class="mycell2"><strong><span class="label label-danger">Ancient Price</span></strong></td>
+                <td class="mycell col-md-1"><strong><span class="label label-danger">Ancient Price</span></strong></td>
               <%end%>
-              <td class="mycell">
+              <td class="mycell col-md-1">
                 <%= f.regular %>
               </td>
-              <td class="mycell"><%= f.medium %></td>
-              <td class="mycell"><%= f.premium %></td>
-              <td class="mycell"><%= f.diesel %></td>
+              <td class="mycell col-md-1"><%= f.medium %></td>
+              <td class="mycell col-md-1"><%= f.premium %></td>
+              <td class="mycell col-md-1"><%= f.diesel %></td>
               <% if f.id == @latest_fuel_price.id && (@latest_fuel_price.created_at > t.beginning_of_day) && (@latest_fuel_price.created_at <= t) %>
-              <td class="mycell"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
+              <td class="mycell col-md-1"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
               <%else%>
-                <td class="mycell"><strong><span class="label label-danger">Uneditable</span></strong></td>
+                <td class="mycell col-md-1"><strong><span class="label label-danger">Uneditable</span></strong></td>
               <%end%>
 
             </tr>

@@ -28,10 +28,10 @@
           <% @texts.each do |f|%>
           <tbody>
             <tr class="gradeX">
-              <td class="mycell5"><strong><%= f.created_at.strftime('%D%M') %></strong></td>
-              <td class="mycell5"><%= f.to %></td>
-              <td class="mycell5"><strong><%= f.body %></strong></td>
-              <td class="mycell1"><strong><span class="label label-success">Sent</span></strong></td>
+              <td class="mycell col-md-1"><strong><%= f.created_at.strftime('%D%M') %></strong></td>
+              <td class="mycell col-md-1"><%= f.to %></td>
+              <td class="mycell"><strong><%= f.body %></strong></td>
+              <td class="mycell1 col-md-1"><strong><span class="label label-success">Sent</span></strong></td>
 
 
             </tr>
