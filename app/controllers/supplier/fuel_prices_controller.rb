@@ -5,6 +5,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
   def index
     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
     @latest_fuel_price = current_user.fuel_prices.last
+    @fuel_price = current_user.fuel_prices.build
   end
 
   def new

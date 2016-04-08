@@ -3,6 +3,7 @@ class Supplier::ContactsController < Supplier::ApplicationController
 
   def index
     @contacts = current_user.contacts.all.order('created_at DESC')
+    @contact = current_user.contacts.build
   end
 
   def new
