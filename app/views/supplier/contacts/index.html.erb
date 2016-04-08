@@ -21,85 +21,116 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newContact">New contact</button>
         </div>
         <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Cell Number</th>
-              <th>87OCT Margin</th>
-              <th>91OCT Margin</th>
-              <th>93OCT Margin</th>
-              <th>Diesel Margin</th>
-              <th>Action</th>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Cell Number</th>
+                <th>87OCT Margin</th>
+                <th>91OCT Margin</th>
+                <th>93OCT Margin</th>
+                <th>Diesel Margin</th>
+                <th>Action</th>
 
+              </tr>
+            </thead>
+            <% @contacts.each do |contact|%>
+            <tbody>
+              <tr class="gradeX">
+                <td class="mycell col-md-2"><%= contact.first_name + " " + contact.last_name  %></td>
+                <td class="mycell col-md-2"><%= contact.cell_number%></td>
+                <td class="mycell col-md-1"><%= contact.c_regular %></td>
+                <td class="mycell col-md-1"><%= contact.c_medium %></td>
+                <td class="mycell col-md-1"><%= contact.c_premium %></td>
+                <td class="mycell col-md-1"><%= contact.c_diesel %></td>
+                <td class="mycell col-md-1"><%= link_to "View", supplier_contact_path(contact), class: "btn btn-success btn-xs"%></td>
 
-            </tr>
-          </thead>
-          <% @contacts.each do |contact|%>
-          <tbody>
-            <tr class="gradeX">
-              <td class="mycell col-md-2"><%= contact.first_name + " " + contact.last_name  %></td>
-              <td class="mycell col-md-2"><%= contact.cell_number%></td>
-              <td class="mycell col-md-1"><%= contact.c_regular %></td>
-              <td class="mycell col-md-1"><%= contact.c_medium %></td>
-              <td class="mycell col-md-1"><%= contact.c_premium %></td>
-              <td class="mycell col-md-1"><%= contact.c_diesel %></td>
-              <td class="mycell col-md-1"><%= link_to "View", supplier_contact_path(contact), class: "btn btn-success btn-xs"%></td>
+              </tr>
+              <%end%>
+            </tbody>
 
-            </tr>
-<%end%>
-          </tbody>
+          </table>
 
-        </table>
-
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
-
-
-
-
-
-<div class="modal inmodal" id="newContact" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <i class="fa fa-users modal-icon"></i>
-                                            <h4 class="modal-title">Add New Contact</h4>
-                                            <span class="font-bold">New contacts will get text message of your latest prices</span></br>
-                                            <span class="font-bold">As (your fuel price + the formula). Set the formula for them below.</span>
-                                        </div>
-                                        <div class="modal-body">
-                                          <%= simple_form_for @contact, url: supplier_contacts_path do |f| %>
-                                          <%= f.input :first_name, label: "First Name" %>
-                                          <%= f.input :last_name, label: "Last Name"%>
-                                          <%= f.input :business_name, label: "Business Name" %>
-                                        <!--  <%= f.input :phone_number, label: "Phone Number" %> -->
-                                          <%= f.input :cell_number, label: "Mobile Number" %>
-                                          <%= f.input :carrier, :label => "Mobile Carrier", :collection => mobile_carrier, :selected => "Tmobile"%>
-                                        <!--  <%= f.input :street_address, label: "Street Address" %>
+  <div class="modal inmodal" id="newContact" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content animated bounceInRight">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <i class="fa fa-users modal-icon"></i>
+          <h4 class="modal-title">Add New Contact</h4>
+          <span class="font-bold">New contacts will get text message of your latest prices</span>
+        </br>
+        <span class="font-bold">As (your fuel price + the formula). Set the formula for them below.</span>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@contact, url: supplier_contacts_path,wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
+        :horizontal_boolean }) do |f| %>
+        <%= f.input :first_name, label: "First Name" %>
+        <%= f.input :last_name, label: "Last Name"%>
+        <%= f.input :business_name, label: "Business Name" %>
+        <!--  <%= f.input :phone_number, label: "Phone Number" %> -->
+        <%= f.input :cell_number, label: "Mobile Number" %>
+      <!--  <%= f.input :carrier, :label => "Mobile Carrier", :collection => mobile_carrier, :selected => "Tmobile"%> -->
+        <!--  <%= f.input :street_address, label: "Street Address" %>
                                           <%= f.input :apt_suite, label: "Apt/Suite" %>
                                           <%= f.input :city, label: "City" %>
                                           <%= f.input :state, :label => "State", :collection => us_states, :selected => "New Jersey"%>
                                           <%= f.input :zip_code, :label => "Zip Code"%> -->
-                                          <%= f.input :c_regular, :label => "Regular", class:  "form-control" %>
+        <%= f.input :c_regular, label: "Regular", wrapper: :vertical_input_group, hint: "Margin formula for Regular." do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :c_regular, class: "form-control", placeholder: "+0.002" %>
+        <%end%>
+        <%= f.input :c_medium, label: "Medium", wrapper: :vertical_input_group, hint: "Margin formula for Medium." do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :c_medium, class: "form-control", placeholder: "+0.002" %>
+        <%end%>
+        <%= f.input :c_premium, label: "Premium", wrapper: :vertical_input_group, hint: "Margin formula for Premium." do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :c_premium, class: "form-control", placeholder: "+0.002" %>
+        <%end%>
+        <%= f.input :c_diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Margin formula for Diesel." do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :c_diesel, class: "form-control", placeholder: "+0.002" %>
+        <%end%>
+        <%= f.input :c_delivery, label: "Delivery Charges", wrapper: :vertical_input_group, hint: "Delivery cost for this contact." do %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-usd" style="color:#1ab394"></i>
+          </button>
+        </span>
+        <%= f.input_field :c_delivery, class: "form-control" , placeholder: "+0.002" %>
+        <%end%>
 
-                                          <%= f.input :c_medium, :label => "Medium"%>
-                                          <%= f.input :c_premium, :label => "Premium"%>
-                                          <%= f.input :c_diesel, :label => "Diesel"%>
-                                          <%= f.input :c_delivery, :label => "Delivery Charges"%>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                           <%= f.button :submit, "Add Retailer", class: "btn btn-primary"%>
-                                        </div>
-                                          <%end%>
-                                    </div>
-                                </div>
-                            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+        <%= f.button :submit, "Add Retailer", class: "btn btn-primary"%>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>

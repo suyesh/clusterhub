@@ -75,17 +75,43 @@
                                 <div class="modal-content animated bounceInRight">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <i class="fa fa-usd modal-icon"></i>
+                                            <i class="fa fa-usd modal-icon" style="color:#1ab394"></i>
                                             <h4 class="modal-title">Add New Fuel Price</h4>
                                             <span class="font-bold">Your contacts will get text message of your latest price</span></br>
                                             <span class="font-bold">As (your fuel price + the formula).</span>
                                         </div>
                                         <div class="modal-body">
-                                          <%= simple_form_for @fuel_price, url: supplier_fuel_prices_path, class: "m-t" do |f| %>
-                                          <%= f.input :regular, label: "Regular" %>
-                                          <%= f.input :medium, label: "Medium"%>
-                                          <%= f.input :premium, label: "Premium" %>
-                                          <%= f.input :diesel, label: "Diesel" %>
+                                          <%= simple_form_for(@fuel_price, url: supplier_fuel_prices_path, wrapper: :vertical_form,
+        wrapper_mappings: {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          radio_buttons: :horizontal_radio_and_checkboxes,
+          file: :horizontal_file_input,
+          boolean: :horizontal_boolean
+        }) do |f| %>
+                                            <%= f.input :regular, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price for Regular" do %>
+                                               <span class="input-group-btn">
+                                                 <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
+                                               </span>
+                                               <%= f.input_field :regular, class: "form-control", placeholder: "1.25" %>
+                                          <%end%>
+                                          <%= f.input :medium, label: "Medium", wrapper: :vertical_input_group, hint: "Your base price for Medium" do %>
+                                             <span class="input-group-btn">
+                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
+                                             </span>
+                                             <%= f.input_field :medium, class: "form-control", placeholder: "1.25" %>
+                                        <%end%>
+                                          <%= f.input :premium, label: "Premium", wrapper: :vertical_input_group, hint: "Your base price for Premium" do %>
+                                             <span class="input-group-btn">
+                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
+                                             </span>
+                                             <%= f.input_field :premium, class: "form-control", placeholder: "1.25" %>
+                                        <%end%>
+                                          <%= f.input :diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Your base price for Diesel" do %>
+                                             <span class="input-group-btn">
+                                               <button class="btn btn-default" type="button"><i class="fa fa-usd" style="color:#1ab394"></i></button>
+                                             </span>
+                                             <%= f.input_field :diesel, class: "form-control", placeholder: "1.25" %>
+                                        <%end%>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
