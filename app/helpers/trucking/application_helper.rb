@@ -1,0 +1,2 @@
+module Trucking::ApplicationHelper
+end

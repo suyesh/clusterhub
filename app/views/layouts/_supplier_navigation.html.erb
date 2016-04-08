@@ -1,0 +1,67 @@
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+    <div class="row border-bottom white-bg">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <i class="fa fa-reorder"></i>
+            </button>
+            <%= link_to "pH+", supplier_dashboard_path, class:"navbar-brand"%>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="accountNumber">
+                    <%= link_to supplier_dashboard_path, class: "accountNumber" do %>
+                    <i class="fa fa-user"></i><strong>NJSUP2347</strong>
+                    <%end%>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-rocket" style="color:#EF5350"></i><strong>Price<span style="color:#EF5350">Rocket</span></strong> <span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><%= link_to "Fuel Price", supplier_fuel_prices_path %></li>
+                        <li><%= link_to "Retailers", supplier_contacts_path %></li>
+                        <li><a href="">Mass Send</a></li>
+                        <li><%= link_to "Text History", supplier_pricerocket_history_path %></li>
+                    </ul>
+                </li>
+<!-- #TODO ORders and Documents and all
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money"> </i><strong>Orders</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Latest</a></li>
+                        <li><a href="">Pending</a></li>
+                        <li><a href="">Completed</a></li>
+                        <li><a href="">Order Reports</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i><strong>Briefcase</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Documents</a></li>
+                        <li><a href="">Reports</a></li>
+                        <li><a href="">Opus Price</a></li>
+                        <li><a href="">Bank</a></li>
+                    </ul>
+                </li>
+                -->
+                <li class="dropdown">
+                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i><strong>Options</strong><span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="">Profile</a></li>
+                        <li><a href="">Billing</a></li>
+                        <li><a href="">Network</a></li>
+                        <li><a href="">Resolution Center</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-top-links navbar-right">
+              <li>
+                  <%= link_to logout_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i> <strong>Log Out</strong>
+                  <%end%>
+              </li>
+            </ul>
+        </div>
+    </nav>
+    </div>

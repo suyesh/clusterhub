@@ -1,0 +1,49 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2><%= current_user.first_name %>'s Dashboard</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", admin_dashboard_path %>
+            </li>
+            <li class="active">
+                <strong>Retailers</strong>
+            </li>
+            <%= link_to "Add New", new_admin_retailer_path, class: "btn btn-primary pull-right"%>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+  <% @retailers.each do |retailer| %>
+      <div class="col-lg-4">
+          <div class="contact-box center-version">
+
+              <%= link_to admin_retailer_path(retailer) do %>
+
+                  <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
+
+
+                  <h3 class="m-b-xs"><strong><%=retailer_full_name(retailer) %></strong></h3>
+
+                  <div class="font-bold"><%= retailer.business_name%></div>
+                  <address class="m-t-md">
+                      <strong>Mobile:<%=  retailer.cell_number %></strong><br>
+                    <%=   retailer.street_address %><br>
+                      <%= retailer.city%>,<%=retailer.state %> , <%= retailer.zip_code%><br>
+                      <abbr title="Phone">Phone:</abbr><%= retailer.phone_number%>
+                  </address>
+
+              <%end%>
+              <div class="contact-box-footer">
+                  <div class="m-t-xs btn-group">
+                     <%= link_to "Edit", edit_admin_retailer_path(retailer), class: "btn btn-xs btn-success" %>
+                     <%= link_to "Status: #{retailer.status}", edit_admin_retailer_path(retailer), class: "btn btn-xs btn-#{retailer.active? ? 'primary' : 'danger'}" %>
+                  </div>
+              </div>
+          </div>
+      </div>
+<%end%>
+</div>
+
+</div>

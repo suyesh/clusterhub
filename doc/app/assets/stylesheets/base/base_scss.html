@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>base.scss - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/suppliers_coffee.html">suppliers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/admin/truckings_coffee.html">truckings.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/inspinia_js.html">inspinia.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/loginrequired_coffee.html">loginrequired.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer_coffee.html">retailer.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/stations_coffee.html">stations.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/retailer/tanks_coffee.html">tanks.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/sessions_coffee.html">sessions.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/contacts_coffee.html">contacts.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/fuel_prices_coffee.html">fuel_prices.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/supplier/retailers_coffee.html">retailers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/application_coffee.html">application.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/trucking/dashboard_coffee.html">dashboard.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/users_coffee.html">users.coffee</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/suppliers_scss.html">suppliers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/admin/truckings_scss.html">truckings.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/badgets_labels_scss.html">badgets_labels.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/base_scss.html">base.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/buttons_scss.html">buttons.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/chat_scss.html">chat.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/custom_scss.html">custom.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/elements_scss.html">elements.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/landing_scss.html">landing.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/md-skin_scss.html">md-skin.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/media_scss.html">media.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/metismenu_scss.html">metismenu.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/mixins_scss.html">mixins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/navigation_scss.html">navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/pages_scss.html">pages.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/rtl_scss.html">rtl.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/sidebar_scss.html">sidebar.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/skins_scss.html">skins.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/spinners_scss.html">spinners.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/theme-config_scss.html">theme-config.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/top_navigation_scss.html">top_navigation.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/typography_scss.html">typography.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/variables_scss.html">variables.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/loginrequired_scss.html">loginrequired.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer_scss.html">retailer.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/stations_scss.html">stations.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/retailer/tanks_scss.html">tanks.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/sessions_scss.html">sessions.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/style_scss.html">style.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/contacts_scss.html">contacts.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/fuel_prices_scss.html">fuel_prices.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/supplier/retailers_scss.html">retailers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/trucking/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../../log/test_log.html">test.log</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/activated.html">activated</a>
+  
+    <li><a href="../../../../spec/fixtures/user_mailer/welcome.html">welcome</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/jquery/jquery-2_1_1_js.html">jquery-2.1.1.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/metisMenu/jquery_metisMenu_js.html">jquery.metisMenu.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/pace/pace_min_js.html">pace.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/slimscroll/jquery_slimscroll_min_js.html">jquery.slimscroll.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/stylesheets/animate/animate_css.html">animate.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/stylesheets/base/base.scss">
+
+<p>body {</p>
+
+<pre>font-family: &quot;open sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+background-color: #2f4050;
+font-size: 13px;
+color: $text-color;
+overflow-x: hidden;</pre>
+
+<p>}</p>
+
+<p>html, body {</p>
+
+<pre>height: 100%;</pre>
+
+<p>}</p>
+
+<p>body.full-height-layout wrapper, body.full-height-layout page-wrapper {</p>
+
+<pre>height: 100%;</pre>
+
+<p>}</p>
+
+<p>page-wrapper {</p>
+
+<pre>min-height: auto;</pre>
+
+<p>}</p>
+
+<p>body.boxed-layout {</p>
+
+<pre>background: $boxed-backgound;</pre>
+
+<p>}</p>
+
+<p>body.boxed-layout wrapper {</p>
+
+<pre>background-color: #2f4050;
+max-width: $boxed-width;
+margin: 0 auto;
+-webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+-moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);</pre>
+
+<p>}</p>
+
+<p>.top-navigation.boxed-layout wrapper, .boxed-layout wrapper.top-navigation
+{</p>
+
+<pre>max-width: 1300px !important;</pre>
+
+<p>}</p>
+
+<p>.block {</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+
+<p>.clear {</p>
+
+<pre>display: block;
+overflow: hidden;</pre>
+
+<p>}</p>
+
+<p>a {</p>
+
+<pre>cursor: pointer;</pre>
+
+<p>}</p>
+
+<p>a:hover, a:focus {</p>
+
+<pre>text-decoration: none;</pre>
+
+<p>}</p>
+
+<p>.border-bottom {</p>
+
+<pre>border-bottom: 1px solid $border-color !important;</pre>
+
+<p>}</p>
+
+<p>.font-bold {</p>
+
+<pre>font-weight: 600;</pre>
+
+<p>}</p>
+
+<p>.font-noraml {</p>
+
+<pre>font-weight: 400;</pre>
+
+<p>}</p>
+
+<p>.text-uppercase {</p>
+
+<pre>text-transform: uppercase;</pre>
+
+<p>}</p>
+
+<p>.b-r {</p>
+
+<pre>border-right: 1px solid $border-color;</pre>
+
+<p>}</p>
+
+<p>.hr-line-dashed {</p>
+
+<pre>border-top: 1px dashed $border-color;
+color: #ffffff;
+background-color: #ffffff;
+height: 1px;
+margin: 20px 0;</pre>
+
+<p>}</p>
+
+<p>.hr-line-solid {</p>
+
+<pre>border-bottom: 1px solid $border-color;
+background-color: rgba(0, 0, 0, 0);
+border-style: solid !important;
+margin-top: 15px;
+margin-bottom: 15px;</pre>
+
+<p>}</p>
+
+<p>video {</p>
+
+<pre>width: 100% !important;
+height: auto !important;</pre>
+
+<p>}</p>
+
+<pre class="ruby"><span class="ruby-constant">GALLERY</span>
+</pre>
+
+<p>.gallery &gt; .row &gt; div {</p>
+
+<pre>margin-bottom: 15px;</pre>
+
+<p>}</p>
+
+<p>.fancybox img {</p>
+
+<pre>margin-bottom: 5px;
+   Only for demo   
+width: 24%;</pre>
+
+<p>}</p>
+
+<p>/* Summernote text editor  */ .note-editor {</p>
+
+<pre>height: auto !important;
+min-height: 300px;</pre>
+
+<p>}</p>
+
+<p>.note-editor.fullscreen {</p>
+
+<pre>z-index: 2050;</pre>
+
+<p>}</p>
+
+<p>/* MODAL */ .modal-content {</p>
+
+<pre>background-clip: padding-box;
+background-color: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0);
+border-radius: 4px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+outline: 0 none;
+position: relative;</pre>
+
+<p>}</p>
+
+<p>.modal-dialog {</p>
+
+<pre>z-index: 2200;</pre>
+
+<p>}</p>
+
+<p>.modal-body {</p>
+
+<pre>padding: 20px 30px 30px 30px;</pre>
+
+<p>}</p>
+
+<p>.inmodal .modal-body {</p>
+
+<pre>background: #f8fafb;</pre>
+
+<p>}</p>
+
+<p>.inmodal .modal-header {</p>
+
+<pre>padding: 30px 15px;
+text-align: center;</pre>
+
+<p>}</p>
+
+<p>.animated.modal.fade .modal-dialog {</p>
+
+<pre>-webkit-transform: none;
+-ms-transform: none;
+-o-transform: none;
+transform: none;</pre>
+
+<p>}</p>
+
+<p>.inmodal .modal-title {</p>
+
+<pre>font-size: 26px;</pre>
+
+<p>}</p>
+
+<p>.inmodal .modal-icon {</p>
+
+<pre>font-size: 84px;
+color: #e2e3e3;</pre>
+
+<p>}</p>
+
+<p>.modal-footer {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>}</p>
+
+<p>/* WRAPPERS */</p>
+
+<p>wrapper {</p>
+
+<pre>width: 100%;
+overflow-x: hidden;</pre>
+
+<p>}</p>
+
+<p>.wrapper {</p>
+
+<pre>padding: 0 20px;</pre>
+
+<p>}</p>
+
+<p>.wrapper-content {</p>
+
+<pre>padding: 20px 10px 40px;</pre>
+
+<p>}</p>
+
+<p>page-wrapper {</p>
+
+<pre>padding: 0 15px;
+min-height: 568px;
+position: relative !important;</pre>
+
+<p>}</p>
+
+<p>@media (min-width: 768px) {</p>
+
+<pre>#page-wrapper {
+  position: inherit;
+  margin: 0 0 0 240px;
+  min-height: 2002px;
+}</pre>
+
+<p>}</p>
+
+<p>.title-action {</p>
+
+<pre>text-align: right;
+padding-top: 30px;</pre>
+
+<p>}</p>
+
+<p>.ibox-content h1, .ibox-content h2, .ibox-content h3, .ibox-content h4,
+.ibox-content h5, .ibox-title h1, .ibox-title h2, .ibox-title h3,
+.ibox-title h4, .ibox-title h5 {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>}</p>
+
+<p>ul.unstyled, ol.unstyled {</p>
+
+<pre>list-style: none outside none;
+margin-left: 0;</pre>
+
+<p>}</p>
+
+<p>.big-icon {</p>
+
+<pre>font-size: 160px !important;
+color: #e5e6e7;</pre>
+
+<p>}</p>
+
+<p>/* FOOTER */</p>
+
+<p>.footer {</p>
+
+<pre>background: none repeat scroll 0 0 white;
+border-top: 1px solid $border-color;
+bottom: 0;
+left: 0;
+padding: 10px 20px;
+position: absolute;
+right: 0;</pre>
+
+<p>}</p>
+
+<p>.footer.fixed_full {</p>
+
+<pre>position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+padding: 10px 20px;
+background: white;
+border-top: 1px solid $border-color;</pre>
+
+<p>}</p>
+
+<p>.footer.fixed {</p>
+
+<pre>position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+padding: 10px 20px;
+background: white;
+border-top: 1px solid $border-color;
+margin-left: $sidebar-width;</pre>
+
+<p>}</p>
+
+<p>body.mini-navbar .footer.fixed, body.body-small.mini-navbar .footer.fixed {</p>
+
+<pre>margin: 0 0 0 70px;</pre>
+
+<p>}</p>
+
+<p>body.mini-navbar.canvas-menu .footer.fixed, body.canvas-menu .footer.fixed
+{</p>
+
+<pre>margin: 0 !important;</pre>
+
+<p>}</p>
+
+<p>body.fixed-sidebar.body-small.mini-navbar .footer.fixed {</p>
+
+<pre>margin: 0 0 0 $sidebar-width;</pre>
+
+<p>}</p>
+
+<p>body.body-small .footer.fixed {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>}</p>
+
+<p>/* PANELS */</p>
+
+<p>.page-heading {</p>
+
+<pre>border-top: 0;
+padding: 0 10px 20px 10px;</pre>
+
+<p>}</p>
+
+<p>.panel-heading h1, .panel-heading h2 {</p>
+
+<pre>margin-bottom: 5px;</pre>
+
+<p>}</p>
+
+<p>/* TABLES */</p>
+
+<p>.table-bordered {</p>
+
+<pre>border: 1px solid #EBEBEB;</pre>
+
+<p>}</p>
+
+<p>.table-bordered &gt; thead &gt; tr &gt; th, .table-bordered &gt; thead &gt;
+tr &gt; td {</p>
+
+<pre>background-color: #F5F5F6;
+border-bottom-width: 1px;</pre>
+
+<p>}</p>
+
+<p>.table-bordered &gt; thead &gt; tr &gt; th, .table-bordered &gt; tbody &gt;
+tr &gt; th, .table-bordered &gt; tfoot &gt; tr &gt; th, .table-bordered
+&gt; thead &gt; tr &gt; td, .table-bordered &gt; tbody &gt; tr &gt; td,
+.table-bordered &gt; tfoot &gt; tr &gt; td {</p>
+
+<pre>border: 1px solid #e7e7e7;</pre>
+
+<p>}</p>
+
+<p>.table &gt; thead &gt; tr &gt; th {</p>
+
+<pre>border-bottom: 1px solid #DDDDDD;
+vertical-align: bottom;</pre>
+
+<p>}</p>
+
+<p>.table &gt; thead &gt; tr &gt; th, .table &gt; tbody &gt; tr &gt; th,
+.table &gt; tfoot &gt; tr &gt; th, .table &gt; thead &gt; tr &gt; td,
+.table &gt; tbody &gt; tr &gt; td, .table &gt; tfoot &gt; tr &gt; td {</p>
+
+<pre>border-top: 1px solid $border-color;
+line-height: 1.42857;
+padding: 8px;
+vertical-align: top;</pre>
+
+<p>}</p>
+
+<p>/* PANELS */</p>
+
+<p>.panel.blank-panel {</p>
+
+<pre>background: none;
+margin: 0;</pre>
+
+<p>}</p>
+
+<p>.blank-panel .panel-heading {</p>
+
+<pre>padding-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>.nav-tabs &gt; li.active &gt; a, .nav-tabs &gt; li.active &gt; a:hover,
+.nav-tabs &gt; li.active &gt; a:focus {</p>
+
+<pre>-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background: none;
+border-color: #DDDDDD #DDDDDD rgba(0, 0, 0, 0);
+border-bottom: $gray;
+border-image: none;
+border-style: solid;
+border-width: 1px;
+color: #555555;
+cursor: default;</pre>
+
+<p>}</p>
+
+<p>.nav.nav-tabs li {</p>
+
+<pre>background: none;
+border: none;</pre>
+
+<p>}</p>
+
+<p>.nav-tabs &gt; li &gt; a {</p>
+
+<pre>color: #A7B1C2;
+font-weight: 600;
+padding: 10px 20px 10px 25px;</pre>
+
+<p>}</p>
+
+<p>.nav-tabs &gt; li &gt; a:hover, .nav-tabs &gt; li &gt; a:focus {</p>
+
+<pre>background-color: #e6e6e6;
+color: $text-color;</pre>
+
+<p>}</p>
+
+<p>.ui-tab .tab-content {</p>
+
+<pre>padding: 20px 0;</pre>
+
+<p>}</p>
+
+<p>/* GLOBAL  */</p>
+
+<p>.no-padding {</p>
+
+<pre>padding: 0 !important;</pre>
+
+<p>}</p>
+
+<p>.no-borders {</p>
+
+<pre>border: none !important;</pre>
+
+<p>}</p>
+
+<p>.no-margins {</p>
+
+<pre>margin: 0 !important;</pre>
+
+<p>}</p>
+
+<p>.no-top-border {</p>
+
+<pre>border-top: 0 !important;</pre>
+
+<p>}</p>
+
+<p>.ibox-content.text-box {</p>
+
+<pre>padding-bottom: 0;
+padding-top: 15px;</pre>
+
+<p>}</p>
+
+<p>.border-left-right {</p>
+
+<pre>border-left: 1px solid $border-color;
+border-right: 1px solid $border-color;
+border-top: none;
+border-bottom: none;</pre>
+
+<p>}</p>
+
+<p>.border-left {</p>
+
+<pre>border-left: 1px solid $border-color;
+border-right: none;
+border-top: none;
+border-bottom: none;</pre>
+
+<p>}</p>
+
+<p>.border-right {</p>
+
+<pre>border-left: none;
+border-right: 1px solid $border-color;
+border-top: none;
+border-bottom: none;</pre>
+
+<p>}</p>
+
+<p>.full-width {</p>
+
+<pre>width: 100% !important;</pre>
+
+<p>}</p>
+
+<p>.link-block {</p>
+
+<pre>font-size: 12px;
+padding: 10px;</pre>
+
+<p>}</p>
+
+<p>.nav.navbar-top-links .link-block a {</p>
+
+<pre>font-size: 12px;</pre>
+
+<p>}</p>
+
+<p>.link-block a {</p>
+
+<pre>font-size: 10px;
+color: inherit;</pre>
+
+<p>}</p>
+
+<p>body.mini-navbar .branding {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>img.circle-border {</p>
+
+<pre>border: 6px solid #FFFFFF;
+border-radius: 50%;</pre>
+
+<p>}</p>
+
+<p>.branding {</p>
+
+<pre>float: left;
+color: #FFFFFF;
+font-size: 18px;
+font-weight: 600;
+padding: 17px 20px;
+text-align: center;
+background-color: $navy;</pre>
+
+<p>}</p>
+
+<p>.login-panel {</p>
+
+<pre>margin-top: 25%;</pre>
+
+<p>}</p>
+
+<p>.icons-box h3 {</p>
+
+<pre>margin-top: 10px;
+margin-bottom: 10px;</pre>
+
+<p>}</p>
+
+<p>.icons-box .infont a i {</p>
+
+<pre>font-size: 25px;
+display: block;
+color: $text-color;</pre>
+
+<p>}</p>
+
+<p>.icons-box .infont a {</p>
+
+<pre>color: #a6a8a9;</pre>
+
+<p>}</p>
+
+<p>.icons-box .infont a {</p>
+
+<pre>padding: 10px;
+
+margin: 1px;
+display: block;</pre>
+
+<p>}</p>
+
+<p>.ui-draggable .ibox-title {</p>
+
+<pre>cursor: move;</pre>
+
+<p>}</p>
+
+<p>.breadcrumb {</p>
+
+<pre>background-color: #ffffff;
+padding: 0;
+margin-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>.breadcrumb &gt; li a {</p>
+
+<pre>color: inherit;</pre>
+
+<p>}</p>
+
+<p>.breadcrumb &gt; .active {</p>
+
+<pre>color: inherit;</pre>
+
+<p>}</p>
+
+<p>code {</p>
+
+<pre>background-color: #F9F2F4;
+border-radius: 4px;
+color: #ca4440;
+font-size: 90%;
+padding: 2px 4px;
+white-space: nowrap;</pre>
+
+<p>}</p>
+
+<p>.ibox {</p>
+
+<pre>clear: both;
+margin-bottom: 25px;
+margin-top: 0;
+padding: 0;</pre>
+
+<p>}</p>
+
+<p>.ibox.collapsed .ibox-content {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>.ibox.collapsed .fa.fa-chevron-up:before {</p>
+
+<pre>content: &quot;\f078&quot;;</pre>
+
+<p>}</p>
+
+<p>.ibox.collapsed .fa.fa-chevron-down:before {</p>
+
+<pre>content: &quot;\f077&quot;;</pre>
+
+<p>}</p>
+
+<p>.ibox:after, .ibox:before {</p>
+
+<pre>display: table;</pre>
+
+<p>}</p>
+
+<p>.ibox-title {</p>
+
+<pre>-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background-color: $ibox-title-bg;
+border-color: $border-color;
+border-image: none;
+border-style: solid solid none;
+border-width: 3px 0 0;
+color: inherit;
+margin-bottom: 0;
+padding: 14px 15px 7px;
+min-height: 48px;</pre>
+
+<p>}</p>
+
+<p>.ibox-content {</p>
+
+<pre>background-color: $ibox-content-bg;
+color: inherit;
+padding: 15px 20px 20px 20px;
+
+border-color: $border-color;
+border-image: none;
+border-style: solid solid none;
+border-width: 1px 0;</pre>
+
+<p>}</p>
+
+<p>.ibox-footer {</p>
+
+<pre>color: inherit;
+border-top: 1px solid $border-color;
+font-size: 90%;
+background: #ffffff;
+padding: 10px 15px;</pre>
+
+<p>}</p>
+
+<p>table.table-mail tr td {</p>
+
+<pre>padding: 12px;</pre>
+
+<p>}</p>
+
+<p>.table-mail .check-mail {</p>
+
+<pre>padding-left: 20px;</pre>
+
+<p>}</p>
+
+<p>.table-mail .mail-date {</p>
+
+<pre>padding-right: 20px;</pre>
+
+<p>}</p>
+
+<p>.star-mail, .check-mail {</p>
+
+<pre>width: 40px;</pre>
+
+<p>}</p>
+
+<p>.unread td a, .unread td {</p>
+
+<pre>font-weight: 600;
+color: inherit;</pre>
+
+<p>}</p>
+
+<p>.read td a, .read td {</p>
+
+<pre>font-weight: normal;
+color: inherit;</pre>
+
+<p>}</p>
+
+<p>.unread td {</p>
+
+<pre>background-color: #f9f8f8;</pre>
+
+<p>}</p>
+
+<p>.ibox-content {</p>
+
+<pre>clear: both;</pre>
+
+<p>}</p>
+
+<p>.ibox-heading {</p>
+
+<pre>background-color: #f3f6fb;
+border-bottom: none;</pre>
+
+<p>}</p>
+
+<p>.ibox-heading h3 {</p>
+
+<pre>font-weight: 200;
+font-size: 24px;</pre>
+
+<p>}</p>
+
+<p>.ibox-title h5 {</p>
+
+<pre>display: inline-block;
+font-size: 14px;
+margin: 0 0 7px;
+padding: 0;
+text-overflow: ellipsis;
+float: left;</pre>
+
+<p>}</p>
+
+<p>.ibox-title .label {</p>
+
+<pre>float: left;
+margin-left: 4px;</pre>
+
+<p>}</p>
+
+<p>.ibox-tools {</p>
+
+<pre>display: block;
+float: none;
+margin-top: 0;
+position: relative;
+padding: 0;
+text-align: right;</pre>
+
+<p>}</p>
+
+<p>.ibox-tools a {</p>
+
+<pre>cursor: pointer;
+margin-left: 5px;
+color: #c4c4c4;</pre>
+
+<p>}</p>
+
+<p>.ibox-tools a.btn-primary {</p>
+
+<pre>color: #fff;</pre>
+
+<p>}</p>
+
+<p>.ibox-tools .dropdown-menu &gt; li &gt; a {</p>
+
+<pre>padding: 4px 10px;
+font-size: 12px;</pre>
+
+<p>}</p>
+
+<p>.ibox .ibox-tools.open &gt; .dropdown-menu {</p>
+
+<pre>left: auto;
+right: 0;</pre>
+
+<p>}</p>
+
+<p>/* BACKGROUNDS */</p>
+
+<p>.gray-bg {</p>
+
+<pre>background-color: $gray;</pre>
+
+<p>}</p>
+
+<p>.white-bg {</p>
+
+<pre>background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.navy-bg {</p>
+
+<pre>background-color: $navy;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.blue-bg {</p>
+
+<pre>background-color: $blue;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.lazur-bg {</p>
+
+<pre>background-color: $lazur;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.yellow-bg {</p>
+
+<pre>background-color: $yellow;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.red-bg {</p>
+
+<pre>background-color: $red;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.black-bg {</p>
+
+<pre>background-color: #262626;</pre>
+
+<p>}</p>
+
+<p>.panel-primary {</p>
+
+<pre>border-color: $navy;</pre>
+
+<p>}</p>
+
+<p>.panel-primary &gt; .panel-heading {</p>
+
+<pre>background-color: $navy;
+border-color: $navy;</pre>
+
+<p>}</p>
+
+<p>.panel-success {</p>
+
+<pre>border-color: $blue;</pre>
+
+<p>}</p>
+
+<p>.panel-success &gt; .panel-heading {</p>
+
+<pre>background-color: $blue;
+border-color: $blue;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.panel-info {</p>
+
+<pre>border-color: $lazur;</pre>
+
+<p>}</p>
+
+<p>.panel-info &gt; .panel-heading {</p>
+
+<pre>background-color: $lazur;
+border-color: $lazur;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.panel-warning {</p>
+
+<pre>border-color: $yellow;</pre>
+
+<p>}</p>
+
+<p>.panel-warning &gt; .panel-heading {</p>
+
+<pre>background-color: $yellow;
+border-color: $yellow;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.panel-danger {</p>
+
+<pre>border-color: $red;</pre>
+
+<p>}</p>
+
+<p>.panel-danger &gt; .panel-heading {</p>
+
+<pre>background-color: $red;
+border-color: $red;
+color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.progress-bar {</p>
+
+<pre>background-color: $navy;</pre>
+
+<p>}</p>
+
+<p>.progress-small, .progress-small .progress-bar {</p>
+
+<pre>height: 10px;</pre>
+
+<p>}</p>
+
+<p>.progress-small, .progress-mini {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>}</p>
+
+<p>.progress-mini, .progress-mini .progress-bar {</p>
+
+<pre>height: 5px;
+margin-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>.progress-bar-navy-light {</p>
+
+<pre>background-color: #3dc7ab;</pre>
+
+<p>}</p>
+
+<p>.progress-bar-success {</p>
+
+<pre>background-color: $blue;</pre>
+
+<p>}</p>
+
+<p>.progress-bar-info {</p>
+
+<pre>background-color: $lazur;</pre>
+
+<p>}</p>
+
+<p>.progress-bar-warning {</p>
+
+<pre>background-color: $yellow;</pre>
+
+<p>}</p>
+
+<p>.progress-bar-danger {</p>
+
+<pre>background-color: $red;</pre>
+
+<p>}</p>
+
+<p>.panel-title {</p>
+
+<pre>font-size: inherit;</pre>
+
+<p>}</p>
+
+<p>.jumbotron {</p>
+
+<pre>border-radius: 6px;
+padding: 40px;</pre>
+
+<p>}</p>
+
+<p>.jumbotron h1 {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>}</p>
+
+<p>/* COLORS */</p>
+
+<p>.text-navy {</p>
+
+<pre>color: $navy;</pre>
+
+<p>}</p>
+
+<p>.text-primary {</p>
+
+<pre>color: inherit;</pre>
+
+<p>}</p>
+
+<p>.text-success {</p>
+
+<pre>color: $blue;</pre>
+
+<p>}</p>
+
+<p>.text-info {</p>
+
+<pre>color: $lazur;</pre>
+
+<p>}</p>
+
+<p>.text-warning {</p>
+
+<pre>color: $yellow;</pre>
+
+<p>}</p>
+
+<p>.text-danger {</p>
+
+<pre>color: $red;</pre>
+
+<p>}</p>
+
+<p>.text-muted {</p>
+
+<pre>color: #888888;</pre>
+
+<p>}</p>
+
+<p>.text-white {</p>
+
+<pre>color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>.simple_tag {</p>
+
+<pre>background-color: #f3f3f4;
+border: 1px solid #e7eaec;
+border-radius: 2px;
+color: inherit;
+font-size: 10px;
+margin-right: 5px;
+margin-top: 5px;
+padding: 5px 12px;
+display: inline-block;</pre>
+
+<p>}</p>
+
+<p>.img-shadow {</p>
+
+<pre>-webkit-box-shadow: 0 0 3px 0 rgba(145, 145, 145, 1);
+-moz-box-shadow: 0 0 3px 0 rgba(145, 145, 145, 1);
+box-shadow: 0 0 3px 0 rgba(145, 145, 145, 1);</pre>
+
+<p>}</p>
+
+<p>/* For handle diferent bg color in AngularJS version */
+.dashboards.dashboard_2 nav.navbar, .dashboards.dashboard_3 nav.navbar,
+.mailbox.inbox nav.navbar, .mailbox.email_view nav.navbar,
+.mailbox.email_compose nav.navbar, .dashboards.dashboard_4_1 nav.navbar,
+.metrics nav.navbar, .metrics.index nav.navbar, .dashboards.dashboard_5
+nav.navbar {</p>
+
+<pre>background: #fff;</pre>
+
+<p>}</p>
+
+<p>/* For handle diferent bg color in MVC version */ .Dashboard_2
+.navbar.navbar-static-top, .Dashboard_3 .navbar.navbar-static-top,
+.Dashboard_4_1 .navbar.navbar-static-top, .ComposeEmail
+.navbar.navbar-static-top, .EmailView .navbar.navbar-static-top, .Inbox
+.navbar.navbar-static-top, .Metrics .navbar.navbar-static-top, .Dashboard_5
+.navbar.navbar-static-top {</p>
+
+<pre>background: #fff;</pre>
+
+<p>}</p>
+
+<p>a.close-canvas-menu {</p>
+
+<pre>position: absolute;
+top: 10px;
+right: 15px;
+z-index: 1011;
+color: #a7b1c2;</pre>
+
+<p>}</p>
+
+<p>a.close-canvas-menu:hover {</p>
+
+<pre>color: #fff;</pre>
+
+<p>}</p>
+
+<p>.close-canvas-menu {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>.canvas-menu .close-canvas-menu {</p>
+
+<pre>display: block</pre>
+
+<p>}</p>
+
+<p>.light-navbar .navbar.navbar-static-top {</p>
+
+<pre>background-color: #fff</pre>
+
+<p>}</p>
+
+<p>/* FULL HEIGHT */</p>
+
+<p>.full-height {</p>
+
+<pre>height: 100%;</pre>
+
+<p>}</p>
+
+<p>.fh-breadcrumb {</p>
+
+<pre>height: calc(100% - 196px);
+margin: 0 -15px;
+position: relative</pre>
+
+<p>}</p>
+
+<p>.fh-no-breadcrumb {</p>
+
+<pre>height: calc(100% - 99px);
+margin: 0 -15px;
+position: relative</pre>
+
+<p>}</p>
+
+<p>.fh-column {</p>
+
+<pre>background: #fff;
+height: 100%;
+width: 240px;
+float: left</pre>
+
+<p>}</p>
+
+<p>.modal-backdrop {</p>
+
+<pre>z-index: 2040 !important;</pre>
+
+<p>}</p>
+
+<p>.modal {</p>
+
+<pre>z-index: 2050 !important;</pre>
+
+<p>}</p>
+
+<p>.spiner-example {</p>
+
+<pre>height: 200px;
+padding-top: 70px;</pre>
+
+<p>}</p>
+
+<p>/* MARGINS &amp; PADDINGS */</p>
+
+<p>.p-xxs {</p>
+
+<pre>padding: 5px;</pre>
+
+<p>}</p>
+
+<p>.p-xs {</p>
+
+<pre>padding: 10px;</pre>
+
+<p>}</p>
+
+<p>.p-sm {</p>
+
+<pre>padding: 15px;</pre>
+
+<p>}</p>
+
+<p>.p-m {</p>
+
+<pre>padding: 20px;</pre>
+
+<p>}</p>
+
+<p>.p-md {</p>
+
+<pre>padding: 25px;</pre>
+
+<p>}</p>
+
+<p>.p-lg {</p>
+
+<pre>padding: 30px;</pre>
+
+<p>}</p>
+
+<p>.p-xl {</p>
+
+<pre>padding: 40px;</pre>
+
+<p>}</p>
+
+<p>.p-w-xs {</p>
+
+<pre>padding: 0 10px;</pre>
+
+<p>}</p>
+
+<p>.p-w-sm {</p>
+
+<pre>padding: 0 15px;</pre>
+
+<p>}</p>
+
+<p>.p-w-m {</p>
+
+<pre>padding: 0 20px;</pre>
+
+<p>}</p>
+
+<p>.p-w-md {</p>
+
+<pre>padding: 0 25px;</pre>
+
+<p>}</p>
+
+<p>.p-w-lg {</p>
+
+<pre>padding: 0 30px;</pre>
+
+<p>}</p>
+
+<p>.p-w-xl {</p>
+
+<pre>padding: 0 40px;</pre>
+
+<p>}</p>
+
+<p>.m-xxs {</p>
+
+<pre>margin: 2px 4px;</pre>
+
+<p>}</p>
+
+<p>.m-xs {</p>
+
+<pre>margin: 5px;</pre>
+
+<p>}</p>
+
+<p>.m-sm {</p>
+
+<pre>margin: 10px;</pre>
+
+<p>}</p>
+
+<p>.m {</p>
+
+<pre>margin: 15px;</pre>
+
+<p>}</p>
+
+<p>.m-md {</p>
+
+<pre>margin: 20px;</pre>
+
+<p>}</p>
+
+<p>.m-lg {</p>
+
+<pre>margin: 30px;</pre>
+
+<p>}</p>
+
+<p>.m-xl {</p>
+
+<pre>margin: 50px;</pre>
+
+<p>}</p>
+
+<p>.m-n {</p>
+
+<pre>margin: 0 !important;</pre>
+
+<p>}</p>
+
+<p>.m-l-none {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>}</p>
+
+<p>.m-l-xs {</p>
+
+<pre>margin-left: 5px;</pre>
+
+<p>}</p>
+
+<p>.m-l-sm {</p>
+
+<pre>margin-left: 10px;</pre>
+
+<p>}</p>
+
+<p>.m-l {</p>
+
+<pre>margin-left: 15px;</pre>
+
+<p>}</p>
+
+<p>.m-l-md {</p>
+
+<pre>margin-left: 20px;</pre>
+
+<p>}</p>
+
+<p>.m-l-lg {</p>
+
+<pre>margin-left: 30px;</pre>
+
+<p>}</p>
+
+<p>.m-l-xl {</p>
+
+<pre>margin-left: 40px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-xxs {</p>
+
+<pre>margin-left: -1px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-xs {</p>
+
+<pre>margin-left: -5px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-sm {</p>
+
+<pre>margin-left: -10px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n {</p>
+
+<pre>margin-left: -15px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-md {</p>
+
+<pre>margin-left: -20px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-lg {</p>
+
+<pre>margin-left: -30px;</pre>
+
+<p>}</p>
+
+<p>.m-l-n-xl {</p>
+
+<pre>margin-left: -40px;</pre>
+
+<p>}</p>
+
+<p>.m-t-none {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>}</p>
+
+<p>.m-t-xxs {</p>
+
+<pre>margin-top: 1px;</pre>
+
+<p>}</p>
+
+<p>.m-t-xs {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>}</p>
+
+<p>.m-t-sm {</p>
+
+<pre>margin-top: 10px;</pre>
+
+<p>}</p>
+
+<p>.m-t {</p>
+
+<pre>margin-top: 15px;</pre>
+
+<p>}</p>
+
+<p>.m-t-md {</p>
+
+<pre>margin-top: 20px;</pre>
+
+<p>}</p>
+
+<p>.m-t-lg {</p>
+
+<pre>margin-top: 30px;</pre>
+
+<p>}</p>
+
+<p>.m-t-xl {</p>
+
+<pre>margin-top: 40px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-xxs {</p>
+
+<pre>margin-top: -1px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-xs {</p>
+
+<pre>margin-top: -5px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-sm {</p>
+
+<pre>margin-top: -10px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n {</p>
+
+<pre>margin-top: -15px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-md {</p>
+
+<pre>margin-top: -20px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-lg {</p>
+
+<pre>margin-top: -30px;</pre>
+
+<p>}</p>
+
+<p>.m-t-n-xl {</p>
+
+<pre>margin-top: -40px;</pre>
+
+<p>}</p>
+
+<p>.m-r-none {</p>
+
+<pre>margin-right: 0;</pre>
+
+<p>}</p>
+
+<p>.m-r-xxs {</p>
+
+<pre>margin-right: 1px;</pre>
+
+<p>}</p>
+
+<p>.m-r-xs {</p>
+
+<pre>margin-right: 5px;</pre>
+
+<p>}</p>
+
+<p>.m-r-sm {</p>
+
+<pre>margin-right: 10px;</pre>
+
+<p>}</p>
+
+<p>.m-r {</p>
+
+<pre>margin-right: 15px;</pre>
+
+<p>}</p>
+
+<p>.m-r-md {</p>
+
+<pre>margin-right: 20px;</pre>
+
+<p>}</p>
+
+<p>.m-r-lg {</p>
+
+<pre>margin-right: 30px;</pre>
+
+<p>}</p>
+
+<p>.m-r-xl {</p>
+
+<pre>margin-right: 40px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-xxs {</p>
+
+<pre>margin-right: -1px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-xs {</p>
+
+<pre>margin-right: -5px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-sm {</p>
+
+<pre>margin-right: -10px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n {</p>
+
+<pre>margin-right: -15px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-md {</p>
+
+<pre>margin-right: -20px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-lg {</p>
+
+<pre>margin-right: -30px;</pre>
+
+<p>}</p>
+
+<p>.m-r-n-xl {</p>
+
+<pre>margin-right: -40px;</pre>
+
+<p>}</p>
+
+<p>.m-b-none {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>.m-b-xxs {</p>
+
+<pre>margin-bottom: 1px;</pre>
+
+<p>}</p>
+
+<p>.m-b-xs {</p>
+
+<pre>margin-bottom: 5px;</pre>
+
+<p>}</p>
+
+<p>.m-b-sm {</p>
+
+<pre>margin-bottom: 10px;</pre>
+
+<p>}</p>
+
+<p>.m-b {</p>
+
+<pre>margin-bottom: 15px;</pre>
+
+<p>}</p>
+
+<p>.m-b-md {</p>
+
+<pre>margin-bottom: 20px;</pre>
+
+<p>}</p>
+
+<p>.m-b-lg {</p>
+
+<pre>margin-bottom: 30px;</pre>
+
+<p>}</p>
+
+<p>.m-b-xl {</p>
+
+<pre>margin-bottom: 40px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-xxs {</p>
+
+<pre>margin-bottom: -1px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-xs {</p>
+
+<pre>margin-bottom: -5px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-sm {</p>
+
+<pre>margin-bottom: -10px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n {</p>
+
+<pre>margin-bottom: -15px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-md {</p>
+
+<pre>margin-bottom: -20px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-lg {</p>
+
+<pre>margin-bottom: -30px;</pre>
+
+<p>}</p>
+
+<p>.m-b-n-xl {</p>
+
+<pre>margin-bottom: -40px;</pre>
+
+<p>}</p>
+
+<p>.space-15 {</p>
+
+<pre>margin: 15px 0;</pre>
+
+<p>}</p>
+
+<p>.space-20 {</p>
+
+<pre>margin: 20px 0;</pre>
+
+<p>}</p>
+
+<p>.space-25 {</p>
+
+<pre>margin: 25px 0;</pre>
+
+<p>}</p>
+
+<p>.space-30 {</p>
+
+<pre>margin: 30px 0;</pre>
+
+<p>}</p>
+
+<p>// Fullscreen functions</p>
+
+<p>.fullscreen-ibox-mode .animated {</p>
+
+<pre>animation: none;</pre>
+
+<p>}</p>
+
+<p>body.fullscreen-ibox-mode {</p>
+
+<pre>overflow-y: hidden;</pre>
+
+<p>}</p>
+
+<p>.ibox.fullscreen {</p>
+
+<pre>z-index: 2030;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+overflow: auto;
+margin-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>.ibox.fullscreen .collapse-link {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>.ibox.fullscreen .ibox-content {</p>
+
+<pre>min-height: calc(100% - 48px);</pre>
+
+<p>}</p>
+
+<p>// Bootstrap issue in 3.3.0 with modal <a
+href="https://github.com/twbs/bootstrap/issues/9855">github.com/twbs/bootstrap/issues/9855</a>
+// Fix body.modal-open {</p>
+
+<pre>padding-right: inherit !important;</pre>
+
+<p>}</p>
+
+<p>// Fix for modal backdrop with animate.css body.modal-open .animated {</p>
+
+<pre>animation-fill-mode: initial;
+z-index: inherit</pre>
+
+<p>}</p>
+
+<p>/* Show profile dropdown on fixed sidebar */ body.mini-navbar.fixed-sidebar
+.profile-element, .block {</p>
+
+<pre>display: block !important;</pre>
+
+<p>}</p>
+
+<p>body.mini-navbar.fixed-sidebar .nav-header {</p>
+
+<pre>padding: 33px 25px;</pre>
+
+<p>}</p>
+
+<p>body.mini-navbar.fixed-sidebar .logo-element {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>// Remove animation on fullscreen video</p>
+
+<p>.fullscreen-video .animated {</p>
+
+<pre>animation: none;</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

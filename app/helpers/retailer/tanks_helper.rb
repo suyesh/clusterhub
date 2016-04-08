@@ -1,0 +1,2 @@
+module Retailer::TanksHelper
+end

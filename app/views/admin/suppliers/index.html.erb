@@ -1,0 +1,49 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2><%= current_user.first_name %>'s Dashboard</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", admin_dashboard_path %>
+            </li>
+            <li class="active">
+                <strong>Suppliers</strong>
+            </li>
+            <%= link_to "Add New", new_admin_supplier_path, class: "btn btn-primary pull-right"%>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+  <% @suppliers.each do |supplier| %>
+      <div class="col-lg-4">
+          <div class="contact-box center-version">
+
+              <%= link_to admin_supplier_path(supplier) do %>
+
+                  <img alt="image" class="img-circle" src="<%= image_path('person_placeholder.png') %>">
+
+
+                  <h3 class="m-b-xs"><strong><%=supplier_full_name(supplier) %></strong></h3>
+
+                  <div class="font-bold"><%= supplier.business_name%></div>
+                  <address class="m-t-md">
+                      <strong>Mobile:<%=  supplier.cell_number %></strong><br>
+                    <%=   supplier.street_address %><br>
+                      <%= supplier.city%>,<%=supplier.state %> , <%= supplier.zip_code%><br>
+                      <abbr title="Phone">Phone:</abbr><%= supplier.phone_number%>
+                  </address>
+
+              <%end%>
+              <div class="contact-box-footer">
+                  <div class="m-t-xs btn-group">
+                     <%= link_to "Edit", edit_admin_supplier_path(supplier), class: "btn btn-xs btn-success" %>
+                     <%= link_to "Status: #{supplier.status}", edit_admin_supplier_path(supplier), class: "btn btn-xs btn-#{supplier.active? ? 'primary' : 'danger'}" %>
+                  </div>
+              </div>
+          </div>
+      </div>
+<%end%>
+</div>
+
+</div>
