@@ -9,6 +9,10 @@
 # end
 
 class FuelPrice < ActiveRecord::Base
+  validates_presence_of :regular
+  validates_presence_of :medium
+  validates_presence_of :premium
+  validates_presence_of :diesel
   after_save :create_contact_price
   belongs_to :supplier, class_name: 'User'
   belongs_to :retail_price
