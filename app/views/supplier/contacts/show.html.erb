@@ -1,5 +1,5 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-  <div class="col-lg-10">
+  <div class="col-lg-12">
     <h2>Dashboard</h2>
     <ol class="breadcrumb">
       <li>
@@ -13,6 +13,9 @@
           <%= @contact.first_name%>
         </strong>
       </li>
+      <%= link_to edit_supplier_contact_path(@contact), class: "pull-right btn btn-success" do %>
+      <i class="fa fa-plus"></i><strong>&nbsp;Edit Contact</strong>
+      <%end%>
     </ol>
     <h2><%= latest_price_date(@latest_price) %></h2>
   </div>
@@ -78,7 +81,7 @@
     </div>
   </div>
 </div>
-<%= unless @contact_prices.empty? %>
+<% unless @contact_prices.empty? %>
 <% @contact_prices.each do |contact| %>
 <div class="panel panel-danger">
   <div class="panel-heading">
