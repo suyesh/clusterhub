@@ -1,8 +1,6 @@
 class Supplier::ApplicationController < LoginrequiredController
   before_action :authenticate_supplier!
 
-  def index
-  end
 
   private
 

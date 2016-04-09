@@ -5,8 +5,7 @@ module Supplier::ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=200"
   end
 
-  def contact_full_name(contact)
-    full_name = contact.first_name + " " + contact.last_name
-    return full_name
-  end
+#  def contact_full_name(contact)
+  #  full_name = contact.first_name + " " + contact.last_name
+  ##end
 end

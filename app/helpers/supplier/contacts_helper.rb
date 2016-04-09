@@ -1,8 +1,10 @@
 module Supplier::ContactsHelper
-  def contact_full_name(contact)
-    full_name = contact.first_name + " " + contact.last_name
+def contact_full_name(contact)
+   unless contact.nil?
+     full_name = contact.first_name + " " + contact.last_name
     return full_name
   end
+end
 
   def mobile_carrier
     [
