@@ -13,12 +13,47 @@
       <span class="font-bold">As (your fuel price + the formula).</span>
     </div>
     <div class="modal-body">
-Hello
-    <div class="modal-footer">
-      <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>To:</th>
+              <th>Regular</th>
+              <th>Medium</th>
+              <th>Premium</th>
+              <th>Diesel</th>
+            </tr>
+          </thead>
+          <% current_user.contacts.each do |contact|%>
+          <tbody>
+            <tr class="gradeX">
+              <td class="mycell col-md-2">
+                <%= contact_full_name(contact) %>
+              </td>
+              <td class="mycell col-md-2">
+                <%= contact.cell_number %>
+              </td>
+              <td class="mycell col-md-1"><%= contact.retail_prices.last.r_regular%></td>
+              <td class="mycell col-md-1"><%= contact.retail_prices.last.r_medium %></td>
+              <td class="mycell col-md-1"><%= contact.retail_prices.last.r_premium %></td>
+              <td class="mycell col-md-1"><%= contact.retail_prices.last.r_diesel %></td>
 
+
+            </tr>
+
+          </tbody>
+<%end%>
+        </table>
+
+      </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal">Customize Text</button>
+      <button type="button" class="btn btn-success" data-dismiss="modal">Send Now</button>
     </div>
 
   </div>
+</div>
 </div>
 </div>
