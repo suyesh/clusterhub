@@ -1,5 +1,5 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-  <div class="col-lg-10">
+  <div class="col-lg-12">
     <h2>
       <i class="fa fa-rocket" style="color:#EF5350"></i>&nbsp;Price<span style="color:#EF5350">Rocket</span>
       Mass Send</h2>
@@ -7,6 +7,7 @@
       <li>
         <%= link_to "Home", supplier_dashboard_path%>
       </li>
+      <%= button_to "Mass Send", supplier_mass_send_mass_send_texts_path, class: "btn btn-success pull-right" %>
     </ol>
   </div>
   <div class="col-lg-2"></div>

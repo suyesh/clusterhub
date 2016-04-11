@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :fuel_prices
     resources :contacts
     get 'mass_send/index'
+    post 'mass_send/mass_send_texts'
   end
 
   namespace :retailer do
