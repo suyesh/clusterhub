@@ -7,7 +7,8 @@
       <li>
         <%= link_to "Home", supplier_dashboard_path%>
       </li>
-      <%= button_to "Mass Send", supplier_mass_send_mass_send_texts_path, class: "btn btn-success pull-right" %>
+      <%= button_to 'Mass Send', {:controller => "mass_send", :action => "mass_send_texts"} ,:status => 1, :method=>:post  %>
+      <%= link_to "Mass Send", supplier_mass_send_path,:method => :post,class: "btn btn-success pull-right" %>
     </ol>
   </div>
   <div class="col-lg-2"></div>
