@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
 
 
-  namespace :supplier do
-  get 'retailers/index'
-  end
 
   resources :users
   get 'login' => 'sessions#new'
@@ -21,6 +18,7 @@ Rails.application.routes.draw do
     resources :retailers
     resources :fuel_prices
     resources :contacts
+    get 'mass_send/index'
   end
 
   namespace :retailer do

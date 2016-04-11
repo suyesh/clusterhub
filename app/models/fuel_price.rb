@@ -17,15 +17,7 @@ class FuelPrice < ActiveRecord::Base
   belongs_to :supplier, class_name: 'User'
   belongs_to :retail_price
 
-  def send_message(contact)
-    require 'twilio-ruby'
-    @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
-    @client.messages.create(
-      from: '+18482299159',
-      to: contact.cell_number,
-      body: "Hey there! #{contact.first_name}. #{supplier.first_name} from #{supplier.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}"
-    )
-  end
+
 
   def create_contact_price
     unless supplier.contacts.empty?
@@ -35,8 +27,7 @@ class FuelPrice < ActiveRecord::Base
                                      r_premium: supplier.fuel_prices.last.premium + contact.c_premium,
                                      r_diesel: supplier.fuel_prices.last.diesel + contact.c_diesel
                                     )
-        supplier.pricerockets.create(to: contact.cell_number, body: "Hey there! #{contact.first_name}. #{supplier.first_name} from #{supplier.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}")
-        send_message(contact)
+        supplier.pricerockets.create(status: :not_sent, to: contact.cell_number, body: "Hey there! #{contact.first_name}. #{supplier.first_name} from #{supplier.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}")
       end
    end
   end
