@@ -7,7 +7,14 @@
       <li>
         <%= link_to "Home", supplier_dashboard_path%>
       </li>
-      <%= link_to "Mass Send", supplier_mass_send_path,:method => :post,class: "btn btn-success pull-right" %>
+      <div class="btn-group open pull-right">
+                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="true">Mass Send&nbsp;<span class="caret"></span></button><div class="dropdown-backdrop"></div>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to "Send Default Text", supplier_mass_send_path,:method => :post%></li>
+                                <li><a href="#" class="font-bold" data-toggle="modal" data-target="#customMessage">Customize Text</a></li>
+                            </ul>
+      </div>
+
     </ol>
   </div>
   <div class="col-lg-2"></div>
@@ -23,7 +30,7 @@
               <tr>
                 <th>Contact Name</th>
                 <th>Phone</th>
-                <th>Text</th>
+                <th>Default Text</th>
                 <th> Status </th>
               </tr>
             </thead>
@@ -53,3 +60,28 @@
       </div>
     </div>
   </div>
+
+  <div class="modal inmodal" id="customMessage" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content animated bounceInRight">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <i class="fa fa-paper-plane modal-icon" style="color:#1ab394"></i>
+          <h4 class="modal-title">You are customizing the message</h4>
+          <span class="font-bold">By default your contacts will receive just their latest fuel price</span>
+        </br>
+        <span class="font-bold">You can add custom message below.</span>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-white" data-dismiss="modal">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
