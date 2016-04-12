@@ -1,4 +1,4 @@
-<%= simple_form_for(@fuel_price,remote: true, url: supplier_fuel_prices_path, wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
+<%= simple_form_for([:supplier, @fuel_price],remote: true,  wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
 :horizontal_boolean }) do |f| %>
 <%= f.input :regular, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price for Regular" do %>
 <span class="input-group-btn">

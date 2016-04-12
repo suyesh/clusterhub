@@ -22,7 +22,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                     render 'success'
                     @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
                 else
-                    render 'create'
+                    render 'new'
                end
             end
         end
