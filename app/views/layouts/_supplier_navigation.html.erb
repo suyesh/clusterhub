@@ -24,12 +24,23 @@
                 <span class="caret"></span>
               </a>
               <ul role="menu" class="dropdown-menu">
-                <li><%= link_to "Fuel Price", supplier_fuel_prices_path %></li>
-                <li><%= link_to "Contacts", supplier_contacts_path %></li>
-                <li>
-                  <%= link_to "Mass Send", supplier_mass_send_index_path%>
+                <li><%= link_to supplier_fuel_prices_path do %>
+                  <span><i class="fa fa-usd" aria-hidden="true"></i>&nbsp;Fuel Price</span>
+                  <%end%>
                 </li>
-                <li><%= link_to "Text History", supplier_pricerocket_history_path %></li>
+                <li><%= link_to supplier_contacts_path do %>
+                  <span><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Contacts</span>
+                  <%end%>
+                </li>
+                <li>
+                  <%= link_to supplier_mass_send_index_path do%>
+                  <span><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Mass Send</span>
+                  <%end%>
+                </li>
+                <li><%= link_to supplier_pricerocket_history_path do %>
+                  <span><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;Text History</span>
+                  <%end%>
+                </li>
               </ul>
             </li>
             <li class="dropdown">
@@ -47,6 +58,24 @@
                 </li>
                 <li>
                   <a href="">Trucking</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-truck"></i>
+                <strong>Terminals</strong>
+                <span class="caret"></span>
+              </a>
+              <ul role="menu" class="dropdown-menu">
+                <li>
+                  <a href=""><i class="fa fa-plus"></i>&nbsp;<strong>Add Terminal</strong></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 1</a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 2</a>
                 </li>
               </ul>
             </li>
