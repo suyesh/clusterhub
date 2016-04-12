@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'mass_send/index'
     match '/mass_send' => 'mass_send#mass_send_texts', via: :get
     match '/mass_send' => 'mass_send#mass_send_texts', via: :post
+    post 'search_query' => 'contacts#search_query'
   end
 
   namespace :retailer do

@@ -31,6 +31,8 @@ class Supplier::ContactsController < Supplier::ApplicationController
     @latest_price = @contact.retail_prices.last
   end
 
+
+
   def edit
   end
 
