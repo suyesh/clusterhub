@@ -6,7 +6,7 @@ class Supplier::MassSendController < Supplier::ApplicationController
   end
 
   def mass_send_texts
-    @texts = current_user.pricerockets.where(status: 0)
+    @texts = current_user.pricerockets.where(status: 0) #and is latest entry
     @texts.all do |text|
       @client.messages.create(
         from: '+18482299159',
