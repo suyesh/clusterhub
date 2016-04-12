@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   validates_presence_of :zip_code
   # validates :tax_id, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
   # validates :ssn, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
-  validates_presence_of :terms, terms: 1, message: 'You have to agree to our terms and conditions.' if: -> new_record?
+  validates_presence_of :terms, terms: 1, message: 'You have to agree to our terms and conditions.', on: :create
 
   enum role: [:pending, :retailer, :supplier, :trucking, :admin]
   enum status: [:inactive, :active, :denied, :archived]
