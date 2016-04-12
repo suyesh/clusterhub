@@ -1,2 +1,6 @@
 $('#FuelmodelBody').html("<%= escape_javascript(render partial: 'alert') %>");
 $('#fuelPriceTable').html("<%= escape_javascript(render partial: 'fuel_prices_table') %>");
+$('#newFuelPrice').slideUp( "slow", function() {
+    // Animation complete.
+    $('#newFuelPrice').modal('toggle');
+  });

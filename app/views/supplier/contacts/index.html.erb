@@ -8,61 +8,17 @@
             <li class="active">
                 <strong>Contacts</strong>
             </li>
-            <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#newContact">
-                <i class="fa fa-plus"></i>
-                <strong>&nbsp;New Contact</strong>
-            </button>
+            <%= link_to new_supplier_contact_path, remote: true do %>
+              <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#newContact"><i class="fa fa-plus"></i><strong>&nbsp;New Contact</strong></button>
+            <%end%>
         </ol>
     </div>
 </div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
 
-    <div class="row">
-        <% @contacts.each do |contact| %>
-        <div class="col-lg-6">
-
-            <div class="contact-box">
-                <%= link_to supplier_contact_path(contact) do %>
-                <div class="col-sm-4">
-                    <div class="text-center">
-                        <%=image_tag( avatar_url(contact), class: "img-circle m-t-xs img-responsive")%>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <h3>
-                        <strong><%= contact_full_name(contact)%></strong>
-                    </h3>
-                    <address>
-                        <strong>Fuel Margin Formulas</strong><br>
-
-                        <strong>Regular:</strong>
-                        $<%= contact.c_regular %><br>
-                        <strong>Medium:</strong>
-                        $<%= contact.c_medium %><br>
-                        <strong>Premium:</strong>
-                        $<%= contact.c_premium %><br>
-                        <strong>Diesel:</strong>
-                        $<%= contact.c_diesel %><br>
-                        <strong>Delivery:</strong>
-                        $<%= contact.c_delivery %><br>
-                        <abbr title="Phone">
-                            <strong>
-                                <i class="fa fa-phone"></i>
-                            </strong>
-                        </abbr>
-                        <%= contact.cell_number %>
-                    </address>
-
-                </div>
-                <%end%>
-                <div class="clearfix"></div>
-
-            </div>
-
-        </div>
-        <%end%>
-
+    <div class="row" id="ContactTable">
+        <%= render partial: 'contacts_tables', locals: { contacts: @contacts } %>
     </div>
 
 </div>
@@ -80,60 +36,9 @@
             </br>
             <span class="font-bold">As (your fuel price + the formula). Set the Formula for them below.</span>
         </div>
-        <div class="modal-body">
-            <%= simple_form_for(@contact, url: supplier_contacts_path, wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
-            :horizontal_boolean }) do |f| %>
-
-            <%= f.input :first_name, label: "First Name" %>
-            <%= f.input :last_name, label: "Last Name"%>
-            <%= f.input :email, label: "Email" %>
-            <%= f.input :cell_number, label: "Mobile Number" %>
-            <%= f.input :c_regular, label: "Regular", wrapper: :vertical_input_group, hint: "Margin Formula for Regular" do %>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <i class="fa fa-usd" style="color:#1ab394"></i>
-                </button>
-            </span>
-            <%= f.input_field :c_regular, class: "form-control", placeholder: "+0.002" %>
-            <%end%>
-            <%= f.input :c_medium, label: "Medium", wrapper: :vertical_input_group, hint: "Margin Formula for Medium" do %>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <i class="fa fa-usd" style="color:#1ab394"></i>
-                </button>
-            </span>
-            <%= f.input_field :c_medium, class: "form-control", placeholder: "+0.002" %>
-            <%end%>
-            <%= f.input :c_premium, label: "Premium", wrapper: :vertical_input_group, hint: "Margin Formula for Premium" do %>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <i class="fa fa-usd" style="color:#1ab394"></i>
-                </button>
-            </span>
-            <%= f.input_field :c_premium, class: "form-control", placeholder: "+0.002" %>
-            <%end%>
-            <%= f.input :c_diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Margin Formula for Diesel" do %>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <i class="fa fa-usd" style="color:#1ab394"></i>
-                </button>
-            </span>
-            <%= f.input_field :c_diesel, class: "form-control", placeholder: "+0.002" %>
-            <%end%>
-            <%= f.input :c_delivery, label: "Diesel", wrapper: :vertical_input_group, hint: "Delivery cost for this contact" do %>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <i class="fa fa-usd" style="color:#1ab394"></i>
-                </button>
-            </span>
-            <%= f.input_field :c_delivery, class: "form-control", placeholder: "+0.002" %>
-            <%end%>
+        <div class="modal-body" id="ContactModelBody">
+          <!--form -->
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-            <%= f.button :submit, "Add Contact", class: "btn btn-primary"%>
-        </div>
-        <%end%>
     </div>
 </div>
 </div>

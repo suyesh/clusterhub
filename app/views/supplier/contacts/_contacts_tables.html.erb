@@ -1,0 +1,43 @@
+<% @contacts.each do |contact| %>
+<div class="col-lg-6">
+
+    <div class="contact-box">
+        <%= link_to supplier_contact_path(contact) do %>
+        <div class="col-sm-4">
+            <div class="text-center">
+                <%=image_tag( avatar_url(contact), class: "img-circle m-t-xs img-responsive")%>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h3>
+                <strong><%= contact_full_name(contact)%></strong>
+            </h3>
+            <address>
+                <strong>Fuel Margin Formulas</strong><br>
+
+                <strong>Regular:</strong>
+                $<%= contact.c_regular %><br>
+                <strong>Medium:</strong>
+                $<%= contact.c_medium %><br>
+                <strong>Premium:</strong>
+                $<%= contact.c_premium %><br>
+                <strong>Diesel:</strong>
+                $<%= contact.c_diesel %><br>
+                <strong>Delivery:</strong>
+                $<%= contact.c_delivery %><br>
+                <abbr title="Phone">
+                    <strong>
+                        <i class="fa fa-phone"></i>
+                    </strong>
+                </abbr>
+                <%= contact.cell_number %>
+            </address>
+
+        </div>
+        <%end%>
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>
+<%end%>

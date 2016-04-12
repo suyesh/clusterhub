@@ -1,0 +1,6 @@
+$('#ContactModelBody').html("<%= escape_javascript(render partial: 'alert') %>");
+$('#ContactTable').html("<%= escape_javascript(render partial: 'contacts_tables') %>");
+$('#newContact').slideUp( "slow", function() {
+    // Animation complete.
+    $('#newContact').modal('toggle');
+  });

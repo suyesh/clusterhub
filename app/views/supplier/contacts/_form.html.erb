@@ -1,0 +1,53 @@
+<%= simple_form_for(@contact,remote: true, url: supplier_contacts_path, wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
+:horizontal_boolean }) do |f| %>
+
+<%= f.input :first_name, label: "First Name" %>
+<%= f.input :last_name, label: "Last Name"%>
+<%= f.input :email, label: "Email" %>
+<%= f.input :cell_number, label: "Mobile Number" %>
+<%= f.input :c_regular, label: "Regular", wrapper: :vertical_input_group, hint: "Margin Formula for Regular" do %>
+<span class="input-group-btn">
+    <button class="btn btn-default" type="button">
+        <i class="fa fa-usd" style="color:#1ab394"></i>
+    </button>
+</span>
+<%= f.input_field :c_regular, class: "form-control", placeholder: "+0.002" %>
+<%end%>
+<%= f.input :c_medium, label: "Medium", wrapper: :vertical_input_group, hint: "Margin Formula for Medium" do %>
+<span class="input-group-btn">
+    <button class="btn btn-default" type="button">
+        <i class="fa fa-usd" style="color:#1ab394"></i>
+    </button>
+</span>
+<%= f.input_field :c_medium, class: "form-control", placeholder: "+0.002" %>
+<%end%>
+<%= f.input :c_premium, label: "Premium", wrapper: :vertical_input_group, hint: "Margin Formula for Premium" do %>
+<span class="input-group-btn">
+    <button class="btn btn-default" type="button">
+        <i class="fa fa-usd" style="color:#1ab394"></i>
+    </button>
+</span>
+<%= f.input_field :c_premium, class: "form-control", placeholder: "+0.002" %>
+<%end%>
+<%= f.input :c_diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Margin Formula for Diesel" do %>
+<span class="input-group-btn">
+    <button class="btn btn-default" type="button">
+        <i class="fa fa-usd" style="color:#1ab394"></i>
+    </button>
+</span>
+<%= f.input_field :c_diesel, class: "form-control", placeholder: "+0.002" %>
+<%end%>
+<%= f.input :c_delivery, label: "Diesel", wrapper: :vertical_input_group, hint: "Delivery cost for this contact" do %>
+<span class="input-group-btn">
+    <button class="btn btn-default" type="button">
+        <i class="fa fa-usd" style="color:#1ab394"></i>
+    </button>
+</span>
+<%= f.input_field :c_delivery, class: "form-control", placeholder: "+0.002" %>
+<%end%>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+<%= f.button :submit, "Add Contact", class: "btn btn-primary"%>
+</div>
+<%end%>

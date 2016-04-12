@@ -12,13 +12,17 @@ class Supplier::ContactsController < Supplier::ApplicationController
   end
 
   def create
-    @contact = current_user.contacts.build(contacts_params)
-    if @contact.save
-      flash[:notice] = 'Retailer has been successfully added.'
-      redirect_to supplier_contacts_path
-    else
-      flash.now[:alert] = 'Something went wrong. Check your form and re-try.'
-      render 'new'
+    @contact = current_user.contacts.new(contacts_params)
+    respond_to do |format|
+      format.js do
+        if @contact.save
+          @contacts = current_user.contacts.all.order('created_at DESC')
+          flash.now[:notice] = 'Retailer has been successfully added.'
+          render 'success'
+        else
+          render 'create'
+        end
+      end
     end
   end
 
