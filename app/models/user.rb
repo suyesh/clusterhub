@@ -59,6 +59,8 @@ class User < ActiveRecord::Base
   has_many :contacts, foreign_key: :supplier_id
   has_many :retail_prices, foreign_key: :contact_id
   has_many :pricerockets, foreign_key: :supplier_id
+
+
 end
 
 # belongs_to :contact, class_name: 'User' # contact_id integer
