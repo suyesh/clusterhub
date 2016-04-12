@@ -19,9 +19,9 @@
       </td>
       <td class="mycell col-md-1">
         <% if f.expired %>
-          Expired
+          <span class="label label-danger %>">Expired</span>
           <%else%>
-          Latest
+          <span class="label label-success %>">Latest</span>
           <%end%>
       </td>
       <td class="mycell col-md-1">
@@ -31,7 +31,15 @@
       <td class="mycell col-md-1"><%= f.premium %></td>
       <td class="mycell col-md-1"><%= f.diesel %></td>
 
-      <td class="mycell col-md-1"><%= link_to "Edit", edit_supplier_fuel_price_path(f), class: "btn btn-primary btn-xs"%></td>
+      <td class="mycell col-md-1">
+        <% if f.expired %>
+        <span class="label label-danger %>">Cannot Edit</span>
+        <%else%>
+        <%= link_to edit_supplier_fuel_price_path(f), remote: true do %>
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newFuelPrice">Edit</button>
+          <%end%>
+        <%end%>
+      </td>
 
     </tr>
     <%end%>
