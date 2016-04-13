@@ -1,0 +1,11 @@
+<%= f.simple_fields_for :fuel_products do |p| %>
+<%= p.input :fuel, :label => "Fuel Type", :collection => fuel_types, :selected => "87 RFG"%>
+<%= p.input :price, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price" do %>
+<span class="input-group-btn">
+  <button class="btn btn-default" type="button">
+    <i class="fa fa-usd" style="color:#1ab394"></i>
+  </button>
+</span>
+<%= p.input_field :price, class: "form-control", placeholder: "1.25" %>
+<%end%>
+<%= link_to "remove", '#', class: "remove_fields" %>
