@@ -34,8 +34,8 @@ module Supplier::ApplicationHelper
 
     # creates a new form for the association
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
-      render(association.to_s.singularize + "_fields", f: builder)
+      render(association.to_s + "_fields", f: builder)
     end
-    link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
+    link_to(name, '#', class: "btn btn-success btn-xs add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 end

@@ -6,10 +6,12 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
         @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
         @latest_fuel_price = current_user.fuel_prices.last
         @fuel_price = current_user.fuel_prices.build
+        @fuel_price.fuel_products.build
     end
 
     def new
         @fuel_price = current_user.fuel_prices.build
+        @fuel_price.fuel_products.build
     end
 
     def create
@@ -20,7 +22,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
                     flash.now[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.contacts.count} Text messages with updated price to your #{current_user.contacts.count} retailers."
                     render 'success'
-                    @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
+                    #@slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.created_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
                 else
                     render 'new'
                end
@@ -43,7 +45,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
                     flash.now[:notice] = "Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers."
                     render 'success'
-                    @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.updated_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
+                    #@slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.updated_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
                 else
                     render 'edit'
                 end
