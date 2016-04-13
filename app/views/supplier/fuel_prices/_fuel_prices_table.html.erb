@@ -30,29 +30,62 @@
       </td>
       <% f.fuel_products.each do |p| %>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == '87 RFG' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == '89 RFG' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == '93 RFG' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == 'Low Sodium Diesel' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == 'Dyed ULS Diesel' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == 'Undyed ULS Diesel' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == 'Heating Oil' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
       <td class="mycell col-md-1">
-        Nil
+        <% if p.fuel == 'Kerosene' %>
+          <strong><%= "$ #{p.price}" %></strong>
+        <%else%>
+          <span class="label label-warning %>"> Not set</span>
+      <%end%>
       </td>
+      <%end%>
       <td class="mycell col-md-1">
         <% if f.expired %>
         <span class="label label-danger %>">Cannot Edit</span>
@@ -60,7 +93,6 @@
         <%= link_to edit_supplier_fuel_price_path(f), remote: true do %>
             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newFuelPrice">Edit</button>
           <%end%>
-        <%end%>
         <%end%>
       </td>
 
