@@ -62,7 +62,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
     end
 
     def fuel_price_params
-        params.require(:fuel_price).permit(:regular, :medium, :premium, :diesel)
+        params.require(:fuel_price).permit(fuel_products_attributes: [:fuel, :price, :_destroy, :id])
     end
 
     def set_fuel_price
