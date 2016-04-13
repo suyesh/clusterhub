@@ -9,16 +9,14 @@
 # end
 
 class FuelPrice < ActiveRecord::Base
-  validates_presence_of :regular
-  validates_presence_of :medium
-  validates_presence_of :premium
-  validates_presence_of :diesel
-  after_save :create_contact_price
+  #after_save :create_contact_price
   belongs_to :supplier, class_name: 'User'
-  belongs_to :retail_price
+  #belongs_to :retail_price
+  has_many :fuel_products
+  accepts_nested_attributes_for :fuel_products, allow_destroy: true
 
 
-
+=begin
   def create_contact_price
     unless supplier.contacts.empty?
       supplier.contacts.each do |contact|
@@ -31,4 +29,5 @@ class FuelPrice < ActiveRecord::Base
       end
    end
   end
+=end
 end
