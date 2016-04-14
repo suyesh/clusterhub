@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetroHub</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetroHub</title>
 
-    <!-- Main css styles -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <!-- Main css styles -->
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-    <!-- Main javascript files -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+        <!-- Main javascript files -->
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
 
-  </head>
-  <body class="md-skin top-navigation">
+    </head>
+    <body class="md-skin top-navigation">
 
-    <!-- Wrapper-->
-    <div id="wrapper">
-      <div id="page-wrapper" class="gray-bg">
+        <!-- Wrapper-->
+        <div id="wrapper">
+            <div id="page-wrapper" class="gray-bg">
 
-        <div class="container">
-          <!-- Navigation -->
-          <%= user_navigation(current_user)%>
+                <div class="container">
+                    <!-- Navigation -->
+                    <%= user_navigation(current_user)%>
 
-          <!-- Page wraper -->
+                    <!-- Page wraper -->
 
-          <!-- Page wrapper -->
+                    <!-- Page wrapper -->
 
-          <% flash.each do |key, message| %>
-          <div class="alert alert-<%= key %>">
-            <%= message %>
-          </div>
-          <% end %>
-          <!-- Main view  -->
+                    <% flash.each do |key, message| %>
+                    <div class="alert alert-<%= key %>">
+                        <%= message %>
+                    </div>
+                    <% end %>
+                    <!-- Main view  -->
 
-          <%= yield %>
+                    <%= yield %>
 
-          <!-- Footer -->
+                    <!-- Footer -->
 
-          <%= render "layouts/footer" %>
-          <!-- End page wrapper-->
+                    <%= render "layouts/footer" %>
+                    <!-- End page wrapper-->
+
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
+        <!-- End wrapper-->
+        <script>
+            // Include the UserVoice JavaScript SDK (only needed once on a page)
+            UserVoice = window.UserVoice || [];
+            (function () {
+                var uv = document.createElement('script');
+                uv.type = 'text/javascript';
+                uv.async = true;
+                uv.src = '//widget.uservoice.com/09nL534hTeSvdNuLe5gWIw.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(uv, s)
+            })();
 
-    </div>
+            //
+            // UserVoice Javascript SDK developer documentation: https://www.uservoice.com/o/javascript-sdk
+            //
 
-    <!-- End wrapper-->
-    <script>
-// Include the UserVoice JavaScript SDK (only needed once on a page)
-UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/09nL534hTeSvdNuLe5gWIw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+            // Set colors
+            UserVoice.push([
+                'set', {
+                    accent_color: '#e23a39',
+                    trigger_color: 'white',
+                    trigger_background_color: '#448dd6'
+                }
+            ]);
 
-//
-// UserVoice Javascript SDK developer documentation:
-// https://www.uservoice.com/o/javascript-sdk
-//
+            // Identify the user and pass traits To enable, replace sample data with actual user traits and uncomment the line
+            UserVoice.push([
+                'identify', {
+                    email: "<%= current_user.email %>", // User’s email address
+                    name: "<%= current_user.first_name + ' ' + current_user.last_name %>", // User’s real name
+                    //created_at: 1364406966, // Unix timestamp for the date the user signed up id:         123, // Optional: Unique id of the user (if set, this should not change)
+                    type: "<%= current_user.role %>", // Optional: segment your users by type
+                    // account: {  id:           123, // Optional: associate multiple users with a single account  name:         'Acme, Co.', // Account name  created_at:   1364406966, // Unix timestamp for the date the account was created  monthly_rate: 9.99, //
+                    // Decimal; monthly rate of the account  ltv:          1495.00, // Decimal; lifetime value of the account  plan:         'Enhanced' // Plan name for the account }
+                }
+            ]);
 
-// Set colors
-UserVoice.push(['set', {
-  accent_color: '#e23a39',
-  trigger_color: 'white',
-  trigger_background_color: '#448dd6'
-}]);
+            // Add default trigger to the bottom-right corner of the window:
+            UserVoice.push([
+                'addTrigger', {
+                    mode: 'satisfaction',
+                    trigger_position: 'bottom-right'
+                }
+            ]);
 
-// Identify the user and pass traits
-// To enable, replace sample data with actual user traits and uncomment the line
-UserVoice.push(['identify', {
-  email:      "<%= current_user.email %>", // User’s email address
-  name:       "<%= current_user.first_name + ' ' + current_user.last_name %>", // User’s real name
-  //created_at: 1364406966, // Unix timestamp for the date the user signed up
-  //id:         123, // Optional: Unique id of the user (if set, this should not change)
-  type:       "<%= current_user.role %>", // Optional: segment your users by type
-  //account: {
-  //  id:           123, // Optional: associate multiple users with a single account
-  //  name:         'Acme, Co.', // Account name
-  //  created_at:   1364406966, // Unix timestamp for the date the account was created
-  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
-  //  ltv:          1495.00, // Decimal; lifetime value of the account
-  //  plan:         'Enhanced' // Plan name for the account
-  //}
-}]);
+            // Or, use your own custom trigger: UserVoice.push(['addTrigger', '#id', { mode: 'satisfaction' }]); Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+            UserVoice.push(['autoprompt', {}]);
+        </script>
 
-// Add default trigger to the bottom-right corner of the window:
-UserVoice.push(['addTrigger', {mode: 'satisfaction', trigger_position: 'bottom-right' }]);
-
-// Or, use your own custom trigger:
-//UserVoice.push(['addTrigger', '#id', { mode: 'satisfaction' }]);
-
-// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
-UserVoice.push(['autoprompt', {}]);
-</script>
-
-
-
-  </body>
+    </body>
 </html>

@@ -1,27 +1,27 @@
 <div class="middle-box text-center loginscreen  animated fadeInDown">
-  <% flash.each do |key, message| %>
-  <div class="alert alert-<%= key %>">
-    <%= message %>
-  </div>
-  <% end %>
-  <div>
-    <div>
-
-      <h1 class="logo-name">pH+</h1>
-
+    <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %>">
+        <%= message %>
     </div>
-    <h3>Welcome to Petrohub</h3>
-    <p>
-      Fuel trading marketplace. Simple way to manage your Fuel business.
-    </p>
-    <p>Login in. To make your business easier</p>
-    <%= simple_form_for(@user, url: login_path) do |f| %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.button :submit,  "Log In", class: "btn btn-primary block full-width m-b"%>
-    <%end%>
-    <p class="m-t">
-      <small>Petrohub &copy; 2016</small>
-    </p>
-  </div>
+    <% end %>
+    <div>
+        <div>
+
+            <h1 class="logo-name">pH+</h1>
+
+        </div>
+        <h3>Welcome to Petrohub</h3>
+        <p>
+            Fuel trading marketplace. Simple way to manage your Fuel business.
+        </p>
+        <p>Login in. To make your business easier</p>
+        <%= simple_form_for(@user, url: login_path) do |f| %>
+        <%= f.input :email %>
+        <%= f.input :password %>
+        <%= f.button :submit,  "Log In", class: "btn btn-primary block full-width m-b"%>
+        <%end%>
+        <p class="m-t">
+            <small>Petrohub &copy; 2016</small>
+        </p>
+    </div>
 </div>

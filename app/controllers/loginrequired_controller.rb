@@ -1,7 +1,6 @@
 class LoginrequiredController < ApplicationController
   before_action :not_authenticated!
   before_action :require_login
-
   private
   def not_authenticated!
     unless current_user
