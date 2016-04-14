@@ -31,7 +31,7 @@
 
 class User < ActiveRecord::Base
   # before_save :generate_account_number, on: [:create]
-  after_update :generate_account_number, on: [:update]
+  before_save :generate_account_number
   authenticates_with_sorcery!
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes['password'] }
   validates :password, confirmation: true, if: -> { new_record? || changes['password'] }
