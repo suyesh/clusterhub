@@ -1,11 +1,13 @@
-<%= simple_form_for([:supplier, @fuel_price],remote: true, wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
-:horizontal_boolean }) do |f| %>
-<%= f.simple_fields_for :fuel_products do |fuel_products_form| %>
-<%= render partial: 'fuel_products_fields', locals: {f: fuel_products_form} %>
-<%= link_to_add_fields "Add more", f, :fuel_products %>
-<% end %>
+<%= simple_form_for([:supplier, @fuel_price],remote: true, :html => {:class => 'form-vertical' }) do |f| %>
 
+<%= f.simple_fields_for :fuel_products do |fuel_products_form| %>
+
+<%= render partial: 'fuel_products_fields', locals: {f: fuel_products_form} %>
+
+<% end %>
+<%= link_to_add_fields "Add more", f, :fuel_products %>
 <div class="modal-footer">
     <%= f.button :submit, "Update", class: "btn btn-success"%>
 </div>
+
 <%end%>

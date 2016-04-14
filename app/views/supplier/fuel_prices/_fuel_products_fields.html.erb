@@ -1,15 +1,14 @@
-<div class="field">
-
-    <div class="col-md-6">
-        <%= f.input :fuel, label: "Fuel Type", :collection => fuel_types, class: "form-control select",:selected => "87 RFG" %>
-    </div>
-    <div class="col-md-3">
-        <%= f.input :price, class: "form-control", placeholder: "$1.25" %>
-    </div>
-    <%= f.hidden_field :_destroy %>
-    <ul class="list-unstyled">
-        <li><%= link_to '#', class: "btn btn-danger btn-xs remove_fields" do %>
-            Remove&nbsp;&nbsp;&nbsp;
-            <%end%></li>
-    </ul>
+<div class="row">
+<div class="col-md-6">
+    <%= f.input :fuel, label: "Fuel Type", :collection => fuel_types, class: "form-control select",:selected => "87 RFG" %>
+</div>
+<div class="col-md-3">
+    <%= f.input :price, class: "form-control", placeholder: "$1.25" %>
+</div>
+<div class="col-md-3">
+<%= f.hidden_field :_destroy %>
+<%= link_to '#', class: "btn btn-danger btn-circle remove_fields" do %>
+        <i class="fa fa-times"></i>
+        <%end%>
+</div>
 </div>

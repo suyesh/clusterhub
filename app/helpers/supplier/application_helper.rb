@@ -35,6 +35,6 @@ module Supplier::ApplicationHelper
         fields = f.fields_for(association, new_object, child_index: id) do |builder|
             render(association.to_s + '_fields', f: builder)
         end
-        link_to(name, '#', class: 'btn btn-success btn-xs add_fields', data: { id: id, fields: fields.delete("\n") })
+        link_to(name, '#', class: 'btn btn-success  add_fields', data: { id: id, fields: fields.delete("\n") })
     end
 end
