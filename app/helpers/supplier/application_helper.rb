@@ -10,12 +10,14 @@ module Supplier::ApplicationHelper
     # #end
     def fuel_types
         [
-            '87 RFG',
-            '89 RFG',
-            '93 RFG',
+            '87 RFG E10',
+            '89 RFG E10',
+            '91 RFG E10',
+            '93 RFG E10',
             'Low Sodium Diesel',
             'Dyed ULS Diesel',
             'Undyed ULS Diesel',
+            'Jet Fuel',
             'Heating Oil',
             'Kerosene'
         ]
