@@ -13,7 +13,7 @@
             <li class="accountNumber">
               <%= link_to supplier_dashboard_path, class: "accountNumber" do %>
               <i class="fa fa-user"></i>
-              <strong>NJSUP2347</strong>
+              <strong><%= current_user.account_number %></strong>
               <%end%>
             </li>
             <li class="dropdown">
