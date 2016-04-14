@@ -20,7 +20,7 @@ class Admin::UsersController < Admin::ApplicationController
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
-          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Retailer. You can now login with your email #{@user.email} and follow your suppliers for their daily pricing and much more. Thank you for being a part of Petrohub."
+          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Retailer. You can now login with your email #{@user.email} and follow your suppliers for their daily pricing and much more. Thank you for being a part of Petrohub. Your Account# is #{@user.account_number}"
         )
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{@user.updated_at.strftime('%F')} #{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Retailer. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
@@ -29,7 +29,7 @@ class Admin::UsersController < Admin::ApplicationController
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
-          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Supplier. You can now login with your email #{@user.email} and follow your retailers and send them daily pricing and much more.. Thank you for being a part of Petrohub."
+          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as a Supplier. You can now login with your email #{@user.email} and follow your retailers and send them daily pricing and much more.. Thank you for being a part of Petrohub. Your Account# is #{@user.account_number}"
         )
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{@user.updated_at.strftime('%F')} #{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Supplier. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
@@ -38,7 +38,7 @@ class Admin::UsersController < Admin::ApplicationController
         @client.messages.create(
           from: '+18482299159',
           to: "+1#{@user.cell_number}",
-          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as Trucking Provider. Expect and email from us with futhur details."
+          body: "Hey there! #{@user.first_name}. Petrohub just approved your account as Trucking Provider. Your Account# is #{@user.account_number} Expect and email from us with futhur details."
         )
         @slack.chat_postMessage(channel: '#admin_activities', text: "#{@user.updated_at.strftime('%F')} #{current_user.first_name} just approved application for #{@user.first_name} from #{@user.business_name} as Trucking provider. Details: phone: #{@user.phone_number}, cell: #{@user.cell_number}, Email: #{@user.email}, Address: #{@user.street_address}, city: #{@user.city}, state: #{@user.state}, Zip: #{@user.zip_code}", as_user: true)
         flash[:notice] = 'You have successfully updated the application.'
@@ -63,6 +63,7 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   private
+
 
   def set_user
     @user = User.find(params[:id])

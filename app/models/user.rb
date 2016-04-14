@@ -31,6 +31,7 @@
 
 class User < ActiveRecord::Base
   # before_save :generate_account_number, on: [:create]
+  after_update :generate_account_number, on: [:update]
   authenticates_with_sorcery!
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes['password'] }
   validates :password, confirmation: true, if: -> { new_record? || changes['password'] }
@@ -59,6 +60,26 @@ class User < ActiveRecord::Base
   has_many :contacts, foreign_key: :supplier_id
   has_many :retail_prices, foreign_key: :contact_id
   has_many :pricerockets, foreign_key: :supplier_id
+
+  private
+
+
+  def generate_account_number
+    rand_num = SecureRandom.hex(3).upcase
+    unless !self.account_number.nil?
+        self.account_number = if admin? && active?
+                                'EGYPT' + rand_num
+                              elsif retailer? && active?
+                                'NJ' + rand_num + 'RET'
+                              elsif supplier? && active?
+                                'NJ' + rand_num + 'SUP'
+                              elsif trucking? && active?
+                                'NJ' + rand_num + 'TRU'
+                              else
+                                nil
+        end
+    end
+  end
 
 
 end
