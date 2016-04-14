@@ -1,4 +1,9 @@
 <%= simple_form_for([:supplier, @fuel_price],remote: true, :html => {:class => 'form-vertical' }) do |f| %>
+<% flash.each do |key, message| %>
+<div class="alert alert-<%= key %>">
+    <%= message %>
+</div>
+<% end %>
 
 <%= f.simple_fields_for :fuel_products do |fuel_products_form| %>
 
