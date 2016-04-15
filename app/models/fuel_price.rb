@@ -3,7 +3,7 @@ class FuelPrice < ActiveRecord::Base
     after_save :send_slack
     validates :fuel_products, presence: true
     belongs_to :supplier, class_name: 'User'
-    has_many :fuel_products
+    has_many :fuel_products, dependent: :destroy
     accepts_nested_attributes_for :fuel_products, allow_destroy: true
 
     private
