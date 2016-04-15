@@ -1,6 +1,5 @@
 class Supplier::FuelPricesController < Supplier::ApplicationController
     before_action :set_fuel_price, only: [:edit, :update]
-    before_action :set_slack, only: [:create, :update]
 
     def index
         @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
@@ -46,7 +45,6 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
                     flash.now[:notice] = "Fuel Price has been successfully updated. And we sent out Text mesagges with updated price to #{current_user.contacts.count} retailers."
                     render 'success'
-                    # @slack.chat_postMessage(channel: '#latest_prices', text: "#{@fuel_price.updated_at.strftime('%F')} - #{current_user.first_name} from #{current_user.business_name} just updated the Fuel Price. Regular: $#{current_user.fuel_prices.last.regular}, Medium: $#{current_user.fuel_prices.last.medium}, Premium: $#{current_user.fuel_prices.last.premium}, Diesel: $#{current_user.fuel_prices.last.diesel} ", as_user: true)
                 else
                     render 'edit'
                 end
@@ -55,14 +53,6 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
     end
 
     private
-
-    def set_slack
-        require 'slack-ruby-client'
-        Slack.configure do |config|
-            config.token = ENV['SLACK_API_TOKEN']
-        end
-        @slack = Slack::Web::Client.new
-    end
 
     def fuel_price_params
         params.require(:fuel_price).permit(fuel_products_attributes: [:fuel, :price, :_destroy, :id])
