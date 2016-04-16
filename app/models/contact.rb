@@ -21,7 +21,7 @@ class Contact < ActiveRecord::Base
 
           #  supplier.pricerockets.create(to: cell_number, body: "Hey there! #{first_name}. #{supplier.first_name} from #{supplier.business_name} just added you to their contacts at petrohub. Regular: $#{retail_prices.last.r_regular}, Medium: $#{retail_prices.last.r_medium},Premium: $#{retail_prices.last.r_premium}, Diesel: $#{retail_prices.last.r_diesel}")
           #  @client.messages.create(
-                from: '+18482299159',
+              #  from: '+18482299159',
           #      to: cell_number,
           #      body: "Hey there! #{first_name}. This message is from PetroHub on behalf of #{supplier.first_name} from #{supplier.business_name}. Their current FuelPrice is as follows, Regular: $#{retail_prices.last.r_regular}, Medium: $#{retail_prices.last.r_medium},Premium: $#{retail_prices.last.r_premium}, Diesel: $#{retail_prices.last.r_diesel}"
           #  )
