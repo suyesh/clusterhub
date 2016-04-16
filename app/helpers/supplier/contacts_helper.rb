@@ -1,29 +1,5 @@
 module Supplier::ContactsHelper
-    def contact_full_name(contact)
-        unless contact.nil?
-            full_name = contact.first_name + ' ' + contact.last_name
-            return full_name
-       end
-    end
-
-    def mobile_carrier
-        [
-            'TMobile',
-            'ATT',
-            'Verizon',
-            'Sprint',
-            'US Cellular',
-            'Ultra Mobile',
-            'Simple Mobile',
-            'Lyca Mobile',
-            'H2O',
-            'Red Pocket',
-            'Ting',
-            'Net10',
-            'Tracfone',
-            'PagePlus'
-        ]
-    end
+    
 
     def latest_price_date(latest_price)
         if latest_price.nil?
