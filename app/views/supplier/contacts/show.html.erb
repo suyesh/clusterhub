@@ -1,156 +1,157 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-  <div class="col-lg-12">
-    <h2>Dashboard</h2>
-    <ol class="breadcrumb">
-      <li>
-        <%= link_to "Home", supplier_dashboard_path%>
-      </li>
-      <li>
-        <strong>Contacts</strong>
-      </li>
-      <li class="active">
-        <strong>Fuel Price History for:
-          <%= @contact.first_name%>
-        </strong>
-      </li>
-      <%= link_to edit_supplier_contact_path(@contact), class: "pull-right btn btn-success" do %>
-      <i class="fa fa-plus"></i><strong>&nbsp;Edit Contact</strong>
-      <%end%>
-    </ol>
-    <h2><%= latest_price_date(@latest_price) %></h2>
-  </div>
+    <div class="col-lg-12">
+        <h2>Dashboard</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", supplier_dashboard_path%>
+            </li>
+            <li>
+                <strong>Contacts</strong>
+            </li>
+            <li class="active">
+                <strong>Fuel Price History for:
+                    <%= @contact.first_name%>
+                </strong>
+            </li>
+            <%= link_to edit_supplier_contact_path(@contact), class: "pull-right btn btn-success" do %>
+            <i class="fa fa-plus"></i>
+            <strong>&nbsp;Edit Contact</strong>
+            <%end%>
+        </ol>
+        <h2><%= latest_price_date(@latest_price) %></h2>
+    </div>
 
-  <div class="col-lg-3 pull-right">
-    <div class="widget style1 blue-bg">
-      <div class="row">
-        <div class="col-xs-3">
-          <i class="fa fa-usd fa-5x"></i>
+    <div class="col-lg-3 pull-right">
+        <div class="widget style1 blue-bg">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-usd fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <span>
+                        <strong>Current Price for Diesel</strong>
+                    </span>
+                    <h2 class="font-bold"><%= latest_price_diesel(@latest_price) %></h2>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-8 text-right">
-          <span>
-            <strong>Current Price for Diesel</strong>
-          </span>
-          <h2 class="font-bold"><%= latest_price_diesel(@latest_price) %></h2>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="col-lg-3 pull-right">
-    <div class="widget style1 lazur-bg">
-      <div class="row">
-        <div class="col-xs-3">
-          <i class="fa fa-usd fa-5x"></i>
+    <div class="col-lg-3 pull-right">
+        <div class="widget style1 lazur-bg">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-usd fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <span>
+                        <strong>Current price for Premium</strong>
+                    </span>
+                    <h2 class="font-bold"><%= latest_price_premium(@latest_price)%></h2>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-8 text-right">
-          <span>
-            <strong>Current price for Premium</strong>
-          </span>
-          <h2 class="font-bold"><%= latest_price_premium(@latest_price)%></h2>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="col-lg-3 pull-right">
-    <div class="widget style1 navy-bg">
-      <div class="row">
-        <div class="col-xs-3">
-          <i class="fa fa-usd fa-5x"></i>
+    <div class="col-lg-3 pull-right">
+        <div class="widget style1 navy-bg">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-usd fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <span>
+                        <strong>Current price for Medium</strong>
+                    </span>
+                    <h2 class="font-bold"><%=latest_price_medium(@latest_price) %></h2>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-8 text-right">
-          <span>
-            <strong>Current price for Medium</strong>
-          </span>
-          <h2 class="font-bold"><%=latest_price_medium(@latest_price) %></h2>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="col-lg-3 pull-right">
-    <div class="widget style1 yellow-bg">
-      <div class="row">
-        <div class="col-xs-3">
-          <i class="fa fa-usd fa-5x"></i>
+    <div class="col-lg-3 pull-right">
+        <div class="widget style1 yellow-bg">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-usd fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <span>
+                        <strong>Current price for Regular</strong>
+                    </span>
+                    <h2 class="font-bold"><%=latest_price_regular(@latest_price) %></h2>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-8 text-right">
-          <span>
-            <strong>Current price for Regular</strong>
-          </span>
-          <h2 class="font-bold"><%=latest_price_regular(@latest_price) %></h2>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 <% unless @contact_prices.empty? %>
 <% @contact_prices.each do |contact| %>
 <div class="panel panel-danger">
-  <div class="panel-heading">
-    <h5><%= contact.created_at.strftime("Expired %B %d at %I:%M %p")  %></h5>
-  </div>
-  <div class="panel-body">
-    <div class="col-lg-3 pull-right">
-      <div class="widget style1 white-bg">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-usd fa-5x"></i>
-          </div>
-          <div class="col-xs-8 text-right">
-            <span>
-              <strong>Expired Price for Diesel</strong>
-            </span>
-            <h2 class="font-bold"><%= contact.r_diesel %></h2>
-          </div>
-        </div>
-      </div>
+    <div class="panel-heading">
+        <h5><%= contact.created_at.strftime("Expired %B %d at %I:%M %p")  %></h5>
     </div>
-    <div class="col-lg-3 pull-right">
-      <div class="widget style1 white-bg">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-usd fa-5x"></i>
-          </div>
-          <div class="col-xs-8 text-right">
-            <span>
-              <strong>Expired price for Premium</strong>
-            </span>
-            <h2 class="font-bold"><%= contact.r_premium %></h2>
-          </div>
+    <div class="panel-body">
+        <div class="col-lg-3 pull-right">
+            <div class="widget style1 white-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                        <span>
+                            <strong>Expired Price for Diesel</strong>
+                        </span>
+                        <h2 class="font-bold"><%= contact.r_diesel %></h2>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-3 pull-right">
-      <div class="widget style1 white-bg">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-usd fa-5x"></i>
-          </div>
-          <div class="col-xs-8 text-right">
-            <span>
-              <strong>Expired price for Medium</strong>
-            </span>
-            <h2 class="font-bold"><%= contact.r_medium %></h2>
-          </div>
+        <div class="col-lg-3 pull-right">
+            <div class="widget style1 white-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                        <span>
+                            <strong>Expired price for Premium</strong>
+                        </span>
+                        <h2 class="font-bold"><%= contact.r_premium %></h2>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-3 pull-right">
-      <div class="widget style1 white-bg">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-usd fa-5x"></i>
-          </div>
-          <div class="col-xs-8 text-right">
-            <span>
-              <strong>Expired price for Regular</strong>
-            </span>
-            <h2 class="font-bold"><%= contact.r_regular %></h2>
-          </div>
+        <div class="col-lg-3 pull-right">
+            <div class="widget style1 white-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                        <span>
+                            <strong>Expired price for Medium</strong>
+                        </span>
+                        <h2 class="font-bold"><%= contact.r_medium %></h2>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col-lg-3 pull-right">
+            <div class="widget style1 white-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                        <span>
+                            <strong>Expired price for Regular</strong>
+                        </span>
+                        <h2 class="font-bold"><%= contact.r_regular %></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 <%end%>

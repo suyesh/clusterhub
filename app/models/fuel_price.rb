@@ -1,34 +1,42 @@
-# create_table "fuel_prices", force: :cascade do |t|
-#  t.decimal  "regular"
-#  t.decimal  "medium"
-#  t.decimal  "premium"
-#  t.decimal  "diesel"
-#  t.integer  "supplier_id"
-#  t.datetime "created_at",  null: false
-#  t.datetime "updated_at",  null: false
-# end
-
 class FuelPrice < ActiveRecord::Base
-  validates_presence_of :regular
-  validates_presence_of :medium
-  validates_presence_of :premium
-  validates_presence_of :diesel
-  after_save :create_contact_price
-  belongs_to :supplier, class_name: 'User'
-  belongs_to :retail_price
+    before_create :validate_product_duplication
+    after_save :send_slack
+    validates :fuel_products, presence: true
+    belongs_to :supplier, class_name: 'User'
+    has_many :fuel_products, dependent: :destroy
+    accepts_nested_attributes_for :fuel_products, allow_destroy: true
 
+    private
 
+    def all_products
+      products = []
+        self.fuel_products.each do |product|
+          products << product.fuel + " " + ":" + " " + "$"+product.price.to_s
+        end
+        products
+    end
 
-  def create_contact_price
-    unless supplier.contacts.empty?
-      supplier.contacts.each do |contact|
-        contact.retail_prices.create(r_regular: supplier.fuel_prices.last.regular + contact.c_regular,
-                                     r_medium: supplier.fuel_prices.last.medium + contact.c_medium,
-                                     r_premium: supplier.fuel_prices.last.premium + contact.c_premium,
-                                     r_diesel: supplier.fuel_prices.last.diesel + contact.c_diesel
-                                    )
-        supplier.pricerockets.create(status: :not_sent, to: contact.cell_number, body: "Hey there! #{contact.first_name}. #{supplier.first_name} from #{supplier.business_name} just updated the Gas price for today. Regular: $#{contact.retail_prices.last.r_regular}, Medium: $#{contact.retail_prices.last.r_medium},Premium: $#{contact.retail_prices.last.r_premium}, Diesel: $#{contact.retail_prices.last.r_diesel}")
+    def send_slack
+        require 'slack-ruby-client'
+        Slack.configure do |config|
+            config.token = ENV['SLACK_API_TOKEN']
+        end
+        @slack = Slack::Web::Client.new
+        @slack.chat_postMessage(channel: '#latest_prices', text: "#{self.created_at.strftime('%F')} - #{supplier.first_name} from #{supplier.business_name} just updated the Fuel Prices. #{all_products} ", as_user: true)
+    end
+
+    def validate_product_duplication
+      products = []
+      counter = 0
+      fuel_products.each do |product|
+        if products.include? product.fuel
+          counter += 1
+        else
+          products << product.fuel
+        end
       end
-   end
-  end
+      if counter > 0
+        return false
+      end
+    end
 end

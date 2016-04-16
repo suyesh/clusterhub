@@ -1,85 +1,93 @@
 <div id="wrapper">
-  <div id="page-wrapper" class="gray-bg">
-    <div class="row border-bottom white-bg">
-      <nav class="navbar navbar-static-top" role="navigation">
-        <div class="navbar-header">
-          <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-            <i class="fa fa-reorder"></i>
-          </button>
-          <%= link_to "pH+", supplier_dashboard_path, class:"navbar-brand"%>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar">
-          <ul class="nav navbar-nav">
-            <li class="accountNumber">
-              <%= link_to supplier_dashboard_path, class: "accountNumber" do %>
-              <i class="fa fa-user"></i>
-              <strong>NJSUP2347</strong>
-              <%end%>
-            </li>
-            <li class="dropdown">
-              <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-rocket" style="color:#EF5350"></i>
-                <strong>Price<span style="color:#EF5350">Rocket</span>
-                </strong>
-                <span class="caret"></span>
-              </a>
-              <ul role="menu" class="dropdown-menu">
-                <li><%= link_to supplier_fuel_prices_path do %>
-                  <span><i class="fa fa-usd" aria-hidden="true"></i>&nbsp;Fuel Price</span>
-                  <%end%>
-                </li>
-                <li><%= link_to supplier_contacts_path do %>
-                  <span><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Contacts</span>
-                  <%end%>
-                </li>
-                <li>
-                  <%= link_to supplier_mass_send_index_path do%>
-                  <span><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Mass Send</span>
-                  <%end%>
-                </li>
-                <li><%= link_to supplier_pricerocket_history_path do %>
-                  <span><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;Text History</span>
-                  <%end%>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-users"></i>
-                <strong>Network</strong>
-                <span class="caret"></span>
-              </a>
-              <ul role="menu" class="dropdown-menu">
-                <li>
-                  <a href="">Retailers</a>
-                </li>
-                <li>
-                  <a href="">Suppliers</a>
-                </li>
-                <li>
-                  <a href="">Trucking</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-truck"></i>
-                <strong>Terminals</strong>
-                <span class="caret"></span>
-              </a>
-              <ul role="menu" class="dropdown-menu">
-                <li>
-                  <a href=""><i class="fa fa-plus"></i>&nbsp;<strong>Add Terminal</strong></a>
-                </li>
-                <li>
-                  <a href=""><i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 1</a>
-                </li>
-                <li>
-                  <a href=""><i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 2</a>
-                </li>
-              </ul>
-            </li>
-            <!-- #TODO ORders and Documents and all
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <%= link_to "pH+", supplier_dashboard_path, class:"navbar-brand"%>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="accountNumber">
+                            <%= link_to supplier_dashboard_path, class: "accountNumber" do %>
+                            <i class="fa fa-user"></i>
+                            <strong><%= current_user.account_number %></strong>
+                            <%end%>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-rocket" style="color:#EF5350"></i>
+                                <strong>Price<span style="color:#EF5350">Rocket</span>
+                                </strong>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><%= link_to supplier_fuel_prices_path do %>
+                                    <span>
+                                        <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;Fuel Price</span>
+                                    <%end%>
+                                </li>
+                                <li><%= link_to supplier_contacts_path do %>
+                                    <span>
+                                        <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Contacts</span>
+                                    <%end%>
+                                </li>
+                                <li>
+                                    <%= link_to supplier_mass_send_index_path do%>
+                                    <span>
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Mass Send</span>
+                                    <%end%>
+                                </li>
+                                <li><%= link_to supplier_pricerocket_history_path do %>
+                                    <span>
+                                        <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;Text History</span>
+                                    <%end%>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-users"></i>
+                                <strong>Network</strong>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <a href="">Retailers</a>
+                                </li>
+                                <li>
+                                    <a href="">Suppliers</a>
+                                </li>
+                                <li>
+                                    <a href="">Trucking</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-truck"></i>
+                                <strong>Terminals</strong>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-plus"></i>&nbsp;<strong>Add Terminal</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 1</a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-database" aria-hidden="true"></i>&nbsp;Terminal 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- #TODO ORders and Documents and all
                 <li class="dropdown">
                     <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money"> </i><strong>Orders</strong><span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
@@ -99,34 +107,80 @@
                     </ul>
                 </li>
                 -->
-            <li class="dropdown">
-              <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-wrench"></i>
-                <strong>Options</strong>
-                <span class="caret"></span>
-              </a>
-              <ul role="menu" class="dropdown-menu">
-                <li>
-                  <a href="">Profile</a>
-                </li>
-                <li>
-                  <a href="">Billing</a>
-                </li>
-                <li>
-                  <a href="">Resolution Center</a>
-                </li>
-              </ul>
-            </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-wrench"></i>
+                                <strong>Options</strong>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <a href="">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="">Billing</a>
+                                </li>
+                                <li>
+                                    <a href="">Resolution Center</a>
+                                </li>
+                            </ul>
+                        </li>
 
-          </ul>
-          <ul class="nav navbar-top-links navbar-right">
-            <li>
-              <%= link_to logout_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>
-              <strong>Log Out</strong>
-              <%end%>
-            </li>
-          </ul>
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell"></i>
+                                <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="mailbox.html">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i>
+                                            You have 16 messages
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="profile.html">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i>
+                                            3 New Followers
+                                            <span class="pull-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="grid_options.html">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i>
+                                            Server Rebooted
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="notifications.html">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <%= link_to logout_path, method: :delete do %>
+                            <i class="fa fa-sign-out"></i>
+                            <strong>Log Out</strong>
+                            <%end%>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-      </nav>
-    </div>

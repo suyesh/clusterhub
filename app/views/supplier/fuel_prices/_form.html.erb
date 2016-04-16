@@ -1,40 +1,18 @@
-<%= simple_form_for([:supplier, @fuel_price],remote: true,  wrapper: :vertical_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean:
-:horizontal_boolean }) do |f| %>
-<%= f.input :regular, label: "Regular", wrapper: :vertical_input_group, hint: "Your base price for Regular" do %>
-<span class="input-group-btn">
-  <button class="btn btn-default" type="button">
-    <i class="fa fa-usd" style="color:#1ab394"></i>
-  </button>
-</span>
-<%= f.input_field :regular, class: "form-control", placeholder: "1.25" %>
-<%end%>
-<%= f.input :medium, label: "Medium", wrapper: :vertical_input_group, hint: "Your base price for Medium" do %>
-<span class="input-group-btn">
-  <button class="btn btn-default" type="button">
-    <i class="fa fa-usd" style="color:#1ab394"></i>
-  </button>
-</span>
-<%= f.input_field :medium, class: "form-control", placeholder: "1.25" %>
-<%end%>
-<%= f.input :premium, label: "Premium", wrapper: :vertical_input_group, hint: "Your base price for Premium" do %>
-<span class="input-group-btn">
-  <button class="btn btn-default" type="button">
-    <i class="fa fa-usd" style="color:#1ab394"></i>
-  </button>
-</span>
-<%= f.input_field :premium, class: "form-control", placeholder: "1.25" %>
-<%end%>
-<%= f.input :diesel, label: "Diesel", wrapper: :vertical_input_group, hint: "Your base price for Diesel" do %>
-<span class="input-group-btn">
-  <button class="btn btn-default" type="button">
-    <i class="fa fa-usd" style="color:#1ab394"></i>
-  </button>
-</span>
-<%= f.input_field :diesel, class: "form-control", placeholder: "1.25" %>
-<%end%>
+<%= simple_form_for([:supplier, @fuel_price],remote: true, :html => {:class => 'form-vertical' }) do |f| %>
+<% flash.each do |key, message| %>
+<div class="alert alert-<%= key %>">
+    <%= message %>
 </div>
+<% end %>
+
+<%= f.simple_fields_for :fuel_products do |fuel_products_form| %>
+
+<%= render partial: 'fuel_products_fields', locals: {f: fuel_products_form} %>
+
+<% end %>
+<%= link_to_add_fields "Add more", f, :fuel_products %>
 <div class="modal-footer">
-<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-<%= f.button :submit, "Update", class: "btn btn-primary"%>
+    <%= f.button :submit, "Update", class: "btn btn-success"%>
 </div>
+
 <%end%>

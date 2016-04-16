@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411170549) do
+ActiveRecord::Schema.define(version: 20160416223919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,25 +29,24 @@ ActiveRecord::Schema.define(version: 20160411170549) do
     t.string   "state"
     t.string   "zip_code"
     t.integer  "supplier_id"
-    t.decimal  "c_regular"
-    t.decimal  "c_medium"
-    t.decimal  "c_premium"
-    t.decimal  "c_diesel"
-    t.decimal  "c_delivery"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "email"
   end
 
   create_table "fuel_prices", force: :cascade do |t|
-    t.decimal  "regular"
-    t.decimal  "medium"
-    t.decimal  "premium"
-    t.decimal  "diesel"
     t.integer  "supplier_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "expired",     default: false
+  end
+
+  create_table "fuel_products", force: :cascade do |t|
+    t.string   "fuel"
+    t.decimal  "price"
+    t.integer  "fuel_price_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "pricerockets", force: :cascade do |t|
