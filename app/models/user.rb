@@ -23,11 +23,15 @@ class User < ActiveRecord::Base
     enum status: [:inactive, :active, :denied, :archived]
 
     has_many :stations, foreign_key: :retailer_id
-    has_many :formulas
     has_many :fuel_prices, foreign_key: :supplier_id
     has_many :contacts, foreign_key: :supplier_id
-    has_many :retail_prices, foreign_key: :contact_id
+    has_many :retail_prices, foreign_key: :retailer_id
     has_many :pricerockets, foreign_key: :supplier_id
+
+    before_create :validate_formula_duplication
+    validates :fuel_formula, presence: true
+    has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
+    accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
 
     private
 
@@ -44,6 +48,21 @@ class User < ActiveRecord::Base
                                       'NJ' + rand_num + 'TRU'
                                           end
         end
+    end
+
+    def validate_formula_duplication
+      formulas = []
+      counter = 0
+      fuel_formulas.each do |formula|
+        if formulas.include? formula.fuel
+          counter += 1
+        else
+          formulas << formula.fuel
+        end
+      end
+      if counter > 0
+        return false
+      end
     end
 end
 
