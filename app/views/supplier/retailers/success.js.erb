@@ -1,0 +1,6 @@
+$('#RetailerModelBody').html("<%= escape_javascript(render partial: 'alert') %>");
+$('#RetailerTable').html("<%= escape_javascript(render partial: 'retailers_tables') %>");
+$('#newRetailer').slideUp( "slow", function() {
+    // Animation complete.
+    $('#newRetailer').modal('toggle');
+  });
