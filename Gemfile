@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -20,20 +19,17 @@ gem 'sorcery', '~> 0.9.0'
 gem 'twilio-ruby'
 gem 'slack-ruby-client'
 
-
-
-
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
-  gem 'byebug'
-  gem 'figaro'
+    gem 'factory_girl_rails'
+    gem 'rspec-rails', '~> 3.0'
+    gem 'capybara'
+    gem 'byebug'
+    gem 'figaro'
 end
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+    gem 'better_errors'
+    gem 'binding_of_caller'
+    gem 'web-console', '~> 2.0'
+    gem 'spring'
 end
