@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
     has_many :retail_prices, foreign_key: :retailer_id
     has_many :pricerockets, foreign_key: :supplier_id
 
-    before_create :validate_formula_duplication
-    validates :fuel_formula, presence: true
+    # before_create :validate_formula_duplication
+    # validates :fuel_formula, presence: true
     has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
     accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
 
@@ -51,18 +51,16 @@ class User < ActiveRecord::Base
     end
 
     def validate_formula_duplication
-      formulas = []
-      counter = 0
-      fuel_formulas.each do |formula|
-        if formulas.include? formula.fuel
-          counter += 1
-        else
-          formulas << formula.fuel
+        formulas = []
+        counter = 0
+        fuel_formulas.each do |formula|
+            if formulas.include? formula.fuel
+                counter += 1
+            else
+                formulas << formula.fuel
+            end
         end
-      end
-      if counter > 0
-        return false
-      end
+        return false if counter > 0
     end
 end
 

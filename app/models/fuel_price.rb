@@ -9,9 +9,9 @@ class FuelPrice < ActiveRecord::Base
     private
 
     def all_products
-      products = []
-        self.fuel_products.each do |product|
-          products << product.fuel + " " + ":" + " " + "$"+product.price.to_s
+        products = []
+        fuel_products.each do |product|
+            products << product.fuel + ' ' + ':' + ' ' + '$' + product.price.to_s
         end
         products
     end
@@ -22,21 +22,19 @@ class FuelPrice < ActiveRecord::Base
             config.token = ENV['SLACK_API_TOKEN']
         end
         @slack = Slack::Web::Client.new
-        @slack.chat_postMessage(channel: '#latest_prices', text: "#{self.created_at.strftime('%F')} - #{supplier.first_name} from #{supplier.business_name} just updated the Fuel Prices. #{all_products} ", as_user: true)
+        @slack.chat_postMessage(channel: '#latest_prices', text: "#{created_at.strftime('%F')} - #{supplier.first_name} from #{supplier.business_name} just updated the Fuel Prices. #{all_products} ", as_user: true)
     end
 
     def validate_product_duplication
-      products = []
-      counter = 0
-      fuel_products.each do |product|
-        if products.include? product.fuel
-          counter += 1
-        else
-          products << product.fuel
+        products = []
+        counter = 0
+        fuel_products.each do |product|
+            if products.include? product.fuel
+                counter += 1
+            else
+                products << product.fuel
+            end
         end
-      end
-      if counter > 0
-        return false
-      end
+        return false if counter > 0
     end
 end

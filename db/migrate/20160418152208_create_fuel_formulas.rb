@@ -3,7 +3,7 @@ class CreateFuelFormulas < ActiveRecord::Migration
     create_table :fuel_formulas do |t|
       t.string :fuel
       t.decimal :margin
-      r.integer :retailer_id
+      t.integer :retailer_id
       t.timestamps null: false
     end
   end
