@@ -28,10 +28,13 @@ class User < ActiveRecord::Base
     has_many :retail_prices, foreign_key: :retailer_id
     has_many :pricerockets, foreign_key: :supplier_id
 
-    # before_create :validate_formula_duplication
+    # validate :validate_formula_duplication
     # validates :fuel_formula, presence: true
     has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
     accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
+    has_many :connections
+    ##has_many :retailers, class_mame: 'User', foreign_key: :retailer_id, through: :connections_retails
+    ##has_many :suppliers, through: :connections_suppliers
 
     private
 
@@ -63,6 +66,3 @@ class User < ActiveRecord::Base
         return false if counter > 0
     end
 end
-
-# belongs_to :contact, class_name: 'User' # contact_id integer
-# belongs_to :supplier, class_name: 'User' # supplier_id integer

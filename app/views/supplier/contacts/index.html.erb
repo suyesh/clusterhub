@@ -9,7 +9,7 @@
                 <strong>Contacts</strong>
             </li>
             <%= link_to new_supplier_retailer_path, remote: true do %>
-            <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#newRetailer">
+            <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#newContact">
                 <i class="fa fa-user-plus"></i>
                 <strong>&nbsp;New Contact</strong>
             </button>
@@ -21,7 +21,7 @@
 <div class="wrapper wrapper-content animated fadeInRight">
 
     <div class="row" id="RetailerTable">
-        <%= render partial: 'retailers_tables', locals: { retailers: @retailers } %>
+        <%= render partial: 'contacts_tables', locals: { retailers: @retailers } %>
     </div>
 
 </div>
@@ -39,7 +39,7 @@
             </br>
             <span class="font-bold">As (your fuel price + the formula). Set the Formula for them below.</span>
         </div>
-        <div class="modal-body" id="RetailerModelBody">
+        <div class="modal-body" id="ContactModelBody">
             <!--form -->
         </div>
     </div>
