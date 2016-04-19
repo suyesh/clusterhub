@@ -1,0 +1,10 @@
+option number one, the server sends events to the client (browsers):
+  - action cable (the rails way)
+  - websockets
+  - (push / pull paradigm)
+
+option number two
+  - a infinite loop in javascript that does an ajax request every 5 minutes to a controller / action that returns a js with the
+    normal jquery_ujs / remote true stuff (returns a jaquery to replace content inside  div)
+
+    to find with google about time events with precision 
