@@ -1,0 +1,27 @@
+<% @retailers.each do |retailer| %>
+<div class="col-lg-6">
+
+    <div class="contact-box">
+        <%= link_to supplier_retailer_path(retailer) do %>
+        <div class="col-sm-4">
+            <div class="text-center">
+                <%=image_tag( avatar_url(retailer), class: "img-circle m-t-xs img-responsive")%>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h3>
+                <strong><%= retailer_full_name(retailer)%></strong>
+            </h3>
+            <address>
+                <strong>Fuel Margin Formulas</strong><br>
+
+            </address>
+
+        </div>
+        <%end%>
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>
+<%end%>

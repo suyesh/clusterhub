@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_twilio, only: [:create]
     before_action :set_slack, only: [:create]
-    before_action :gen_default_password, only: [:new, :create]
     layout 'static_application'
     def new
         @user = User.new
@@ -26,9 +25,7 @@ class UsersController < ApplicationController
 
     private
 
-    def gen_default_password
-        @default_password = SecureRandom.hex(5)
-    end
+
 
 
     def user_params

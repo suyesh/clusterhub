@@ -1,6 +1,6 @@
 module Supplier::RetailersHelper
   def retailer_full_name(contact)
-      unless retailer.nil?
+      unless contact.nil?
           full_name = contact.first_name + ' ' + contact.last_name
           return full_name
      end

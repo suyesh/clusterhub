@@ -20,8 +20,8 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
 
-    <div class="row" id="ContactTable">
-        <%= render partial: 'contacts_tables', locals: { contacts: @contacts } %>
+    <div class="row" id="RetailerTable">
+        <%= render partial: 'retailers_tables', locals: { retailers: @retailers } %>
     </div>
 
 </div>
@@ -34,8 +34,8 @@
                     <span class="sr-only">Close</span>
                 </button>
                 <i class="fa fa-users modal-icon" style="color:#1ab394"></i>
-                <h4 class="modal-title">Add New Contact</h4>
-                <span class="font-bold">Your contacts will get text message of your latest price</span>
+                <h4 class="modal-title">Add New Retailer</h4>
+                <span class="font-bold">Your Retailers will get text message of your latest price</span>
             </br>
             <span class="font-bold">As (your fuel price + the formula). Set the Formula for them below.</span>
         </div>
