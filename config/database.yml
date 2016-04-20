@@ -8,13 +8,13 @@ default: &default
 
 development:
   <<: *default
-  database: petrox_main_dev
+  database: petro_future_dev
 
 
 
 test:
   <<: *default
-  database: petrox_main_test
+  database: petrox_future_test
 
 
 production:

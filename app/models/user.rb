@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     before_save :generate_account_number
     authenticates_with_sorcery!
+    attr_accessor :user_supplier
     validates :password, length: { minimum: 3 }, if: -> { new_record? || changes['password'] }
     validates :password, confirmation: true, if: -> { new_record? || changes['password'] }
     validates :password_confirmation, presence: true, if: -> { new_record? || changes['password'] }
@@ -23,8 +24,13 @@ class User < ActiveRecord::Base
     has_many :connection_suppliers
     has_many :retailers, foreign_key: :retailer_id, through: :connection_retailers
     has_many :suppliers, foreign_key: :supplier_id, through: :connection_suppliers
+    validate :validate_formula_duplication, if: :user_supplier_check
 
     private
+
+    def user_supplier_check
+        user_supplier.supplier?
+    end
 
     def generate_account_number
         rand_num = SecureRandom.hex(3).upcase
@@ -39,5 +45,18 @@ class User < ActiveRecord::Base
                                       'NJ' + rand_num + 'TRU'
                                           end
         end
+    end
+
+    def validate_formula_duplication
+        formulas = []
+        counter = 0
+        fuel_formulas.each do |formula|
+            if formulas.include? formula.fuel
+                counter += 1
+            else
+                formulas << formula.fuel
+            end
+        end
+        return false if counter > 0
     end
 end

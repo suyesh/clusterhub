@@ -12,6 +12,7 @@ class Supplier::RetailersController < Supplier::ApplicationController
 
     def create
         @retailer = User.create(retailers_params)
+        @retailer.user_supplier = current_user
         respond_to do |format|
             format.js do
                 if @retailer.save
@@ -21,7 +22,7 @@ class Supplier::RetailersController < Supplier::ApplicationController
                     flash.now[:notice] = 'Retailer has been successfully added.'
                     render 'success'
                 else
-                    flash.now[:alert] = "something went wrong. Please check your form."
+                    flash.now[:alert] = 'something went wrong. Please check your form.'
                     render 'new'
                 end
             end
@@ -39,6 +40,6 @@ class Supplier::RetailersController < Supplier::ApplicationController
             password: @default_password,
             password_confirmation: @default_password
         }
-        params.require(:user).permit(:first_name, :last_name, :business_name, :role, :cell_number,:email, :password, :password_confirmation, fuel_formulas_attributes: [:fuel, :margin, :_destroy, :id]).merge(default_params)
+        params.require(:user).permit(:first_name, :last_name, :business_name, :cell_number, :email, :password, :password_confirmation, fuel_formulas_attributes: [:fuel, :margin, :_destroy, :id]).merge(default_params)
      end
 end
