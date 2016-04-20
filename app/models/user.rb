@@ -32,9 +32,10 @@ class User < ActiveRecord::Base
     # validates :fuel_formula, presence: true
     has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
     accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
-    has_many :connections
-    ##has_many :retailers, class_mame: 'User', foreign_key: :retailer_id, through: :connections_retails
-    ##has_many :suppliers, through: :connections_suppliers
+    has_many :connections_retailers
+    has_many :connection_suppliers
+    has_many :retailers, class_mame: 'User', foreign_key: :retailer_id, through: :connections_retailers
+    has_many :suppliers, class_name: 'User', foreign_key: :supplier_id, through: :connections_suppliers
 
     private
 
