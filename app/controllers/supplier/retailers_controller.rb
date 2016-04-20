@@ -12,7 +12,7 @@ class Supplier::RetailersController < Supplier::ApplicationController
 
     def create
         @retailer = User.create(retailers_params)
-        @retailer.user_supplier = current_user
+        @retailer.user_supplier = current_user.role
         respond_to do |format|
             format.js do
                 if @retailer.save
