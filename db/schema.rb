@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420140641) do
+ActiveRecord::Schema.define(version: 20160420143447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "connection_retailers", force: :cascade do |t|
     t.integer  "retailer_id"
-    t.integer  "supplier_id"
     t.integer  "status",      default: 0
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "user_id"
   end
 
   create_table "connection_suppliers", force: :cascade do |t|
-    t.integer  "retailer_id"
     t.integer  "supplier_id"
     t.integer  "status",      default: 0
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
