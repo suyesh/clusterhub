@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
     has_many :connections_retailers
     has_many :connection_suppliers
-    has_many :retailers, class_mame: 'User', foreign_key: :retailer_id, through: :connections_retailers
+    has_many :retailers, class_name: 'User', foreign_key: :retailer_id, through: :connections_retailers
     has_many :suppliers, class_name: 'User', foreign_key: :supplier_id, through: :connections_suppliers
 
     private
