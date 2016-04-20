@@ -9,29 +9,15 @@ class User < ActiveRecord::Base
     validates_presence_of :first_name
     validates_presence_of :last_name
     validates_presence_of :business_name
-    validates_presence_of :phone_number
     validates_presence_of :cell_number
-    validates_presence_of :street_address
-    validates_presence_of :city
-    validates_presence_of :state
-    validates_presence_of :zip_code
-    # validates :tax_id, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
-    # validates :ssn, uniqueness: true, presence: true, if: -> { new_record? || changes['password'] }
-    validates_presence_of :terms, terms: 1, message: 'You have to agree to our terms and conditions.', on: :create
-
     enum role: [:pending, :retailer, :supplier, :trucking, :admin]
     enum status: [:inactive, :active, :denied, :archived]
-
     has_many :stations, foreign_key: :retailer_id
     has_many :fuel_prices, foreign_key: :supplier_id
     has_many :contacts, foreign_key: :supplier_id
     has_many :retail_prices, foreign_key: :retailer_id
     has_many :pricerockets, foreign_key: :supplier_id
-
-    # validate :validate_formula_duplication
-    # validates :fuel_formula, presence: true
     has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
-    accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
     has_many :connection_retailers
     has_many :connection_suppliers
     has_many :retailers, foreign_key: :retailer_id, through: :connection_retailers
@@ -52,18 +38,5 @@ class User < ActiveRecord::Base
                                       'NJ' + rand_num + 'TRU'
                                           end
         end
-    end
-
-    def validate_formula_duplication
-        formulas = []
-        counter = 0
-        fuel_formulas.each do |formula|
-            if formulas.include? formula.fuel
-                counter += 1
-            else
-                formulas << formula.fuel
-            end
-        end
-        return false if counter > 0
     end
 end

@@ -1,0 +1,16 @@
+<%= simple_form_for(@retailer, remote: true, url: supplier_retailers_path, :html => {:class => 'form-vertical' }) do |f| %>
+<% flash.each do |key, message| %>
+<div class="alert alert-<%= key %>">
+    <%= message %>
+</div>
+<% end %>
+<%= f.input :first_name, label: "First Name" %>
+<%= f.input :last_name, label: "Last Name"%>
+<%= f.input :business_name, label: "Business Name" %>
+<%= f.input :email, label: "Email" %>
+<%= f.input :cell_number, label: "Mobile Number" %>
+<div class="modal-footer">
+    <%= f.button :submit, "Add", class: "btn btn-success"%>
+</div>
+
+<%end%>

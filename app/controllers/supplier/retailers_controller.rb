@@ -1,23 +1,27 @@
 class Supplier::RetailersController < Supplier::ApplicationController
+    before_action :gen_default_password, only: [:new, :create]
+    
     def index
         @retailers = current_user.retailers.all
     end
 
     def new
-        @retailer = current_user.retailers.build
-        @latest_retailer = current_user.retailers.last
+        @retailer = User.new
     end
 
     def create
-        @retailer = current_user.retailers.new(retailers_params)
+        @retailer = User.create(retailers_params)
         respond_to do |format|
             format.js do
                 if @retailer.save
+                    @retailer.retailer!
+                    current_user.retailers << @retailer
                     @retailers = current_user.retailers.all.order('created_at DESC')
                     flash.now[:notice] = 'Retailer has been successfully added.'
                     render 'success'
                 else
-                    render 'create'
+                    flash.now[:alert] = "something went wrong. Please check your form."
+                    render 'new'
                 end
             end
         end
@@ -25,11 +29,15 @@ class Supplier::RetailersController < Supplier::ApplicationController
 
     private
 
+    def gen_default_password
+        @default_password = SecureRandom.hex(5)
+    end
+
     def retailers_params
         default_params = {
             password: @default_password,
             password_confirmation: @default_password
         }
-        params.require(:user).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code, :tax_id, :ssn, :in_biz, :terms, :email, :password, :password_confirmation).merge(default_params)
+        params.require(:user).permit(:first_name, :last_name, :business_name, :role, :cell_number,:email, :password, :password_confirmation).merge(default_params)
      end
 end

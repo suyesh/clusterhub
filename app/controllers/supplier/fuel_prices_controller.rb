@@ -19,7 +19,7 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
             format.js do
                 if @fuel_price.save
                     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
-                    flash.now[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.contacts.count} Text messages with updated price to your #{current_user.contacts.count} retailers."
+                    flash.now[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.retailers.count} Text messages with updated price to your #{current_user.retailers.count} retailers."
                     render 'success'
                 else
                     flash.now[:alert] = "You need to add atleast one Fuel product price. You cannot have multiple same types of Fuel selected."
