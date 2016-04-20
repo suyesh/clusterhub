@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
     has_many :retail_prices, foreign_key: :retailer_id
     has_many :pricerockets, foreign_key: :supplier_id
     has_many :fuel_formulas, foreign_key: :retailer_id, dependent: :destroy
+    accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
     has_many :connection_retailers
     has_many :connection_suppliers
     has_many :retailers, foreign_key: :retailer_id, through: :connection_retailers

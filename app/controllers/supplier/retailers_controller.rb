@@ -1,12 +1,13 @@
 class Supplier::RetailersController < Supplier::ApplicationController
     before_action :gen_default_password, only: [:new, :create]
-    
+
     def index
         @retailers = current_user.retailers.all
     end
 
     def new
         @retailer = User.new
+        @retailer.fuel_formulas.build
     end
 
     def create
@@ -38,6 +39,6 @@ class Supplier::RetailersController < Supplier::ApplicationController
             password: @default_password,
             password_confirmation: @default_password
         }
-        params.require(:user).permit(:first_name, :last_name, :business_name, :role, :cell_number,:email, :password, :password_confirmation).merge(default_params)
+        params.require(:user).permit(:first_name, :last_name, :business_name, :role, :cell_number,:email, :password, :password_confirmation, fuel_formulas_attributes: [:fuel, :margin, :_destroy, :id]).merge(default_params)
      end
 end
