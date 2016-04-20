@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     private
 
     def user_supplier_check
-        self.user_supplier == :supplier
+        user_supplier == :supplier
     end
 
     def generate_account_number
