@@ -3,7 +3,7 @@ class CreateConnectionSuppliers < ActiveRecord::Migration
     create_table :connection_suppliers do |t|
       t.integer :retailer_id
       t.integer :supplier_id
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end
