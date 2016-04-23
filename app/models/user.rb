@@ -28,8 +28,17 @@ class User < ActiveRecord::Base
 
     private
 
+
     def user_supplier_check
         user_supplier == :supplier
+    end
+
+    def gen_retail_price
+      supp = suppliers.find(supplier_number)
+      fuel_formulas.each do |formula|
+        supp.fuel_prices.last.fuel_products.each do |products|
+        end
+      end
     end
 
     def generate_account_number
