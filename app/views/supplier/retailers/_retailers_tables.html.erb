@@ -14,6 +14,16 @@
             </h3>
             <address>
                 <strong>Fuel Margin Formulas</strong><br>
+                <% retailer.fuel_formulas.each do |formula| %>
+                <strong><%= formula.fuel %></strong>
+                $<%= formula.margin %><br>
+                <%end%>
+                <abbr title="Phone">
+                    <strong>
+                        <i class="fa fa-phone"></i>
+                    </strong>
+                </abbr>
+                <%= retailer.cell_number %>
 
             </address>
 

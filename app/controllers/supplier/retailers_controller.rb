@@ -13,11 +13,13 @@ class Supplier::RetailersController < Supplier::ApplicationController
     def create
         @retailer = User.create(retailers_params)
         @retailer.user_supplier = current_user.role
+        @retailer.supplier_number = current_user.id
         respond_to do |format|
             format.js do
                 if @retailer.save
                     @retailer.retailer!
                     current_user.retailers << @retailer
+                    @retailer.suppliers << current_user
                     @retailers = current_user.retailers.all.order('created_at DESC')
                     flash.now[:notice] = 'Retailer has been successfully added.'
                     render 'success'

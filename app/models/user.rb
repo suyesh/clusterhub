@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
     before_save :generate_account_number
     authenticates_with_sorcery!
-    attr_accessor :user_supplier
+    attr_accessor :user_supplier, :supplier_number
     validates :password, length: { minimum: 3 }, if: -> { new_record? || changes['password'] }
     validates :password, confirmation: true, if: -> { new_record? || changes['password'] }
     validates :password_confirmation, presence: true, if: -> { new_record? || changes['password'] }
@@ -35,13 +35,13 @@ class User < ActiveRecord::Base
     def generate_account_number
         rand_num = SecureRandom.hex(3).upcase
         if account_number.nil?
-            self.account_number = if admin? && active?
+            self.account_number = if admin?
                                       'EGYPT' + rand_num
-                                  elsif retailer? && active?
+                                  elsif retailer?
                                       'NJ' + rand_num + 'RET'
-                                  elsif supplier? && active?
+                                  elsif supplier?
                                       'NJ' + rand_num + 'SUP'
-                                  elsif trucking? && active?
+                                  elsif trucking?
                                       'NJ' + rand_num + 'TRU'
                                           end
         end
