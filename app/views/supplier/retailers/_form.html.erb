@@ -10,11 +10,11 @@
 <%= f.input :email, label: "Email" %>
 <%= f.input :cell_number, label: "Mobile Number" %>
 <%= f.simple_fields_for :fuel_formulas do |fuel_formulas_form| %>
-<%= render partial: 'fuel_formulas_fields', locals: {f: fuel_formulas_form} %>
+  <%= render partial: 'fuel_formulas_fields', locals: {f: fuel_formulas_form} %>
 <% end %>
 
 <%= link_to_add_fields "Add More", f, :fuel_formulas %>
-<div class="modal-footer">
+  <div class="modal-footer">
     <%= f.button :submit, "Add", class: "btn btn-success"%>
-</div>
+  </div>
 <%end%>
