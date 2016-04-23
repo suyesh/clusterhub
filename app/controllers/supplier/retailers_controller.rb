@@ -1,5 +1,6 @@
 class Supplier::RetailersController < Supplier::ApplicationController
     before_action :gen_default_password, only: [:new, :create]
+    before_action :set_retailer, only: [:show]
 
     def index
         @retailers = current_user.retailers.all
@@ -38,10 +39,14 @@ class Supplier::RetailersController < Supplier::ApplicationController
 
     def show
         @retail_prices = @retailer.retail_prices.all.order('created_at DESC').offset(1)
-        @latest_price = @retailer.retail_prices.last
+        @latest_fuel_price = @retailer.retail_prices.last
     end
 
     private
+
+    def set_retailer
+      @retailer = current_user.retailers.find(params[:id])
+    end
 
     def gen_default_password
         @default_password = SecureRandom.hex(5)

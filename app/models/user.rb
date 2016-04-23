@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
     accepts_nested_attributes_for :fuel_formulas, allow_destroy: true
     has_many :connection_retailers
     has_many :connection_suppliers
-    has_many :retailers, foreign_key: :retailer_id, through: :connection_retailers
-    has_many :suppliers, foreign_key: :supplier_id, through: :connection_suppliers
+    has_many :retailers, foreign_key: :retailer_id, through: :connection_retailers,dependent: :destroy
+    has_many :suppliers, foreign_key: :supplier_id, through: :connection_suppliers,dependent: :destroy
     validate :validate_formula_duplication, if: :user_supplier_check
 
     private
