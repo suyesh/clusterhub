@@ -1,0 +1,24 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Other Suppliers</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", supplier_dashboard_path %>
+            </li>
+            <li class="active">
+                <strong>Suppliers</strong>
+            </li>
+            <%= link_to new_supplier_retailer_path, remote: true do %>
+            <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#newSupplier" >
+                <i class="fa fa-user-plus"></i>
+                <strong>&nbsp;Add Supplier</strong>
+            </button>
+            <%end%>
+        </ol>
+    </div>
+</div>
+<div class="jumbotron">
+  <h1>Hello!</h1>
+  <p>Soon you will be able to Add other suppliers like yourself to your network. You will be able to share Fuel price and do other business easily.</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Coming soon</a></p>
+</div>

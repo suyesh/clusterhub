@@ -6,7 +6,7 @@
                     <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
                         <i class="fa fa-reorder"></i>
                     </button>
-                    <%= link_to "pH+", supplier_dashboard_path, class:"navbar-brand"%>
+                    <%= link_to "pH+ (beta v0.1)", supplier_dashboard_path, class:"navbar-brand"%>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
@@ -27,11 +27,6 @@
                                 <li><%= link_to supplier_fuel_prices_path do %>
                                     <span>
                                         <i class="fa fa-usd" aria-hidden="true"></i>&nbsp;Fuel Price</span>
-                                    <%end%>
-                                </li>
-                                <li><%= link_to supplier_contacts_path do %>
-                                    <span>
-                                        <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Contacts</span>
                                     <%end%>
                                 </li>
                                 <li>
@@ -58,10 +53,10 @@
                                     <%= link_to "Retailers", supplier_retailers_path %>
                                 </li>
                                 <li>
-                                    <a href="">Suppliers</a>
+                                    <%= link_to "Suppliers", supplier_suppliers_path%>
                                 </li>
                                 <li>
-                                    <a href="">Trucking</a>
+                                    <%= link_to "Trucking", supplier_truckings_path %>
                                 </li>
                             </ul>
                         </li>
