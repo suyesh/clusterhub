@@ -20,6 +20,11 @@ class Supplier::RetailersController < Supplier::ApplicationController
                     @retailer.retailer!
                     current_user.retailers << @retailer
                     @retailer.suppliers << current_user
+                    @retail_price = @retailer.retail_prices.create
+                    @retailer.fuel_formulas.each do |formula|
+                        supplier_fuel = current_user.fuel_prices.last.fuel_products.find_by(fuel: formula.fuel)
+                        @retail_price.retail_products.create(fuel: formula.fuel, price: formula.margin + supplier_fuel.price)
+                    end
                     @retailers = current_user.retailers.all.order('created_at DESC')
                     flash.now[:notice] = 'Retailer has been successfully added.'
                     render 'success'
@@ -29,6 +34,11 @@ class Supplier::RetailersController < Supplier::ApplicationController
                 end
             end
         end
+    end
+
+    def show
+        @retail_prices = @retailer.retail_prices.all.order('created_at DESC').offset(1)
+        @latest_price = @retailer.retail_prices.last
     end
 
     private
