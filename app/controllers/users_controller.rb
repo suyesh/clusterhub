@@ -25,9 +25,6 @@ class UsersController < ApplicationController
 
     private
 
-
-
-
     def user_params
         params.require(:user).permit(:first_name, :last_name, :business_name, :phone_number, :cell_number, :street_address, :apt_suite, :city, :state, :zip_code, :tax_id, :ssn, :in_biz, :terms, :email, :password, :password_confirmation)
     end
