@@ -1,3 +1,25 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Today's latest price for <%= @retailer.first_name %>e</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to "Home", supplier_dashboard_path%>
+            </li>
+            <li class="active">
+                <strong><%= @retailer.business_name %></strong>
+            </li>
+
+            <%= link_to edit_supplier_retailer_path(@retailer), remote: true do %>
+            <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#editRetailer">
+                <i class="fa fa-plus"></i>
+                <strong>&nbsp;Edit Retailer</strong>
+            </button>
+            <%end%>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
 <div class="row">
     <div class="title">
         <h3 id="today">Today's latest price for <%= @retailer.first_name %></h3>
@@ -235,4 +257,25 @@
         </div>
     </div>
     <%end%>
+</div>
+
+<div class="modal inmodal" id="editRetailer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <i class="fa fa-usd modal-icon" style="color:#1ab394"></i>
+                <h4 class="modal-title">Edit Retailer</h4>
+                <span class="font-bold">Your Retailrs will get text message of your latest price</span>
+            </br>
+            <span class="font-bold">As (your fuel price + the Margin).</span>
+        </div>
+        <div class="modal-body" id="RetailerModelBody">
+            <!-- form -->
+        </div>
+    </div>
+</div>
 </div>

@@ -1,6 +1,6 @@
 class Supplier::RetailersController < Supplier::ApplicationController
     before_action :gen_default_password, only: [:new, :create]
-    before_action :set_retailer, only: [:show]
+    before_action :set_retailer, only: [:show, :edit, :update]
 
     def index
         @retailers = current_user.retailers.all
@@ -21,10 +21,15 @@ class Supplier::RetailersController < Supplier::ApplicationController
                     @retailer.retailer!
                     current_user.retailers << @retailer
                     @retailer.suppliers << current_user
+                    @fuel = nil
                     @retail_price = @retailer.retail_prices.create
-                    @retailer.fuel_formulas.each do |formula|
-                        supplier_fuel = current_user.fuel_prices.last.fuel_products.find_by(fuel: formula.fuel)
-                        @retail_price.retail_products.create(fuel: formula.fuel, price: formula.margin + supplier_fuel.price)
+                    @retailer.fuel_formulas.sort.each do |formula|
+                      current_user.fuel_prices.last.fuel_products.sort.each do |product|
+                        if formula.fuel == product.fuel
+                          @fuel = product.fuel
+                          @retail_price.retail_products.create(fuel: @fuel, price: product.price + formula.margin)
+                        end
+                      end
                     end
                     @retailers = current_user.retailers.all.order('created_at DESC')
                     flash.now[:notice] = 'Retailer has been successfully added.'
@@ -33,6 +38,14 @@ class Supplier::RetailersController < Supplier::ApplicationController
                     flash.now[:alert] = 'something went wrong. Please check your form.'
                     render 'new'
                 end
+            end
+        end
+    end
+
+    def edit
+        respond_to do |format|
+            format.js do
+                render 'edit'
             end
         end
     end
