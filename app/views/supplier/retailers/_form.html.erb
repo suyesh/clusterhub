@@ -9,6 +9,7 @@
 <%= f.input :business_name, label: "Business Name" %>
 <%= f.input :email, label: "Email" %>
 <%= f.input :cell_number, label: "Mobile Number" %>
+<%= f.input :zip_code, label: "Zip Code" %>
 <%= f.simple_fields_for :fuel_formulas do |fuel_formulas_form| %>
   <%= render partial: 'fuel_formulas_fields', locals: {f: fuel_formulas_form} %>
 <% end %>

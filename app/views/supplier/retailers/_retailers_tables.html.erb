@@ -13,14 +13,14 @@
                 <strong><%= retailer_full_name(retailer)%></strong>
             </h3>
             <address>
-              <strong>Fuel Margin Formulas</strong><br>
+              <strong><%= retailer.business_name %></strong><br>
 
               <strong>Name: </strong>
               <%= retailer_full_name(retailer)%><br>
               <strong>Email:</strong>
-              $<%= retailer.email%><br>
-              <strong>Business Name:</strong>
-              $<%= retailer.business_name %><br>
+              <%= retailer.email%><br>
+              <strong>Zip Code</strong>
+              <%= retailer.zip_code %><br>
               <abbr title="Phone">
                   <strong>
                       <i class="fa fa-phone"></i>

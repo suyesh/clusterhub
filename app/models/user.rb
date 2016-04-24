@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     validates_presence_of :last_name
     validates_presence_of :business_name
     validates_presence_of :cell_number
+    validates_presence_of :zip_code
     enum role: [:pending, :retailer, :supplier, :trucking, :admin]
     enum status: [:inactive, :active, :denied, :archived]
     has_many :stations, foreign_key: :retailer_id

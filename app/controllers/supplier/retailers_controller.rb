@@ -117,7 +117,7 @@ class Supplier::RetailersController < Supplier::ApplicationController
             password: @default_password,
             password_confirmation: @default_password
         }
-        params.require(:user).permit(:first_name, :last_name, :business_name, :cell_number, :email, :password, :password_confirmation, fuel_formulas_attributes: [:fuel, :margin, :_destroy, :id]).merge(default_params)
+        params.require(:user).permit(:first_name, :last_name, :business_name, :cell_number, :zip_code, :email, :password, :password_confirmation, fuel_formulas_attributes: [:fuel, :margin, :_destroy, :id]).merge(default_params)
      end
 
     def set_twilio
