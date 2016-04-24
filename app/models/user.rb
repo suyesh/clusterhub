@@ -44,13 +44,13 @@ class User < ActiveRecord::Base
     def generate_account_number
         rand_num = SecureRandom.hex(3).upcase
         if account_number.nil?
-            self.account_number = if admin?
+            self.account_number = if admin? && active?
                                       'EGYPT' + rand_num
-                                  elsif retailer?
+                                  elsif retailer? && active?
                                       'NJ' + rand_num + 'RET'
-                                  elsif supplier?
+                                  elsif supplier? && active?
                                       'NJ' + rand_num + 'SUP'
-                                  elsif trucking?
+                                  elsif trucking? && active?
                                       'NJ' + rand_num + 'TRU'
                                           end
         end
