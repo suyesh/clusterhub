@@ -1,5 +1,6 @@
 class Supplier::FuelPricesController < Supplier::ApplicationController
     before_action :set_fuel_price, only: [:edit, :update]
+    before_action :set_twilio, only: [:create, :edit, :update]
 
     def index
         @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
@@ -19,10 +20,33 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
             format.js do
                 if @fuel_price.save
                     @fuel_prices = current_user.fuel_prices.all.order('created_at DESC')
+                    @fuel = nil
+                    current_user.retailers.each do |retailer|
+                        @retail_price = retailer.retail_prices.create
+                        retailer.fuel_formulas.sort.each do |formula|
+                            current_user.fuel_prices.last.fuel_products.sort.each do |product|
+                                if formula.fuel == product.fuel
+                                    @fuel = product.fuel
+                                    @retail_price.retail_products.create(fuel: @fuel, price: product.price + formula.margin)
+                                end
+                            end
+                        end
+                        products = []
+                        @retail_price.retail_products.each do |product|
+                            products << product.fuel + ' ' + ':' + ' ' + '$' + product.price.to_s
+                        end
+                        @pricerocket = current_user.pricerockets.create(to: retailer.cell_number, body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products}")
+                        @client.messages.create(
+                            from: '+18482299159',
+                            to: "+1#{retailer.cell_number}",
+                            body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products}"
+                        )
+                        @pricerocket.sent!
+                    end
                     flash.now[:notice] = "You have successfully Added new Fuel Price. Petrohub sent out #{current_user.retailers.count} Text messages with updated price to your #{current_user.retailers.count} retailers."
                     render 'success'
                 else
-                    flash.now[:alert] = "You need to add atleast one Fuel product price. You cannot have multiple same types of Fuel selected."
+                    flash.now[:alert] = 'You need to add atleast one Fuel product price. You cannot have multiple same types of Fuel selected.'
                     render 'new'
                end
             end
@@ -59,5 +83,10 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
 
     def set_fuel_price
         @fuel_price = FuelPrice.find(params[:id])
+    end
+
+    def set_twilio
+        require 'twilio-ruby'
+        @client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
     end
 end
