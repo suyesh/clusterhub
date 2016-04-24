@@ -1,12 +1,18 @@
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Today's latest price for <%= @retailer.first_name %>e</h2>
+        <h2>Current latest price for <%= @retailer.first_name %>e</h2>
         <ol class="breadcrumb">
-            <li>
-                <%= link_to "Home", supplier_dashboard_path%>
+            <li class="active">
+                <strong><%= @retailer.business_name.upcase %></strong>
             </li>
             <li class="active">
-                <strong><%= @retailer.business_name %></strong>
+                <strong><%= retailer_full_name(@retailer) %></strong>
+            </li>
+            <li class="active">
+                <strong><%= @retailer.email %></strong>
+            </li>
+            <li class="active">
+                <i class="fa fa-phone"></i>&nbsp;<strong><%= @retailer.cell_number %></strong>
             </li>
 
             <%= link_to edit_supplier_retailer_path(@retailer), remote: true do %>
@@ -22,7 +28,7 @@
 
 <div class="row">
     <div class="title">
-        <h3 id="today">Today's latest price for <%= @retailer.first_name %></h3>
+        <h3 id="today">Current latest price for <%= @retailer.first_name %></h3>
     </div>
     <% if @retailer.retail_prices.empty? %>
     <div class="col-lg-12">
@@ -258,6 +264,8 @@
     </div>
     <%end%>
 </div>
+<br>
+<br>
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-12">
@@ -266,10 +274,11 @@
     <div class="col-lg-2"></div>
 </div>
 
+
 <!-- Margins-->
 <div class="row">
     <div class="title">
-        <h3 id="today">Margins for <%= @retailer.first_name %> (These margins + your fuel price will be this retailer's purchasing price.)</h3>
+        <h3 id="today">Margins for <%= @retailer.first_name %> (Above prices are based on this margin added to your Fuel Price)</h3>
     </div>
     <% if @retailer.fuel_formulas.empty? %>
     <div class="col-lg-12">
@@ -293,7 +302,7 @@
     <% prices[product.fuel] = product.margin %>
     <%end%>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -314,7 +323,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -336,7 +345,7 @@
     </div>
 
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -357,7 +366,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -378,7 +387,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -399,7 +408,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -420,7 +429,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -441,7 +450,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -462,7 +471,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
@@ -483,7 +492,7 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <div class="widget style1">
+        <div class="widget style1" id="fuel_margins">
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-usd fa-3x"></i>
