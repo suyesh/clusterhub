@@ -35,11 +35,11 @@ class Supplier::FuelPricesController < Supplier::ApplicationController
                         @retail_price.retail_products.each do |product|
                             products << product.fuel + ' ' + ':' + ' ' + '$' + product.price.to_s
                         end
-                        @pricerocket = current_user.pricerockets.create(to: retailer.cell_number, body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products}")
+                        @pricerocket = current_user.pricerockets.create(to: retailer.cell_number, body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products.join(', ')}")
                         @client.messages.create(
                             from: '+18482299159',
                             to: "+1#{retailer.cell_number}",
-                            body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products}"
+                            body: "Hey there! #{retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just updated their Fuel Price. Their current Fuel price is #{products.join(', ')}"
                         )
                         @pricerocket.sent!
                     end
