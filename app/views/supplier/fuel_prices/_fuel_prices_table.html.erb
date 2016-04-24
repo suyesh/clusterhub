@@ -8,7 +8,7 @@
                             <tr>
                                 <th>Time</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                              <!--  <th>Action</th> -->
                                 <th>87 RFG E10</th>
                                 <th>89 RFG E10</th>
                                 <th>91 RFG E10</th>
@@ -28,13 +28,13 @@
                                 <td class="mycell col-md-1">
                                     <span class="label label-success">Not set</span>
                                 </td>
-                                <td class="mycell col-md-1">
+                              <!--  <td class="mycell col-md-1">
                                     <%= link_to edit_supplier_fuel_price_path(f), remote: true do %>
                                     <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newFuelPrice">
                                         edit
                                     </button>
                                     <%end%>
-                                </td>
+                                </td> -->
                                 <% prices = {} %>
                                 <% f.fuel_products.each do |product| %>
                                 <% prices[product.fuel] = product.price %>
