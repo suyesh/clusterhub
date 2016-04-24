@@ -13,20 +13,22 @@
                 <strong><%= retailer_full_name(retailer)%></strong>
             </h3>
             <address>
-                <strong>Fuel Margin Formulas</strong><br>
-                <% retailer.fuel_formulas.each do |formula| %>
-                <strong><%= formula.fuel %></strong>
-                $<%= formula.margin %><br>
-                <%end%>
-                <abbr title="Phone">
-                    <strong>
-                        <i class="fa fa-phone"></i>
-                    </strong>
-                </abbr>
-                <%= retailer.cell_number %>
+              <strong>Fuel Margin Formulas</strong><br>
 
+              <strong>Name: </strong>
+              <%= retailer_full_name(retailer)%><br>
+              <strong>Email:</strong>
+              $<%= retailer.email%><br>
+              <strong>Business Name:</strong>
+              $<%= retailer.business_name %><br>
+              <abbr title="Phone">
+                  <strong>
+                      <i class="fa fa-phone"></i>
+                  </strong>
+              </abbr>
+              <%= retailer.cell_number %>
             </address>
-
+          <span class="label"> Click to view Margins <br>and their Current Fuel Price.</span>
         </div>
         <%end%>
         <div class="clearfix"></div>

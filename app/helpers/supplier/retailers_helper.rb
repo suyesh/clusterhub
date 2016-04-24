@@ -6,6 +6,14 @@ module Supplier::RetailersHelper
      end
   end
 
+  def add_or_minus(price)
+    if price < 0
+      "-#{price}"
+    else
+      "+#{price}"
+    end
+  end
+
   def mobile_carrier
       [
           'TMobile',
