@@ -8,7 +8,7 @@ module Supplier::RetailersHelper
 
   def add_or_minus(price)
     if price < 0
-      "-#{price}"
+      "#{price}"
     else
       "+#{price}"
     end
