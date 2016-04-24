@@ -22,28 +22,31 @@ class Supplier::RetailersController < Supplier::ApplicationController
                     @retailer.retailer!
                     current_user.retailers << @retailer
                     @retailer.suppliers << current_user
-                    @fuel = nil
-                    @retail_price = @retailer.retail_prices.create
-                    @retailer.fuel_formulas.sort.each do |formula|
-                        current_user.fuel_prices.last.fuel_products.sort.each do |product|
-                            if formula.fuel == product.fuel
-                                @fuel = product.fuel
-                                @retail_price.retail_products.create(fuel: @fuel, price: product.price + formula.margin)
+                    @retailers = current_user.retailers.all.order('created_at DESC')
+                    unless current_user.fuel_prices.empty?
+                        @fuel = nil
+                        @retail_price = @retailer.retail_prices.create
+                        @retailer.fuel_formulas.sort.each do |formula|
+                            current_user.fuel_prices.last.fuel_products.sort.each do |product|
+                                if formula.fuel == product.fuel
+                                    @fuel = product.fuel
+                                    @retail_price.retail_products.create(fuel: @fuel, price: product.price + formula.margin)
+                                end
                             end
                         end
-                    end
-                    @retailers = current_user.retailers.all.order('created_at DESC')
-                    products = []
-                    @retail_price.retail_products.each do |product|
-                        products << product.fuel + ' ' + ':' + ' ' + '$' + product.price.to_s
-                    end
-                    @pricerocket = current_user.pricerockets.create(to: @retailer.cell_number, body: "Hey there! #{@retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just added you to their Network at Petrohub. Their current Fuel price is #{products}")
-                    @client.messages.create(
-                        from: '+18482299159',
-                        to: "+1#{@retailer.cell_number}",
-                        body: "Hey there! #{@retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just added you to their Network at Petrohub. Their current Fuel price is #{products}"
-                    )
-                    @pricerocket.sent!
+
+                        products = []
+                        @retail_price.retail_products.each do |product|
+                            products << product.fuel + ' ' + ':' + ' ' + '$' + product.price.to_s
+                        end
+                        @pricerocket = current_user.pricerockets.create(to: @retailer.cell_number, body: "Hey there! #{@retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just added you to their Network at Petrohub. Their current Fuel price is #{products}")
+                        @client.messages.create(
+                            from: '+18482299159',
+                            to: "+1#{@retailer.cell_number}",
+                            body: "Hey there! #{@retailer.first_name}. #{current_user.first_name} from #{current_user.business_name} just added you to their Network at Petrohub. Their current Fuel price is #{products}"
+                        )
+                        @pricerocket.sent!
+                  end
                     flash.now[:notice] = 'Retailer has been successfully added.'
                     render 'success'
 
